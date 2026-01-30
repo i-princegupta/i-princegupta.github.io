@@ -15,26 +15,26 @@
     }
 
     header {
-      background: #0f172a;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #ffffff;
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 36px;
+      font-size: 38px;
       margin-bottom: 10px;
     }
 
     header p {
       font-size: 18px;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 22px;
-      margin: 5px;
+      padding: 13px 24px;
+      margin: 6px;
       background: #2563eb;
       color: white;
       text-decoration: none;
@@ -42,8 +42,12 @@
       font-weight: bold;
     }
 
+    .btn.whatsapp {
+      background: #25D366;
+    }
+
     section {
-      padding: 50px 20px;
+      padding: 55px 20px;
       max-width: 1100px;
       margin: auto;
     }
@@ -58,14 +62,14 @@
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
     .card {
       background: white;
       padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
     .card h3 {
@@ -75,9 +79,13 @@
 
     .about, .why {
       background: #ffffff;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .why ul {
+      padding-left: 18px;
     }
 
     footer {
@@ -87,19 +95,41 @@
       padding: 25px 15px;
       font-size: 14px;
     }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <header>
     <h1>Prince Gupta</h1>
-    <p>CA Finalist | Accounting, GST & Tax Compliance Consultant</p>
-    <p>Helping businesses stay compliant, confident & stress-free</p>
+    <p>CA Finalist | Accounting, GST & Tax Consultant</p>
+    <p>✔ Step-by-step & <strong>line-by-line guidance</strong> for every compliance</p>
 
-    <a class="btn" href="princegupta09work@gmail.com">Email Me</a>
-    <a class="btn" href="https://wa.me/919311661381" target="_blank">WhatsApp Me</a>
+    <a class="btn" href="mailto:princegupta09work@gmail.com">Email Me</a>
+
+    <a class="btn whatsapp"
+       href="https://wa.me/919311661381?text=Hello%20Prince%20Gupta%2C%0AI%20visited%20your%20website%20and%20I%20am%20looking%20for%20GST%20%2F%20Income%20Tax%20%2F%20ROC%20services.%0AI%20need%20proper%20step-by-step%20and%20line-by-line%20guidance.%0APlease%20connect."
+       target="_blank">
+       WhatsApp Me
+    </a>
   </header>
 
   <!-- SERVICES -->
@@ -110,38 +140,38 @@
       <div class="card">
         <h3>GST Services</h3>
         <p>
-          GST registration, GSTR-1, GSTR-3B, annual return,
-          reconciliation of GSTR-2B with books,
-          and GST notice reply support.
+          GST registration, returns (GSTR-1, 3B, Annual),
+          reconciliation with GSTR-2B,
+          notice replies — with complete
+          <strong>line-by-line explanation</strong>.
         </p>
       </div>
 
       <div class="card">
         <h3>Income Tax Services</h3>
         <p>
-          ITR filing for individuals, firms and companies,
-          tax computation, TDS returns,
-          and assistance in income-tax notices.
+          ITR filing, tax computation,
+          TDS returns and income-tax notices,
+          explained <strong>step by step</strong> for full clarity.
         </p>
       </div>
 
       <div class="card">
         <h3>Accounting & Bookkeeping</h3>
         <p>
-          Bookkeeping in Tally / Excel,
+          Tally / Excel bookkeeping,
           bank reconciliation,
-          MIS reports,
-          and financial data organisation.
+          MIS reports with
+          <strong>practical line-by-line guidance</strong>.
         </p>
       </div>
 
       <div class="card">
-        <h3>ROC & Compliance Support</h3>
+        <h3>ROC & Incorporation</h3>
         <p>
-          Company incorporation assistance,
-          annual ROC filings,
-          director KYC,
-          and compliance documentation.
+          Company, LLP & HUF incorporation,
+          ROC filings and compliance support
+          with <strong>end-to-end guidance</strong>.
         </p>
       </div>
     </div>
@@ -152,24 +182,24 @@
     <h2>About Me</h2>
     <div class="about">
       <p>
-        I am a CA Finalist with strong practical exposure in
-        GST, Income Tax and accounting compliances.
-        My goal is to provide accurate, timely and
-        easy-to-understand solutions to businesses and professionals.
+        I am a CA Finalist with hands-on experience in GST,
+        Income Tax, ROC and accounting compliances.
+        I focus on accuracy, timelines and
+        <strong>making every compliance easy to understand</strong>.
       </p>
     </div>
   </section>
 
-  <!-- WHY CHOOSE ME -->
+  <!-- WHY -->
   <section>
     <h2>Why Choose Me</h2>
     <div class="why">
       <ul>
         <li>CA Final level technical knowledge</li>
-        <li>Practical compliance-oriented approach</li>
-        <li>Clear communication without jargon</li>
+        <li>Complete step-by-step & line-by-line guidance</li>
+        <li>No jargon — clear and practical explanation</li>
         <li>Affordable & transparent fees</li>
-        <li>Personal attention to every client</li>
+        <li>Direct WhatsApp support</li>
       </ul>
     </div>
   </section>
@@ -179,6 +209,11 @@
     <p>© 2026 Prince Gupta | Accounting & Tax Consultant</p>
     <p>Disclaimer: Services provided as Consultant. Not a Chartered Accountant.</p>
   </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="whatsapp-float"
+     href="https://wa.me/919311661381?text=Hello%20Prince%20Gupta%2C%20I%20need%20CA%20consultancy%20with%20line-by-line%20guidance."
+     target="_blank">💬</a>
 
 </body>
 </html>

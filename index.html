@@ -7,132 +7,171 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
-/* ===== GLOBAL STYLES ===== */
+/* ===== MODERN DESIGN SYSTEM ===== */
 :root {
-  --primary: #2563eb;
-  --primary-hover: #1e40af;
-  --dark-bg: #0f172a;
-  --light-bg: #f0f9ff;
-  --glass: rgba(255, 255, 255, 0.4);
-  --glass-dark: rgba(30, 41, 59, 0.7);
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.5);
+  --accent: #8b5cf6;
+  --dark-bg: #030712;
+  --light-bg: #f8fafc;
+  --card-light: #ffffff;
+  --card-dark: #111827;
 }
 
 * { box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
   margin:0;
-  font-family:'Inter', 'Segoe UI', sans-serif;
-  color:#1f2937;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  color:#334155;
   line-height:1.6;
   overflow-x:hidden;
   background: var(--light-bg);
-  transition: 0.5s;
+  transition: background 0.4s ease;
 }
 
-body.dark { color:#cbd5e1; background: var(--dark-bg); }
+body.dark { color:#e2e8f0; background: var(--dark-bg); }
 
 /* ===== NAVIGATION ===== */
 nav {
   position: fixed; top: 0; width: 100%; z-index: 1000;
-  padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
-  backdrop-filter: blur(10px); background: rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.logo { font-weight: 800; font-size: 20px; color: var(--primary); text-decoration: none; }
+body.dark nav { background: rgba(3, 7, 18, 0.7); border-color: rgba(255,255,255,0.05); }
 
-/* ===== PARTICLES ===== */
-#particles-js {
-  position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;
+.logo { 
+    font-weight: 900; font-size: 22px; color: var(--primary); text-decoration: none; 
+    letter-spacing: -1px; text-transform: uppercase;
 }
 
 /* ===== HERO SECTION ===== */
 header {
   position:relative; min-height: 100vh; display:flex; justify-content:center; align-items:center;
-  overflow:hidden; padding: 100px 20px 50px;
+  padding: 120px 20px 80px;
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+}
+
+#particles-js {
+  position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;
 }
 
 .hero-box {
-  position: relative; z-index: 2; text-align: center; padding: 60px 40px;
-  background: var(--glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 30px;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); max-width: 900px;
-  transform: translateY(0); transition: 0.5s;
+  position: relative; z-index: 2; text-align: center; padding: 80px 40px;
+  background: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 40px;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.05); max-width: 1000px;
 }
 
-body.dark .hero-box { background: var(--glass-dark); border: 1px solid rgba(255, 255, 255, 0.05); }
+body.dark .hero-box { 
+    background: rgba(17, 24, 39, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.4);
+}
 
+/* THE "PRINCE GUPTA" HEADING STYLE */
 header h1 { 
-    font-size: clamp(40px, 8vw, 64px); margin-bottom: 15px; font-weight: 800; 
-    background: linear-gradient(to right, #2563eb, #7dd3fc);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    letter-spacing: -2px;
+    font-size: clamp(48px, 10vw, 85px); 
+    margin: 10px 0 20px; 
+    font-weight: 900; 
+    line-height: 1;
+    background: linear-gradient(135deg, #2563eb 0%, #7dd3fc 50%, #2563eb 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+    letter-spacing: -4px;
 }
 
-header p { font-size: 1.2rem; margin-bottom: 20px; color: #334155; }
-body.dark header p { color: #94a3b8; }
+@keyframes shine {
+  to { background-position: 200% center; }
+}
 
 /* ===== BUTTONS ===== */
 .btn { 
-  display:inline-flex; align-items: center; gap: 10px;
-  padding:16px 35px; margin:10px; background: var(--primary); 
-  color:white; border-radius:12px; font-weight:600; 
-  text-decoration:none; transition:0.3s;
+  display:inline-flex; align-items: center; gap: 12px;
+  padding:18px 40px; margin:10px; background: var(--primary); 
+  color:white; border-radius:16px; font-weight:700; 
+  text-decoration:none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 20px -5px var(--primary-glow);
 }
-.btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(37,99,235,0.4); }
-.btn.whatsapp { background:#22c55e; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 20px 30px -10px var(--primary-glow); }
 
-/* ===== SECTIONS & CARDS ===== */
-section { padding:100px 20px; max-width:1200px; margin:auto; position:relative; z-index:1; }
-h2 { text-align:center; margin-bottom:60px; font-size:42px; font-weight:800; letter-spacing: -1px; }
+.btn.whatsapp { 
+    background: #10b981; 
+    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+}
 
-.services { display:grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap:30px; }
+/* ===== SERVICES GRID ===== */
+section { padding:120px 20px; max-width:1300px; margin:auto; }
+h2 { text-align:center; margin-bottom:70px; font-size:48px; font-weight:900; letter-spacing: -2px; }
+
+.services { display:grid; grid-template-columns: repeat(auto-fit,minmax(340px,1fr)); gap:30px; }
 .card {
-  background:white; padding:40px; border-radius:24px; 
-  border: 1px solid rgba(0,0,0,0.05); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: var(--card-light); padding:50px 40px; border-radius:32px; 
+  border: 1px solid rgba(0,0,0,0.03); 
+  transition: all 0.4s ease;
+  position: relative; overflow: hidden;
 }
-body.dark .card { background:#1e293b; border-color: #334155; }
-.card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); }
+body.dark .card { background: var(--card-dark); border-color: rgba(255,255,255,0.05); }
+
+.card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--primary);
+    box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1);
+}
 
 .card i { 
-    font-size: 40px; color: var(--primary); margin-bottom: 25px; 
-    background: rgba(37,99,235,0.1); padding: 15px; border-radius: 15px;
+    font-size: 32px; color: var(--primary); margin-bottom: 30px; 
+    width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;
+    background: rgba(59, 130, 246, 0.08); border-radius: 20px;
 }
 
-/* ===== LIST STYLES ===== */
-.why-box { background: white; border-radius: 30px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-body.dark .why-box { background: #1e293b; }
+/* ===== WHY CHOOSE SECTION ===== */
+.why-box { 
+    background: var(--card-light); border-radius: 40px; padding: 60px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+body.dark .why-box { background: var(--card-dark); border-color: rgba(255,255,255,0.05); }
 
-.fomo-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.fomo-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 .fomo-list li { 
-  padding:20px; border-radius:15px; background: rgba(37,99,235,0.03);
+  padding:30px; border-radius:24px; background: rgba(59, 130, 246, 0.03);
   border: 1px solid transparent; transition: 0.3s;
 }
-.fomo-list li:hover { border-color: var(--primary); background: white; transform: scale(1.03); }
-body.dark .fomo-list li:hover { background: #0f172a; }
+.fomo-list li:hover { background: white; border-color: var(--primary); transform: scale(1.02); }
+body.dark .fomo-list li:hover { background: #1f2937; }
 
-/* ===== DARK TOGGLE ===== */
+/* ===== UTILITIES ===== */
 .dark-toggle {
-  background: var(--primary); color:white; padding:10px 18px; border-radius:50px; 
-  cursor:pointer; font-weight:700; display: flex; align-items: center; gap: 8px;
+  background: #1e293b; color:white; padding:12px 20px; border-radius:14px; 
+  cursor:pointer; font-weight:700; display: flex; align-items: center; gap: 10px;
+  transition: 0.3s;
 }
+body.dark .dark-toggle { background: #f8fafc; color: #0f172a; }
 
-/* ===== FOOTER ===== */
-footer { background:#0f172a; color:#94a3b8; text-align:center; padding:80px 20px; }
+footer { background:#030712; color:#64748b; text-align:center; padding:100px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
 
 .whatsapp-float {
-  position:fixed; bottom:30px; right:30px; background:#22c55e; color:white; width:65px; height:65px;
-  border-radius:50%; font-size:35px; text-align:center; line-height:65px; box-shadow:0 10px 25px rgba(34,197,94,0.4);
-  z-index:1000; transition: 0.3s;
+  position:fixed; bottom:40px; right:40px; background:#10b981; color:white; width:70px; height:70px;
+  border-radius:22px; font-size:35px; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3); z-index:1000; transition: 0.3s;
 }
-.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
 @media(max-width:768px){ 
-    nav { padding: 15px 20px; }
-    header h1 { font-size: 45px; }
-    .hero-box { padding: 40px 20px; }
+    nav { padding: 15px 5%; }
+    header h1 { font-size: 55px; letter-spacing: -2px; }
+    .hero-box { padding: 50px 25px; border-radius: 30px; }
+    section { padding: 70px 20px; }
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="dark">
 
@@ -144,11 +183,11 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:80px 20px
 <header>
   <div id="particles-js"></div>
   <div class="hero-box">
-    <p style="text-transform: uppercase; letter-spacing: 3px; font-weight: 700; color: var(--primary); margin-bottom: 10px;">Trusted Tax Partner</p>
+    <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 14px; font-weight: 800; color: var(--primary); margin-bottom: 15px;">Trusted Tax Partner</p>
     <h1>Prince Gupta</h1>
-    <p><b>CA Finalist | Accounting & Tax Consultant</b></p>
-    <p>Transforming Compliance into Clear, Hassle-Free Processes</p>
-    <div style="margin-top: 35px;">
+    <p style="font-size: 1.4rem; font-weight: 600;"><b>CA Finalist | Accounting & Tax Consultant</b></p>
+    <p style="opacity: 0.8;">Transforming Compliance into Clear, Hassle-Free Processes</p>
+    <div style="margin-top: 40px;">
       <a class="btn" href="mailto:princegupta09work@gmail.com"><i class="fas fa-paper-plane"></i> Email Me</a>
       <a class="btn whatsapp" href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
@@ -167,10 +206,10 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:80px 20px
   </div>
 </section>
 
-<section id="about" style="background: rgba(37,99,235,0.02);">
+<section id="about" style="background: rgba(59, 130, 246, 0.03);">
   <h2>About Me</h2>
-  <div class="why-box" style="text-align: center; max-width: 800px; margin: auto;">
-    <p style="font-size: 1.2rem;">I am a <b>CA Finalist</b> specializing in GST, Income Tax, ROC, PF, ESI, E-way Bill compliance, Tax Audit & Tax Audit Finalisation, and Accounting. I help businesses simplify compliance, save time, and ensure accuracy.</p>
+  <div class="why-box" style="text-align: center; max-width: 900px; margin: auto;">
+    <p style="font-size: 1.25rem; line-height: 1.8;">I am a <b>CA Finalist</b> specializing in GST, Income Tax, ROC, PF, ESI, E-way Bill compliance, Tax Audit & Tax Audit Finalisation, and Accounting. I help businesses simplify compliance, save time, and ensure accuracy.</p>
   </div>
 </section>
 
@@ -184,16 +223,14 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:80px 20px
       <li><strong>✅ Instant Support</strong><br>Get your queries resolved quickly via WhatsApp.</li>
       <li><strong>✅ Precision & Trust</strong><br>Ensuring 100% accuracy in every filing.</li>
     </ul>
-    <div style="text-align:center; margin-top:50px; padding: 20px; border-top: 1px solid rgba(0,0,0,0.05);">
-      <p style="font-weight:800; color:#2563eb; font-size: 1.3rem;">Joined hundreds of businesses who’ve simplified compliance!</p>
+    <div style="text-align:center; margin-top:60px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05);">
+      <p style="font-weight:800; color:#2563eb; font-size: 1.5rem;">Joined hundreds of businesses who’ve simplified compliance!</p>
     </div>
   </div>
 </section>
 
 <footer>
   <p>© 2026 Prince Gupta | Professional Tax Consultant</p>
-  <p style="font-size:13px; margin-top:20px; max-width: 800px; margin: 20px auto; opacity: 0.6;">
-      </p>
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -202,12 +239,12 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:80px 20px
 <script>
 particlesJS("particles-js", {
   "particles": {
-    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
     "color": { "value": "#3b82f6" },
-    "opacity": { "value": 0.5 },
-    "size": { "value": 3, "random": true },
-    "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.2 },
-    "move": { "enable": true, "speed": 2 }
+    "opacity": { "value": 0.3 },
+    "size": { "value": 2, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.1 },
+    "move": { "enable": true, "speed": 1.5 }
   },
   "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
 });
@@ -221,4 +258,3 @@ toggleBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
-

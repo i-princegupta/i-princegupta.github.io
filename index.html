@@ -1,253 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prince Gupta | Accounting & Tax Consultant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Gupta | CA Finalist | Accounting & Tax Consultant</title>
+<meta name="description" content="Prince Gupta is a CA Finalist providing expert services in GST, Income Tax, Accounting, ROC, PF, ESI, E-way Bill, Tax Audit & Tax Audit Finalisation. Simplify compliance and save time with professional guidance.">
+<meta name="keywords" content="CA Finalist, GST Registration, GSTR Filing, Income Tax Filing, Tax Audit, Accounting, ROC Filing, PF Compliance, ESI Compliance, E-way Bill, Tax Consultancy, Financial Consultant">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.yourwebsite.com/">
 
-  <style>
-    /* ================== BODY & BACKGROUND ================== */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      color: #1f2937;
-      line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-    /* Subtle abstract circles for modern look */
-    body::before, body::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.1;
-      z-index: 0;
-    }
+<style>
+/* ===== BODY ===== */
+body {
+  margin:0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#1f2937;
+  line-height:1.6;
+  overflow-x:hidden;
+  transition: background 0.5s, color 0.5s;
+}
+body.dark { color:#cbd5e1; background:#0f172a; }
 
-    body::before {
-      width: 400px;
-      height: 400px;
-      background: #2563eb;
-      top: -100px;
-      left: -100px;
-    }
+/* ===== HERO ANIMATED CANVAS ===== */
+#heroCanvas {
+  position:absolute;
+  top:0; left:0; width:100%; height:100%; z-index:0;
+  pointer-events:none;
+}
 
-    body::after {
-      width: 600px;
-      height: 600px;
-      background: #0284c7;
-      bottom: -200px;
-      right: -150px;
-    }
+/* ===== HEADER ===== */
+header {
+  position:relative;
+  height:500px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  overflow:hidden;
+}
+header h1, header p, header .btn { position:relative; z-index:1; }
+header h1 { font-size:42px; margin-bottom:10px; font-weight:700; animation:fadeDown 1s ease forwards; }
+header p { font-size:18px; margin-bottom:20px; animation:fadeDown 1.2s ease forwards; }
 
-    /* ================== HEADER / HERO ================== */
-    header {
-      background: linear-gradient(135deg, rgba(14,165,233,0.85), rgba(2,132,199,0.85));
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-      position: relative;
-      overflow: hidden;
-    }
+/* ===== BUTTONS ===== */
+.btn { display:inline-block; padding:14px 28px; margin:6px; background:#2563eb; color:white; border-radius:8px; font-weight:600; transition:0.3s; text-decoration:none;}
+.btn:hover { background:#1e40af; }
+.btn.whatsapp { background:#25D366; }
+.btn.whatsapp:hover { background:#1ebe55; }
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15, 23, 42, 0.3); /* transparent overlay for readability */
-      z-index: 0;
-    }
+/* ===== SECTIONS ===== */
+section { padding:60px 20px; max-width:1100px; margin:auto; position:relative; z-index:1; }
+h2 { text-align:center; margin-bottom:50px; font-size:34px; font-weight:700; opacity:0; transform:translateY(20px); transition:all 0.6s ease; }
+body.dark h2 { color:#f0f9ff; }
 
-    header h1, header p, header .btn { position: relative; z-index: 1; }
-    header h1 { font-size: 42px; margin-bottom: 10px; }
-    header p { font-size: 18px; margin-bottom: 20px; }
+/* ===== CARDS ===== */
+.services { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+.card {
+  background:white; 
+  padding:30px; 
+  border-radius:16px; 
+  box-shadow:0 10px 25px rgba(0,0,0,0.08); 
+  transition:0.4s; 
+  opacity:0; 
+  transform:translateY(20px);
+  position:relative;
+}
+body.dark .card { background:#1f2937; color:#cbd5e1; }
+.card:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 18px 35px rgba(0,0,0,0.15); }
+.card h3 { color:#0284c7; margin-bottom:12px; font-weight:600; display:flex; align-items:center; gap:10px; }
+body.dark .card h3 { color:#3b82f6; }
+.card p { font-size:15px; }
 
-    /* ================== BUTTONS ================== */
-    .btn {
-      display: inline-block;
-      padding: 13px 24px;
-      margin: 6px;
-      background: #2563eb;
-      color: white;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* ===== ICONS IN CARDS ===== */
+.card h3 i { color:#2563eb; }
 
-    .btn:hover { background: #1e40af; }
-    .btn.whatsapp { background: #25D366; }
-    .btn.whatsapp:hover { background: #1ebe55; }
+/* ===== ABOUT & WHY ===== */
+.about, .why { background:white; border-radius:16px; padding:40px; box-shadow:0 10px 25px rgba(0,0,0,0.08); margin-bottom:30px; opacity:0; transform:translateY(20px); transition:0.6s ease; }
+body.dark .about, body.dark .why { background:#1f2937; color:#cbd5e1; }
 
-    /* ================== SECTIONS ================== */
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-      position: relative;
-      z-index: 1;
-    }
+.why ul { padding-left:20px; }
+.fomo-list li { padding:16px; border-radius:10px; transition:0.3s; cursor:pointer; }
+.fomo-list li:hover { background:#2563eb; color:white; transform:translateX(5px); }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 32px;
-      color: #0f172a;
-    }
+/* ===== FOOTER ===== */
+footer { background:#0f172a; color:#cbd5e1; text-align:center; padding:35px 15px; font-size:14px; position:relative; z-index:1; }
+footer p { margin:5px 0; }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+/* ===== FLOATING WHATSAPP ===== */
+.whatsapp-float {
+  position:fixed; bottom:25px; right:25px; background:#25D366; color:white; width:60px; height:60px;
+  border-radius:50%; font-size:30px; text-align:center; line-height:60px; box-shadow:0 6px 15px rgba(0,0,0,0.3); text-decoration:none;
+  transition:0.3s; z-index:10;
+}
+.whatsapp-float:hover { background:#1ebe55; }
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
+/* ===== DARK MODE TOGGLE ===== */
+.dark-toggle {
+  position:fixed; top:20px; right:20px; background:#2563eb; color:white; padding:10px 16px; border-radius:8px; cursor:pointer;
+  font-weight:bold; z-index:100;
+  transition:0.3s;
+}
+.dark-toggle:hover { background:#1e40af; }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
+@media(max-width:600px){ header h1{font-size:32px;} header p{font-size:16px;} }
 
-    .card h3 { color: #0284c7; margin-bottom: 12px; }
-    .highlight { color: #2563eb; font-weight: bold; }
-
-    .about, .why { background: white; border-radius: 12px; padding: 35px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); margin-bottom: 30px; }
-    .why ul { padding-left: 20px; list-style-type: disc; }
-
-    /* ================== FOMO HOVER EFFECT ================== */
-    .fomo-list li {
-      padding: 15px;
-      border-radius: 8px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .fomo-list li:hover {
-      background: #2563eb; /* Blue background on hover */
-      color: white;        /* Text becomes white */
-      transform: translateX(5px); /* Small slide effect */
-    }
-
-    /* ================== FOOTER ================== */
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 30px 15px;
-      font-size: 14px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ================== FLOATING WHATSAPP ================== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      font-size: 30px;
-      text-align: center;
-      line-height: 60px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      text-decoration: none;
-      transition: 0.3s;
-      z-index: 10;
-    }
-
-    .whatsapp-float:hover { background: #1ebe55; }
-
-    @media(max-width: 600px){
-      header h1 { font-size: 32px; }
-      header p { font-size: 16px; }
-    }
-  </style>
+@keyframes fadeDown { from { opacity:0; transform:translateY(-20px);} to { opacity:1; transform:translateY(0);} }
+.show { opacity:1 !important; transform:translateY(0) !important; }
+</style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Prince Gupta</h1>
-    <p>CA Finalist | Accounting & Tax Consultant</p>
-    <p>Transforming Compliance into Clear, Hassle-Free Processes</p>
+<!-- DARK MODE TOGGLE -->
+<div class="dark-toggle" onclick="document.body.classList.toggle('dark')">Dark Mode</div>
 
-    <a class="btn" href="mailto:princegupta09work@gmail.com">Email</a>
+<!-- HERO -->
+<header>
+<canvas id="heroCanvas"></canvas>
+<h1>Prince Gupta</h1>
+<p>CA Finalist | Accounting & Tax Consultant</p>
+<p>Transforming Compliance into Clear, Hassle-Free Processes</p>
+<a class="btn" href="mailto:princegupta09work@gmail.com">Email</a>
 <a class="btn whatsapp" href="https://wa.me/919311661381" target="_blank">Whatsapp</a>
-  </header>
+</header>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>Expert Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>GST & Compliance</h3>
-        <p>Seamless <span class="highlight">GST Registration</span>, <span class="highlight">GSTR Filing</span>, reconciliation, and <span class="highlight">notice resolution</span> with complete clarity.</p>
-      </div>
-      <div class="card">
-        <h3>Income Tax & TDS</h3>
-        <p>Professional handling of <span class="highlight">ITR Filing</span>, accurate <span class="highlight">Tax Computation</span>, <span class="highlight">TDS Returns</span>, and <span class="highlight">compliance guidance</span> to simplify your taxation.</p>
-      </div>
-      <div class="card">
-        <h3>Accounting & Bookkeeping</h3>
-        <p>Precise <span class="highlight">Tally & Excel bookkeeping</span>, bank reconciliations, MIS reports, and actionable insights for smarter financial management.</p>
-      </div>
-      <div class="card">
-        <h3>ROC & Incorporation</h3>
-        <p>Expert <span class="highlight">Company, LLP & HUF Incorporation</span> and <span class="highlight">ROC filings</span> with end-to-end support for compliance peace of mind.</p>
-      </div>
-    </div>
-  </section>
+<!-- SERVICES -->
+<section id="services">
+<h2>Expert Services</h2>
+<div class="services">
+<div class="card"><h3><i class="fas fa-gem"></i> GST & Compliance</h3><p>Seamless GST Registration, GSTR Filing, reconciliation, notice resolution.</p></div>
+<div class="card"><h3><i class="fas fa-file-invoice-dollar"></i> Income Tax & TDS</h3><p>Professional handling of ITR Filing, Tax Computation, TDS Returns, Tax Audit, Tax Audit Finalisation.</p></div>
+<div class="card"><h3><i class="fas fa-calculator"></i> Accounting & Bookkeeping</h3><p>Precise Tally & Excel bookkeeping, bank reconciliations, MIS reports.</p></div>
+<div class="card"><h3><i class="fas fa-building"></i> ROC & Incorporation</h3><p>Expert Company, LLP & HUF Incorporation and ROC filings.</p></div>
+<div class="card"><h3><i class="fas fa-hand-holding-usd"></i> PF & ESI Compliance</h3><p>Complete handling of PF Registration & Compliance, ESI Registration & Filing.</p></div>
+<div class="card"><h3><i class="fas fa-truck"></i> E-way Bill Management</h3><p>Seamless E-way Bill generation, tracking, and reconciliation.</p></div>
+</div>
+</section>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About Me</h2>
-    <div class="about">
-      <p>I am a CA Finalist specializing in GST, Income Tax, ROC, and Accounting. I help businesses and individuals simplify compliance, save time, and ensure accuracy — turning complex processes into easy-to-follow steps.</p>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<div class="about">
+<p>I am a CA Finalist specializing in GST, Income Tax, ROC, PF, ESI, E-way Bill compliance, Tax Audit & Tax Audit Finalisation, and Accounting. I help businesses simplify compliance, save time, and ensure accuracy.</p>
+</div>
+</section>
 
-  <!-- WHY CHOOSE ME (FOMO VERSION) -->
-  <section>
-    <h2>Why You Can't Afford to Miss Out</h2>
-    <div class="why">
-      <ul class="fomo-list">
-        <li>✅ <strong>Expert CA Final guidance:</strong> Avoid costly mistakes and stay fully compliant.</li>
-        <li>✅ <strong>Step-by-step clarity:</strong> Never get stuck in confusing GST, Tax, or ROC processes again.</li>
-        <li>✅ <strong>Save Time & Money:</strong> Focus on your business while I handle compliance swiftly and accurately.</li>
-        <li>✅ <strong>Instant WhatsApp Support:</strong> Get your queries resolved without waiting days.</li>
-        <li>✅ <strong>Limited Slots:</strong> Work with me before my calendar fills up — don’t risk delays or penalties.</li>
-      </ul>
-      <p style="text-align:center; margin-top:20px; font-weight:bold; color:#2563eb;">
-        Join hundreds of businesses and individuals who’ve simplified compliance and boosted their financial confidence!
-      </p>
-    </div>
-  </section>
+<!-- WHY CHOOSE ME (FOMO) -->
+<section id="why">
+<h2>Why You Can't Afford to Miss Out</h2>
+<div class="why">
+<ul class="fomo-list">
+<li>✅ <strong>Expert CA Final guidance:</strong> Avoid costly mistakes and stay fully compliant.</li>
+<li>✅ <strong>Step-by-step clarity:</strong> Never get stuck in confusing GST, Tax, PF, ESI, ROC, or Audit processes.</li>
+<li>✅ <strong>Save Time & Money:</strong> Focus on your business while I handle compliance swiftly.</li>
+<li>✅ <strong>Instant WhatsApp Support:</strong> Get queries resolved instantly.</li>
+<li>✅ <strong>Limited Slots:</strong> Work with me before calendar fills up.</li>
+</ul>
+<p style="text-align:center; margin-top:20px; font-weight:bold; color:#2563eb;">
+Join hundreds of businesses and individuals who’ve simplified compliance and boosted their financial confidence!
+</p>
+</div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Prince Gupta | Accounting & Tax Consultant</p>
-      </footer>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Prince Gupta | Accounting & Tax Consultant</p>
+<p style="font-size:13px; color:#cbd5e1; margin-top:5px;">
+Disclaimer: I provide accounting, GST, PF, ESI, E-way Bill, Tax Audit & Tax Audit Finalisation consultancy services as a professional consultant. This website is for informational purposes only and does not constitute formal Chartered Accountancy services.
+</p>
+</footer>
 
-  <p>Seamless <a href="https://www.google.com/search?q=GST+Registration" target="_blank" class="highlight">GST Registration</a>, 
-<a href="https://www.google.com/search?q=GSTR+Filing" target="_blank" class="highlight">GSTR Filing</a>, 
-reconciliation, and <a href="https://www.google.com/search?q=notice+resolution" target="_blank" class="highlight">notice resolution</a> with complete clarity.</p>
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/919311661381" target="_blank">💬</a>
 
-  <!-- FLOATING WHATSAPP -->
-  <a class="whatsapp-float" href="https://wa.me/919311661381" target="_blank">💬</a>
+<!-- SCROLL ANIMATION -->
+<script>
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); }});
+},{ threshold:0.1 });
+document.querySelectorAll('h2, .card, .about, .why').forEach(el => observer.observe(el));
+</script>
+
+<!-- HERO PARTICLES -->
+<script>
+const canvas = document.getElementById('heroCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth; canvas.height = 500;
+let particles = [];
+for(let i=0;i<120;i++){ particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*3+1, dx:(Math.random()-0.5)*0.5, dy:(Math.random()-0.5)*0.5}); }
+function animate(){ ctx.clearRect(0,0,canvas.width,canvas.height); for(let p of particles){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.fill(); p.x+=p.dx; p.y+=p.dy; if(p.x<0||p.x>canvas.width)p.dx*=-1; if(p.y<0||p.y>canvas.height)p.dy*=-1; } for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){let a=particles[i],b=particles[j];let dist=Math.hypot(a.x-b.x,a.y-b.y); if(dist<100){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle='rgba(255,255,255,'+(0.2-(dist/500))+')'; ctx.lineWidth=1; ctx.stroke();}}} requestAnimationFrame(animate);}
+animate();
+window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=500; });
+</script>
 
 </body>
 </html>
-
-
-

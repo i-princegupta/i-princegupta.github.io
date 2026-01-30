@@ -12,10 +12,11 @@
   --primary: #3b82f6;
   --primary-glow: rgba(59, 130, 246, 0.5);
   --accent: #8b5cf6;
-  --dark-bg: #030712;
-  --light-bg: #f8fafc;
+  /* UPDATED: Slightly lighter background values */
+  --dark-bg: #0f172a; 
+  --light-bg: #fcfcfd; 
   --card-light: #ffffff;
-  --card-dark: #111827;
+  --card-dark: #1e293b;
 }
 
 * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -41,7 +42,7 @@ nav {
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-body.dark nav { background: rgba(3, 7, 18, 0.7); border-color: rgba(255,255,255,0.05); }
+body.dark nav { background: rgba(15, 23, 42, 0.7); border-color: rgba(255,255,255,0.05); }
 
 .logo { 
     font-weight: 900; font-size: 22px; color: var(--primary); text-decoration: none; 
@@ -68,7 +69,7 @@ header {
 }
 
 body.dark .hero-box { 
-    background: rgba(17, 24, 39, 0.6); 
+    background: rgba(30, 41, 59, 0.6); 
     border: 1px solid rgba(255, 255, 255, 0.08); 
     box-shadow: 0 40px 100px -20px rgba(0,0,0,0.4);
 }
@@ -145,7 +146,7 @@ body.dark .why-box { background: var(--card-dark); border-color: rgba(255,255,25
   border: 1px solid transparent; transition: 0.3s;
 }
 .fomo-list li:hover { background: white; border-color: var(--primary); transform: scale(1.02); }
-body.dark .fomo-list li:hover { background: #1f2937; }
+body.dark .fomo-list li:hover { background: #334155; }
 
 /* ===== UTILITIES ===== */
 .dark-toggle {
@@ -155,7 +156,7 @@ body.dark .fomo-list li:hover { background: #1f2937; }
 }
 body.dark .dark-toggle { background: #f8fafc; color: #0f172a; }
 
-footer { background:#030712; color:#64748b; text-align:center; padding:100px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+footer { background:#0f172a; color:#94a3b8; text-align:center; padding:100px 20px; border-top: 1px solid rgba(255,255,255,0.05); }
 
 .whatsapp-float {
   position:fixed; bottom:40px; right:40px; background:#10b981; color:white; width:70px; height:70px;

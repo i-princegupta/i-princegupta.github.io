@@ -3,136 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GST Services | Prince Gupta</title>
+<title>GST & Compliance Services | Prince Gupta</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-/* ===== CORE DESIGN SYSTEM (Copied for Consistency) ===== */
 :root {
-  --primary: #3b82f6;
-  --primary-glow: rgba(59, 130, 246, 0.5);
-  --dark-bg: #0f172a; 
-  --light-bg: #fcfcfd; 
-  --card-light: #ffffff;
-  --card-dark: #1e293b;
+  --primary: #10b981; /* GST Green Theme */
+  --primary-glow: rgba(16, 185, 129, 0.4);
+  --dark-bg: #0f172a; --light-bg: #fcfcfd; 
 }
+* { box-sizing: border-box; scroll-behavior: smooth; text-decoration: none !important; }
+body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-bg); color:#334155; }
+body.dark { background: var(--dark-bg); color:#e2e8f0; }
 
-* { box-sizing: border-box; }
+nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(12px); background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(0,0,0,0.05); }
+body.dark nav { background: rgba(15, 23, 42, 0.7); }
+.logo { font-weight: 900; font-size: 22px; color: var(--primary); }
 
-body {
-  margin:0; font-family: 'Plus Jakarta Sans', sans-serif;
-  color:#334155; line-height:1.6; background: var(--light-bg);
-  transition: background 0.4s ease;
-}
+header { padding: 160px 20px 80px; text-align: center; background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%); }
+h1 { font-size: 60px; font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; color: var(--primary); }
 
-body.dark { color:#e2e8f0; background: var(--dark-bg); }
+.content-box { max-width: 900px; margin: auto; padding: 40px; background: white; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); }
+body.dark .content-box { background: #1e293b; border-color: rgba(255,255,255,0.05); }
 
-/* NAV */
-nav {
-  padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
-  background: rgba(255,255,255,0.7); backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 1000;
-}
-body.dark nav { background: rgba(15, 23, 42, 0.7); border-color: rgba(255,255,255,0.05); }
+.service-list { list-style: none; padding: 0; text-align: left; }
+.service-list li { padding: 15px; margin-bottom: 10px; background: rgba(16, 185, 129, 0.05); border-radius: 12px; display: flex; align-items: center; gap: 15px; font-weight: 600; }
+.service-list li i { color: var(--primary); }
 
-.logo { font-weight: 900; font-size: 22px; color: var(--primary); text-decoration: none; text-transform: uppercase; }
-
-/* UTILITIES */
-.dark-toggle {
-  background: #1e293b; color:white; padding:12px 20px; border-radius:14px; cursor:pointer; font-weight:700; 
-  display: flex; align-items: center; gap: 10px;
-}
-body.dark .dark-toggle { background: #f8fafc; color: #0f172a; }
-
-.btn { 
-  display:inline-flex; align-items: center; gap: 12px;
-  padding:18px 40px; background: #10b981; 
-  color:white; border-radius:16px; font-weight:700; 
-  text-decoration:none; box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
-  transition: 0.3s;
-}
-.btn:hover { transform: translateY(-3px); }
-
-/* ===== PAGE SPECIFIC STYLES ===== */
-.page-header {
-  padding: 150px 20px 60px; text-align: center;
-  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-}
-
-.content-container { max-width: 900px; margin: 0 auto 100px; padding: 0 20px; }
-
-.detail-card {
-  background: var(--card-light); padding: 50px; border-radius: 32px;
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.05);
-}
-body.dark .detail-card { background: var(--card-dark); border-color: rgba(255,255,255,0.05); }
-
-.detail-list { list-style: none; padding: 0; margin-top: 30px; }
-.detail-list li {
-  padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.1);
-  display: flex; align-items: flex-start; gap: 15px; font-size: 1.1rem;
-}
-body.dark .detail-list li { border-color: rgba(255,255,255,0.1); }
-
-.back-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    color: var(--primary); font-weight: 700; text-decoration: none; margin-bottom: 20px;
-}
+.btn { display:inline-flex; align-items: center; gap: 12px; padding:18px 40px; background: var(--primary); color:white !important; border-radius:16px; font-weight:700; margin-top: 30px; }
+footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px; margin-top: 100px; }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="dark">
 
 <nav>
-    <a href="index.html" class="logo">PG CONSULTANCY</a>
-    <div id="darkToggle" class="dark-toggle"><i class="fas fa-sun"></i><span>Light</span></div>
+    <a href="index.html" class="logo">← BACK TO HOME</a>
 </nav>
 
-<header class="page-header">
-  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-  <h1 style="font-size: clamp(32px, 5vw, 48px); margin: 10px 0;">GST & Compliance Services</h1>
-  <p style="opacity: 0.8; font-size: 1.2rem; max-width: 600px; margin: auto;">End-to-end GST management ensuring you stay compliant and avoid penalties.</p>
+<header>
+    <h1>GST & Compliance</h1>
+    <p>Strategic Indirect Tax Solutions for Modern Businesses</p>
 </header>
 
-<section class="content-container">
-  <div class="detail-card">
-    <h2 style="margin-top: 0;">What We Offer</h2>
-    <ul class="detail-list">
-      <li>
-        <i class="fas fa-check-circle" style="color: var(--primary); margin-top: 5px;"></i> 
-        <span><strong>GST Registration:</strong> Hassle-free application process for new businesses.</span>
-      </li>
-      <li>
-        <i class="fas fa-file-invoice" style="color: var(--primary); margin-top: 5px;"></i> 
-        <span><strong>GSTR Filing:</strong> Monthly/Quarterly filing of GSTR-1 & GSTR-3B with 100% accuracy.</span>
-      </li>
-      <li>
-        <i class="fas fa-calculator" style="color: var(--primary); margin-top: 5px;"></i> 
-        <span><strong>Input Tax Credit Reconciliation:</strong> We match your Purchase Register with GSTR-2B to save taxes.</span>
-      </li>
-      <li>
-        <i class="fas fa-envelope-open-text" style="color: var(--primary); margin-top: 5px;"></i> 
-        <span><strong>Notice Handling:</strong> Expert drafting of replies to departmental notices and ASMT-10.</span>
-      </li>
-    </ul>
-    
-    <div style="text-align: center; margin-top: 50px;">
-        <p style="margin-bottom: 20px; font-weight: 600;">Need help with GST?</p>
-        <a class="btn" href="https://wa.me/919311661381?text=Hi Prince, I need help with GST Services" target="_blank">
-            <i class="fab fa-whatsapp"></i> Get a Quote Now
-        </a>
+<section style="padding: 20px;">
+    <div class="content-box">
+        <h3>Comprehensive GST Solutions</h3>
+        <p>Prince Gupta provides end-to-end GST management to ensure your business stays compliant and avoids heavy penalties.</p>
+        
+        <ul class="service-list">
+            <li><i class="fas fa-check-circle"></i> GST Registration (New & Amendment)</li>
+            <li><i class="fas fa-check-circle"></i> Regular Monthly/Quarterly Return Filing (GSTR-1, 3B)</li>
+            <li><i class="fas fa-check-circle"></i> Annual Returns (GSTR-9 & 9C)</li>
+            <li><i class="fas fa-check-circle"></i> GST Refund Claims & Assessment</li>
+            <li><i class="fas fa-check-circle"></i> Responding to GST Notices & Appeals</li>
+            <li><i class="fas fa-check-circle"></i> Input Tax Credit (ITC) Reconciliation</li>
+        </ul>
+
+        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Get GST Consultation</a>
     </div>
-  </div>
 </section>
 
-<script>
-const toggleBtn = document.getElementById('darkToggle');
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    const isDark = document.body.classList.contains('dark');
-    toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i><span>Light</span>' : '<i class="fas fa-moon"></i><span>Dark</span>';
-});
-</script>
+<footer>
+    <p>© 2026 Prince Gupta | GST Specialist</p>
+</footer>
+
 </body>
 </html>

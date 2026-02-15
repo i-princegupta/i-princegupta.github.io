@@ -3,68 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GST & Compliance Services | Prince Gupta</title>
+<title>GST Excellence & Compliance | Prince Gupta</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
 :root {
-  --primary: #10b981; /* GST Green Theme */
-  --primary-glow: rgba(16, 185, 129, 0.4);
-  --dark-bg: #0f172a; --light-bg: #fcfcfd; 
+  --primary: #2563eb;
+  --accent: #3b82f6;
+  --dark-bg: #0f172a; --light-bg: #fcfcfd;
 }
 * { box-sizing: border-box; scroll-behavior: smooth; text-decoration: none !important; }
-body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-bg); color:#334155; }
+body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-bg); color:#334155; line-height: 1.6; }
 body.dark { background: var(--dark-bg); color:#e2e8f0; }
 
 nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(12px); background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(0,0,0,0.05); }
 body.dark nav { background: rgba(15, 23, 42, 0.7); }
-.logo { font-weight: 900; font-size: 22px; color: var(--primary); }
+.logo { font-weight: 900; font-size: 20px; color: var(--primary); }
 
-header { padding: 160px 20px 80px; text-align: center; background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%); }
-h1 { font-size: 60px; font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; color: var(--primary); }
+header { padding: 160px 20px 60px; text-align: center; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%); }
+h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 900; letter-spacing: -2px; color: var(--primary); margin: 0; }
 
-.content-box { max-width: 900px; margin: auto; padding: 40px; background: white; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); }
+.container { max-width: 1000px; margin: auto; padding: 20px; }
+.content-box { background: white; border-radius: 32px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); margin-bottom: 30px; }
 body.dark .content-box { background: #1e293b; border-color: rgba(255,255,255,0.05); }
 
-.service-list { list-style: none; padding: 0; text-align: left; }
-.service-list li { padding: 15px; margin-bottom: 10px; background: rgba(16, 185, 129, 0.05); border-radius: 12px; display: flex; align-items: center; gap: 15px; font-weight: 600; }
-.service-list li i { color: var(--primary); }
+.doc-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.doc-table th, .doc-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.05); }
+body.dark .doc-table td { border-bottom-color: rgba(255,255,255,0.05); }
+.doc-table th { color: var(--primary); font-weight: 800; text-transform: uppercase; font-size: 13px; }
 
-.btn { display:inline-flex; align-items: center; gap: 12px; padding:18px 40px; background: var(--primary); color:white !important; border-radius:16px; font-weight:700; margin-top: 30px; }
-footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px; margin-top: 100px; }
+.btn { display:inline-flex; align-items: center; gap: 12px; padding:18px 40px; background: #10b981; color:white !important; border-radius:16px; font-weight:700; transition: 0.3s; margin-top: 20px; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); }
+
+footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px; }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="dark">
 
 <nav>
-    <a href="index.html" class="logo">← BACK TO HOME</a>
+    <a href="index.html" class="logo">← PRINCE GUPTA</a>
 </nav>
 
 <header>
-    <h1>GST & Compliance</h1>
-    <p>Strategic Indirect Tax Solutions for Modern Businesses</p>
+    <h1>GST Advisory & Compliance</h1>
+    <p>Strategic Tax Solutions for Business Growth</p>
 </header>
 
-<section style="padding: 20px;">
+<div class="container">
     <div class="content-box">
-        <h3>Comprehensive GST Solutions</h3>
-        <p>Prince Gupta provides end-to-end GST management to ensure your business stays compliant and avoids heavy penalties.</p>
+        <h2 style="color: var(--accent);">Why Compliance Matters?</h2>
+        <p>In the current GST regime, <b>Input Tax Credit (ITC)</b> leakage and late filing fees are the biggest hidden costs for any business. As a CA Finalist, I ensure that your business stays 100% compliant, minimizing tax risks and maximizing your cash flow.</p>
         
-        <ul class="service-list">
-            <li><i class="fas fa-check-circle"></i> GST Registration (New & Amendment)</li>
-            <li><i class="fas fa-check-circle"></i> Regular Monthly/Quarterly Return Filing (GSTR-1, 3B)</li>
-            <li><i class="fas fa-check-circle"></i> Annual Returns (GSTR-9 & 9C)</li>
-            <li><i class="fas fa-check-circle"></i> GST Refund Claims & Assessment</li>
-            <li><i class="fas fa-check-circle"></i> Responding to GST Notices & Appeals</li>
-            <li><i class="fas fa-check-circle"></i> Input Tax Credit (ITC) Reconciliation</li>
-        </ul>
-
-        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Get GST Consultation</a>
+        <h3 style="margin-top: 40px;"><i class="fas fa-file-invoice" style="color: var(--primary);"></i> Documents Required for Registration</h3>
+        <table class="doc-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Required Documents</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Proprietor/Director</b></td>
+                    <td>PAN Card, Aadhaar Card, Passport Photo.</td>
+                </tr>
+                <tr>
+                    <td><b>Business Address</b></td>
+                    <td>Electricity Bill / Property Tax Receipt / Rent Agreement.</td>
+                </tr>
+                <tr>
+                    <td><b>Banking</b></td>
+                    <td>Cancelled Cheque / First Page of Passbook.</td>
+                </tr>
+                <tr>
+                    <td><b>Authorization</b></td>
+                    <td>Letter of Authorization / Board Resolution.</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</section>
+
+    <div class="content-box" style="text-align: center;">
+        <h2>Ready to Streamline Your GST?</h2>
+        <p>Avoid notices and penalties. Let's build a robust compliance system for your business today.</p>
+        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Get Free Consultation</a>
+    </div>
+</div>
 
 <footer>
-    <p>© 2026 Prince Gupta | GST Specialist</p>
+    <p>© 2026 Prince Gupta | GST & Indirect Tax Specialist</p>
 </footer>
 
 </body>

@@ -22,7 +22,7 @@
 * { 
     box-sizing: border-box; 
     scroll-behavior: smooth; 
-    text-decoration: none !important; /* Forces all underlines to disappear */
+    text-decoration: none !important; 
 }
 
 body {
@@ -105,10 +105,12 @@ header h1 {
 }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 20px 30px -10px var(--primary-glow); }
 
-.btn.whatsapp { 
-    background: #10b981; 
-    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
-    text-decoration: none !important; /* Double-check to prevent underlines */
+.btn.whatsapp { background: #10b981; box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4); }
+
+/* V-CARD SPECIFIC BUTTON STYLE */
+.btn.vcard { 
+    background: #6366f1; 
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4); 
 }
 
 /* ===== SERVICES GRID ===== */
@@ -201,10 +203,16 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:100px 20p
     <h1>Prince Gupta</h1>
     <p style="font-size: 1.4rem; font-weight: 600;"><b>CA Finalist | Accounting & Tax Consultant</b></p>
     <p style="opacity: 0.8;">Transforming Compliance into Clear, Hassle-Free Processes</p>
-    <div style="margin-top: 40px;">
+    
+    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
       <a class="btn" href="mailto:princegupta09work@gmail.com"><i class="fas fa-paper-plane"></i> Email </a>
       <a class="btn whatsapp" href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      
+      <a class="btn vcard" href="contact.vcf" download="Prince_Gupta_Contact">
+        <i class="fas fa-user-plus"></i> Save Contact
+      </a>
     </div>
+
   </div>
 </header>
 

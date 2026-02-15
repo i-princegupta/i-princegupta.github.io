@@ -18,7 +18,12 @@
   --card-dark: #1e293b;
 }
 
-* { box-sizing: border-box; scroll-behavior: smooth; }
+/* GLOBAL UNDERLINE REMOVAL */
+* { 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+    text-decoration: none !important; /* Forces all underlines to disappear */
+}
 
 body {
   margin:0;
@@ -94,8 +99,8 @@ header h1 {
 .btn { 
   display:inline-flex; align-items: center; gap: 12px;
   padding:18px 40px; margin:10px; background: var(--primary); 
-  color:white; border-radius:16px; font-weight:700; 
-  text-decoration:none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color:white !important; border-radius:16px; font-weight:700; 
+  text-decoration:none !important; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 20px -5px var(--primary-glow);
 }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 20px 30px -10px var(--primary-glow); }
@@ -103,7 +108,7 @@ header h1 {
 .btn.whatsapp { 
     background: #10b981; 
     box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
-  text-decoration: none !important;
+    text-decoration: none !important; /* Double-check to prevent underlines */
 }
 
 /* ===== SERVICES GRID ===== */
@@ -112,9 +117,8 @@ h2 { text-align:center; margin-bottom:70px; font-size:48px; font-weight:900; let
 
 .services { display:grid; grid-template-columns: repeat(auto-fit,minmax(340px,1fr)); gap:30px; }
 
-/* NEW LINK STYLES FOR MULTI-PAGE */
 a.card-link {
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
     display: block;
 }
@@ -124,11 +128,10 @@ a.card-link {
   border: 1px solid rgba(0,0,0,0.03); 
   transition: all 0.4s ease;
   position: relative; overflow: hidden;
-  height: 100%; /* Ensure uniform height */
+  height: 100%; 
 }
 body.dark .card { background: var(--card-dark); border-color: rgba(255,255,255,0.05); }
 
-/* Apply hover effect to the link wrapper instead of the card div */
 a.card-link:hover .card { 
     transform: translateY(-10px); 
     border-color: var(--primary);
@@ -171,6 +174,7 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:100px 20p
   position:fixed; bottom:40px; right:40px; background:#10b981; color:white; width:70px; height:70px;
   border-radius:22px; font-size:35px; display: flex; align-items: center; justify-content: center;
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3); z-index:1000; transition: 0.3s;
+  text-decoration: none !important;
 }
 .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
@@ -311,6 +315,3 @@ toggleBtn.addEventListener('click', () => {
 </script>
 </body>
 </html>
-
-
-

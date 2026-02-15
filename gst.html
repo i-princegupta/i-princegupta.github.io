@@ -26,6 +26,10 @@ h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 900; letter-spacing: -2px; 
 .content-box { background: white; border-radius: 32px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); margin-bottom: 30px; }
 body.dark .content-box { background: #1e293b; border-color: rgba(255,255,255,0.05); }
 
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+.feature-item { padding: 25px; background: rgba(37, 99, 235, 0.05); border-radius: 20px; border: 1px solid rgba(37, 99, 235, 0.1); }
+.feature-item i { font-size: 24px; color: var(--primary); margin-bottom: 15px; display: block; }
+
 .doc-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
 .doc-table th, .doc-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.05); }
 body.dark .doc-table td { border-bottom-color: rgba(255,255,255,0.05); }
@@ -45,15 +49,38 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px
 
 <header>
     <h1>GST Advisory & Compliance</h1>
-    <p>Strategic Tax Solutions for Business Growth</p>
+    <p>Comprehensive Indirect Tax Management for Growing Businesses</p>
 </header>
 
 <div class="container">
     <div class="content-box">
-        <h2 style="color: var(--accent);">Why Compliance Matters?</h2>
-        <p>In the current GST regime, <b>Input Tax Credit (ITC)</b> leakage and late filing fees are the biggest hidden costs for any business. As a CA Finalist, I ensure that your business stays 100% compliant, minimizing tax risks and maximizing your cash flow.</p>
+        <h2 style="color: var(--accent);">Advanced GST Vertical Support</h2>
+        <p>In the complex GST landscape, simple filing isn't enough. We provide end-to-end strategic support to optimize your <b>Input Tax Credit (ITC)</b> and ensure total regulatory alignment.</p>
         
-        <h3 style="margin-top: 40px;"><i class="fas fa-file-invoice" style="color: var(--primary);"></i> Documents Required for Registration</h3>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <i class="fas fa-undo"></i>
+                <h4 style="margin:0 0 10px 0;">GST Refunds</h4>
+                <p style="font-size: 13px; margin:0;">Specialized processing for Exporters and Inverted Duty Structure refunds.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-search"></i>
+                <h4 style="margin:0 0 10px 0;">Dept. Audits</h4>
+                <p style="font-size: 13px; margin:0;">Handling departmental audits and ASMT-10 notice reconciliations.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-balance-scale"></i>
+                <h4 style="margin:0 0 10px 0;">Appeals</h4>
+                <p style="font-size: 13px; margin:0;">Drafting professional replies and representing cases before Authorities.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-check-double"></i>
+                <h4 style="margin:0 0 10px 0;">ITC Reconcile</h4>
+                <p style="font-size: 13px; margin:0;">Automated GSTR-2B vs. Books matching to prevent credit leakage.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px;"><i class="fas fa-file-invoice" style="color: var(--primary);"></i> Essential Documentation</h3>
         <table class="doc-table">
             <thead>
                 <tr>
@@ -63,29 +90,29 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px
             </thead>
             <tbody>
                 <tr>
-                    <td><b>Proprietor/Director</b></td>
+                    <td><b>Identity Proof</b></td>
                     <td>PAN Card, Aadhaar Card, Passport Photo.</td>
                 </tr>
                 <tr>
-                    <td><b>Business Address</b></td>
-                    <td>Electricity Bill / Property Tax Receipt / Rent Agreement.</td>
+                    <td><b>Business Proof</b></td>
+                    <td>Electricity Bill / Rent Agreement / Property Tax Receipt.</td>
                 </tr>
                 <tr>
                     <td><b>Banking</b></td>
-                    <td>Cancelled Cheque / First Page of Passbook.</td>
+                    <td>Cancelled Cheque / Bank Statement (First Page).</td>
                 </tr>
                 <tr>
                     <td><b>Authorization</b></td>
-                    <td>Letter of Authorization / Board Resolution.</td>
+                    <td>Board Resolution or Authorization Letter.</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="content-box" style="text-align: center;">
-        <h2>Ready to Streamline Your GST?</h2>
-        <p>Avoid notices and penalties. Let's build a robust compliance system for your business today.</p>
-        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Get Free Consultation</a>
+        <h2>Ready for Professional Compliance?</h2>
+        <p>Minimize penalties and maximize efficiency. Contact us for a strategic GST review.</p>
+        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Consult with GST Expert</a>
     </div>
 </div>
 

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
 :root {
-  --primary: #059669; /* Trust-evoking Emerald Green for Finance */
+  --primary: #059669; /* Emerald Green for Wealth */
   --accent: #10b981;
   --dark-bg: #0f172a; --light-bg: #fcfcfd;
 }
@@ -26,10 +26,11 @@ h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 900; letter-spacing: -2px; 
 .content-box { background: white; border-radius: 32px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); margin-bottom: 30px; }
 body.dark .content-box { background: #1e293b; border-color: rgba(255,255,255,0.05); }
 
-.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
-.feature-item { padding: 20px; background: rgba(5, 150, 105, 0.05); border-radius: 20px; border: 1px solid rgba(5, 150, 105, 0.1); }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+.feature-item { padding: 25px; background: rgba(5, 150, 105, 0.05); border-radius: 20px; border: 1px solid rgba(5, 150, 105, 0.1); }
+.feature-item i { font-size: 24px; color: var(--primary); margin-bottom: 15px; display: block; }
 
-.doc-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
+.doc-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
 .doc-table th, .doc-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.05); }
 body.dark .doc-table td { border-bottom-color: rgba(255,255,255,0.05); }
 .doc-table th { color: var(--primary); font-weight: 800; text-transform: uppercase; }
@@ -38,7 +39,6 @@ body.dark .doc-table td { border-bottom-color: rgba(255,255,255,0.05); }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3); }
 
 footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px; }
-@media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body class="dark">
@@ -49,26 +49,38 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px
 
 <header>
     <h1>Income Tax & Wealth Shield</h1>
-    <p>Advanced Tax Minimization & Regulatory Compliance</p>
+    <p>Strategic Tax Minimization & Regulatory Asset Protection</p>
 </header>
 
 <div class="container">
     <div class="content-box">
-        <h2 style="color: var(--accent);">Stop Overpaying the Government</h2>
-        <p>Most taxpayers treat Income Tax Return (ITR) as a dead-end compliance. I treat it as a <b>Financial Optimization</b> exercise. By structuring your investments and expenses correctly, we protect your hard-earned wealth.</p>
+        <h2 style="color: var(--accent);">Direct Tax Management Verticals</h2>
+        <p>ITR filing is just the final step. Our core expertise lies in <b>Advanced Tax Planning</b>, ensuring you leverage every legal exemption while maintaining audit-ready financial records.</p>
         
         <div class="feature-grid">
             <div class="feature-item">
-                <h4 style="margin:0 0 10px 0;"><i class="fas fa-umbrella"></i> Tax Planning</h4>
-                <p style="font-size: 14px; margin:0;">Strategic restructuring of income to utilize all legal exemptions and deductions.</p>
+                <i class="fas fa-file-signature"></i>
+                <h4 style="margin:0 0 10px 0;">Tax Audits</h4>
+                <p style="font-size: 13px; margin:0;">Expert finalization of financials under Sec 44AB for businesses/professionals.</p>
             </div>
             <div class="feature-item">
-                <h4 style="margin:0 0 10px 0;"><i class="fas fa-gavel"></i> Litigation Support</h4>
-                <p style="font-size: 14px; margin:0;">Handling complex tax notices, scrutiny assessments, and appeals with authority.</p>
+                <i class="fas fa-percentage"></i>
+                <h4 style="margin:0 0 10px 0;">TDS/TCS Compliance</h4>
+                <p style="font-size: 13px; margin:0;">Quarterly filings and resolution of defaults/notices in Form 26AS/Traces.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-globe"></i>
+                <h4 style="margin:0 0 10px 0;">NRI Taxation</h4>
+                <p style="font-size: 13px; margin:0;">Advisory on DTAA benefits and 15CA/CB certifications for foreign remittances.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-coins"></i>
+                <h4 style="margin:0 0 10px 0;">Capital Gains</h4>
+                <p style="font-size: 13px; margin:0;">Optimizing tax on sale of Property, Shares, Mutual Funds, and Virtual Assets.</p>
             </div>
         </div>
 
-        <h3 style="margin-top: 40px;">📋 The "Audit-Ready" Checklist</h3>
+        <h3 style="margin-top: 40px;">📋 The Financial Shield Checklist</h3>
         <table class="doc-table">
             <thead>
                 <tr>
@@ -79,28 +91,28 @@ footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px
             <tbody>
                 <tr>
                     <td><b>Income Proof</b></td>
-                    <td>Form 16, Salary Slips, & Bank Statements (Yearly).</td>
+                    <td>Form 16, Bank Statements (Apr-Mar), Rental Agreements.</td>
                 </tr>
                 <tr>
-                    <td><b>Investment Proof</b></td>
-                    <td>80C (LIC, PPF, ELSS), 80D (Health Insurance), Rent Receipts.</td>
+                    <td><b>Investment Data</b></td>
+                    <td>80C (PPF, LIC, ELSS), 80D (Health Insurance), Home Loan Certificates.</td>
                 </tr>
                 <tr>
-                    <td><b>Asset Transactions</b></td>
-                    <td>Capital Gains Statement from Broker / Property Sale Deed.</td>
+                    <td><b>Statutory Reports</b></td>
+                    <td>Updated AIS (Annual Information Statement) & TIS.</td>
                 </tr>
                 <tr>
-                    <td><b>Statutory Data</b></td>
-                    <td>Updated AIS (Annual Information Statement) & Form 26AS.</td>
+                    <td><b>Business Records</b></td>
+                    <td>Balance Sheet, P&L Account, and Stock Summary (if applicable).</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="content-box" style="text-align: center;">
-        <h2>Experience Financial Security</h2>
-        <p>Don't wait for the tax season rush. Let’s plan your wealth shield today.</p>
-        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Secure Your Tax Strategy</a>
+        <h2>Protect Your Hard-Earned Wealth</h2>
+        <p>Don't just file; plan. Let's build a tax-efficient future for your business today.</p>
+        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Book a Strategy Session</a>
     </div>
 </div>
 

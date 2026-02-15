@@ -5,189 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Prince Gupta | Professional CA Finalist & Tax Consultant New Delhi</title>
-    <meta name="description" content="Prince Gupta - Expert CA Finalist providing GST registration, Income Tax filing, ROC compliance, and Bookkeeping services in New Delhi. Simplify your taxes today.">
-    <meta name="keywords" content="Prince Gupta, CA Finalist, Tax Consultant New Delhi, GST Filing, ITR Expert, ROC Compliance, TDS Returns, Bookkeeping Services">
-    <meta name="author" content="Prince Gupta">
+    <meta name="description" content="Prince Gupta - Expert CA Finalist providing GST, Income Tax, ROC, and Bookkeeping services in New Delhi.">
     <link rel="canonical" href="https://i-princegupta.github.io/" />
-
-    <meta property="og:title" content="Prince Gupta | Professional CA Finalist & Tax Consultant">
-    <meta property="og:description" content="Expert tax & compliance solutions for businesses and individuals. GST, Income Tax, and Corporate Secretarial services.">
-    <meta property="og:url" content="https://i-princegupta.github.io/">
-    <meta property="og:type" content="website">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FinancialService",
-      "name": "Prince Gupta | Professional Tax Consultant",
-      "image": "https://i-princegupta.github.io/assets/logo.png",
-      "@id": "https://i-princegupta.github.io/",
-      "url": "https://i-princegupta.github.io/",
-      "telephone": "+91-9311661381",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Delhi",
-        "addressCountry": "IN"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    }
-    </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-    /* ===== MODERN DESIGN SYSTEM ===== */
+    /* ===== MODERN DESIGN SYSTEM (RESTORED) ===== */
     :root {
       --primary: #3b82f6;
-      --primary-glow: rgba(59, 130, 246, 0.5);
       --accent: #8b5cf6;
       --dark-bg: #0f172a; 
-      --light-bg: #fcfcfd; 
-      --card-light: #ffffff;
-      --card-dark: #1e293b;
+      --card-navy: #1e293b; /* Your exact card color */
+      --text-main: #e2e8f0;
+      --text-dim: #94a3b8;
     }
 
     * { box-sizing: border-box; scroll-behavior: smooth; text-decoration: none !important; }
 
     body {
-      margin:0; font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; color:#334155; line-height:1.6;
-      overflow-x:hidden; background: var(--light-bg); transition: background 0.4s ease;
+      margin:0; font-family: 'Plus Jakarta Sans', sans-serif; 
+      background: var(--dark-bg); color: var(--text-main); line-height:1.6;
+      overflow-x:hidden;
     }
 
-    body.dark { color:#e2e8f0; background: var(--dark-bg); }
-
+    /* ===== NAVIGATION ===== */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 1000;
       padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(0,0,0,0.05);
+      backdrop-filter: blur(12px); background: rgba(15, 23, 42, 0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-
-    body.dark nav { background: rgba(15, 23, 42, 0.7); border-color: rgba(255,255,255,0.05); }
 
     .logo { font-weight: 900; font-size: 22px; color: var(--primary); letter-spacing: -1px; text-transform: uppercase; }
 
+    /* ===== HERO SECTION ===== */
     header {
       position:relative; min-height: 100vh; display:flex; justify-content:center; align-items:center;
       padding: 120px 20px 80px;
-      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
     }
 
     #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
 
     .hero-box {
-      position: relative; z-index: 2; text-align: center; padding: 80px 40px;
-      background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 40px;
-      box-shadow: 0 40px 100px -20px rgba(0,0,0,0.05); max-width: 1000px;
+      position: relative; z-index: 2; text-align: center; padding: 60px 40px;
+      background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 40px;
+      max-width: 900px;
     }
-
-    body.dark .hero-box { background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); }
 
     header h1 { 
-        font-size: clamp(48px, 10vw, 85px); margin: 10px 0 20px; font-weight: 900; line-height: 1;
-        background: linear-gradient(135deg, #2563eb 0%, #7dd3fc 50%, #2563eb 100%);
-        background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        animation: shine 5s linear infinite; letter-spacing: -4px;
+        font-size: clamp(40px, 8vw, 75px); margin: 10px 0; font-weight: 900;
+        background: linear-gradient(135deg, #2563eb 0%, #7dd3fc 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        letter-spacing: -3px;
     }
-
-    @keyframes shine { to { background-position: 200% center; } }
 
     .btn { 
-      display:inline-flex; align-items: center; gap: 12px; padding:18px 40px; margin:10px;
-      background: var(--primary); color:white !important; border-radius:16px; font-weight:700;
-      transition: all 0.3s ease; box-shadow: 0 10px 20px -5px var(--primary-glow);
+      display:inline-flex; align-items: center; gap: 10px; padding:15px 35px; margin:10px;
+      background: var(--primary); color:white !important; border-radius:14px; font-weight:700;
+      transition: 0.3s;
     }
+    .btn.whatsapp { background: #10b981; }
 
-    .btn.whatsapp { background: #10b981; box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4); }
+    /* ===== SERVICES GRID ===== */
+    section { padding:100px 20px; max-width:1200px; margin:auto; }
+    h2 { text-align:center; margin-bottom:60px; font-size:42px; font-weight:800; }
 
-    section { padding:120px 20px; max-width:1300px; margin:auto; }
-    h2 { text-align:center; margin-bottom:70px; font-size:48px; font-weight:900; letter-spacing: -2px; }
-
-    .services { display:grid; grid-template-columns: repeat(auto-fit,minmax(340px,1fr)); gap:30px; }
+    .services { display:grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap:25px; }
 
     .card {
-      background: var(--card-light); padding:50px 40px; border-radius:32px; border: 1px solid rgba(0,0,0,0.03);
-      transition: all 0.4s ease; height: 100%;
+      background: var(--card-navy); padding:45px 35px; border-radius:28px;
+      border: 1px solid rgba(59, 130, 246, 0.1); transition: 0.4s; height: 100%;
     }
-    body.dark .card { background: var(--card-dark); border-color: rgba(255,255,255,0.05); }
-    .card-link:hover .card { transform: translateY(-10px); border-color: var(--primary); }
+    .card:hover { transform: translateY(-10px); border-color: var(--primary); }
 
     .card i { 
-        font-size: 32px; color: var(--primary); margin-bottom: 30px; width: 70px; height: 70px;
-        display: flex; align-items: center; justify-content: center; background: rgba(59, 130, 246, 0.08); border-radius: 20px;
+      color: var(--primary); background: rgba(59, 130, 246, 0.15);
+      font-size: 24px; width: 55px; height: 55px; border-radius: 15px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 25px;
     }
 
-    .why-box { background: var(--card-light); border-radius: 40px; padding: 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.02); }
-    body.dark .why-box { background: var(--card-dark); }
+    .card h3 { color: var(--accent); font-size: 1.4rem; margin-bottom: 15px; }
+    .card p { color: var(--text-dim); font-size: 0.95rem; }
 
-    .fomo-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .fomo-list li { padding:30px; border-radius:24px; background: rgba(59, 130, 246, 0.03); transition: 0.3s; }
-    .fomo-list li:hover { background: white; border-color: var(--primary); transform: scale(1.02); }
+    /* ===== CALENDAR TABLE ===== */
+    .table-container { 
+        background: var(--card-navy); border-radius: 30px; padding: 40px; 
+        overflow-x: auto; border: 1px solid rgba(255,255,255,0.05);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    th { color: var(--primary); text-align: left; padding: 15px; border-bottom: 2px solid var(--primary); }
+    td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-    .dark-toggle { background: #1e293b; color:white; padding:12px 20px; border-radius:14px; cursor:pointer; font-weight:700; display: flex; align-items: center; gap: 10px; }
-
-    footer { background:#0f172a; color:#94a3b8; text-align:center; padding:100px 20px; }
+    footer { text-align: center; padding: 60px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); }
 
     .whatsapp-float {
-      position:fixed; bottom:40px; right:40px; background:#10b981; color:white; width:70px; height:70px;
-      border-radius:22px; font-size:35px; display: flex; align-items: center; justify-content: center; z-index:1000;
+      position:fixed; bottom:30px; right:30px; background:#10b981; color:white; width:65px; height:65px;
+      border-radius:20px; font-size:30px; display: flex; align-items: center; justify-content: center; z-index:1000;
     }
-
-    /* CALENDAR TABLE STYLES */
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th { padding: 15px; text-align: left; color: var(--primary); border-bottom: 2px solid var(--primary); text-transform: uppercase; font-size: 14px; }
-    td { padding: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-    body.dark td { border-bottom-color: rgba(255,255,255,0.05); }
-
-    @media(max-width:768px){ header h1 { font-size: 55px; } .hero-box { padding: 50px 25px; } }
     </style>
 </head>
-<body class="dark">
+<body>
 
 <nav>
     <a href="#" class="logo">PG CONSULTANCY</a>
-    <div id="darkToggle" class="dark-toggle"><i class="fas fa-sun"></i><span>Light</span></div>
+    <p style="font-size: 12px; color: var(--primary); font-weight: 700;">CA FINALIST</p>
 </nav>
 
 <header>
   <div id="particles-js"></div>
   <div class="hero-box">
-    <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 14px; font-weight: 800; color: var(--primary); margin-bottom: 15px;">Trusted Tax Partner</p>
+    <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 12px; color: var(--primary); margin-bottom: 10px;">Expert Financial Solutions</p>
     <h1>Prince Gupta</h1>
-    <p style="font-size: 1.4rem; font-weight: 600;"><strong>CA Finalist | Accounting & Tax Consultant</strong></p>
-    <p style="opacity: 0.8;">Transforming Compliance into Clear, Hassle-Free Processes</p>
-    <div style="margin-top: 40px;">
-      <a class="btn" href="mailto:princegupta09work@gmail.com"><i class="fas fa-paper-plane"></i> Email </a>
-      <a class="btn whatsapp" href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <p style="font-size: 1.2rem; color: var(--text-main);">Accounting & Tax Consultant</p>
+    <div style="margin-top: 30px;">
+      <a class="btn" href="mailto:princegupta09work@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a class="btn whatsapp" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
   </div>
 </header>
 
-<section id="calendar" style="background: rgba(59, 130, 246, 0.05);">
+<section id="calendar">
   <h2>Compliance Calendar</h2>
-  <p id="currentMonthLabel" style="text-align: center; margin-bottom: 40px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 2px;"></p>
-  
-  <div class="why-box" style="overflow-x: auto; padding: 40px;">
-    <table id="complianceTable">
+  <p id="monthLabel" style="text-align: center; color: var(--primary); font-weight: 800; margin-bottom: 30px; text-transform: uppercase;"></p>
+  <div class="table-container">
+    <table id="compTable">
       <thead>
-        <tr>
-          <th>Due Date</th>
-          <th>Compliance Type</th>
-          <th>Form / Description</th>
-        </tr>
+        <tr><th>Due Date</th><th>Type</th><th>Compliance Description</th></tr>
       </thead>
       <tbody id="tableBody">
-        <tr><td colspan="3" style="text-align:center; padding:20px;">Syncing with Tax Cloud...</td></tr>
+        <tr><td colspan="3" style="text-align:center;">Initializing Cloud Data...</td></tr>
       </tbody>
     </table>
   </div>
@@ -196,101 +145,53 @@
 <section id="services">
   <h2>Expert Services</h2>
   <div class="services">
-    <a href="gst.html" class="card-link" title="GST Services"><div class="card"><i class="fas fa-shield-alt"></i><h3>GST & Compliance</h3><p>Seamless GST Registration, GSTR Filing, and Notice resolution.</p></div></a>
-    <a href="income-tax.html" class="card-link" title="Income Tax"><div class="card"><i class="fas fa-chart-line"></i><h3>Income Tax & TDS</h3><p>Professional ITR Filing, TDS Returns, and Tax Audit support.</p></div></a>
-    <a href="bookkeeping.html" class="card-link" title="Bookkeeping"><div class="card"><i class="fas fa-book"></i><h3>Bookkeeping</h3><p>Accurate accounting and insightful MIS reports.</p></div></a>
-    <a href="roc.html" class="card-link" title="ROC Incorporation"><div class="card"><i class="fas fa-city"></i><h3>ROC & Incorporation</h3><p>Company & LLP formation and annual ROC filings.</p></div></a>
-    <a href="pf-esi.html" class="card-link" title="PF ESI"><div class="card"><i class="fas fa-users-cog"></i><h3>PF & ESI</h3><p>PF/ESI Registration and monthly compliance filing.</p></div></a>
-    <a href="eway-bill.html" class="card-link" title="E-way Bill"><div class="card"><i class="fas fa-truck-loading"></i><h3>E-way Bill</h3><p>Seamless E-way Bill generation and reconciliation.</p></div></a>
-  </div>
-</section>
-
-<section id="about" style="background: rgba(59, 130, 246, 0.03);">
-  <h2>About Me</h2>
-  <div class="why-box" style="text-align: center; max-width: 900px; margin: auto;">
-    <p style="font-size: 1.25rem; line-height: 1.8;">I am a <strong>CA Finalist</strong> specializing in GST, Statutory Audit, Income Tax, ROC, and Accounting. I help businesses ensure 100% accuracy in every filing.</p>
-  </div>
-</section>
-
-<section id="why">
-  <h2>Why Choose Prince Gupta?</h2>
-  <div class="why-box">
-    <ul class="fomo-list">
-      <li><strong>✅ Expert Guidance</strong><br>Avoid costly mistakes with CA Finalist expertise.</li>
-      <li><strong>✅ Swift Handling</strong><br>Focus on your business while I handle compliance.</li>
-      <li><strong>✅ Precision & Trust</strong><br>Ensuring 100% accuracy in every filing.</li>
-    </ul>
+    <a href="gst.html" class="card-link"><div class="card"><i class="fas fa-shield-alt"></i><h3>GST & Compliance</h3><p>Registration, GSTR Filing, and Notice resolution.</p></div></a>
+    <a href="income-tax.html" class="card-link"><div class="card"><i class="fas fa-chart-line"></i><h3>Income Tax & TDS</h3><p>ITR Filing, TDS Returns, and Tax Audit support.</p></div></a>
+    <a href="bookkeeping.html" class="card-link"><div class="card"><i class="fas fa-book"></i><h3>Bookkeeping</h3><p>Accurate accounting and insightful MIS reports.</p></div></a>
+    <a href="roc.html" class="card-link"><div class="card"><i class="fas fa-city"></i><h3>ROC & Incorporation</h3><p>Company formation and annual ROC filings.</p></div></a>
+    <a href="pf-esi.html" class="card-link"><div class="card"><i class="fas fa-users-cog"></i><h3>PF & ESI</h3><p>Registration and monthly compliance filing.</p></div></a>
+    <a href="eway-bill.html" class="card-link"><div class="card"><i class="fas fa-truck-loading"></i><h3>E-way Bill</h3><p>Generation and reconciliation for logistics.</p></div></a>
   </div>
 </section>
 
 <footer><p>© 2026 Prince Gupta | Professional Tax Consultant | New Delhi</p></footer>
 
-<a class="whatsapp-float" href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a class="whatsapp-float" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-// PARTICLES CONFIG
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-    "color": { "value": "#3b82f6" },
-    "opacity": { "value": 0.3 },
-    "size": { "value": 2, "random": true },
-    "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.1 },
-    "move": { "enable": true, "speed": 1.5 }
-  }
-});
+particlesJS("particles-js", {"particles":{"number":{"value":50},"color":{"value":"#3b82f6"},"opacity":{"value":0.2},"size":{"value":2},"line_linked":{"enable":true,"opacity":0.05}}});
 
-// SMART CALENDAR LOGIC
-const sheetUrl = 'YOUR_PUBLISHED_CSV_LINK_HERE'; // Replace with your CSV link
+// DYNAMIC GOOGLE SHEETS LOGIC
+const sheetUrl = 'YOUR_PUBLISHED_CSV_LINK_HERE'; 
 
-async function fetchSmartDeadlines() {
+async function loadCalendar() {
     try {
-        const response = await fetch(sheetUrl);
-        const csvData = await response.text();
-        const rows = csvData.split('\n').slice(1);
+        const res = await fetch(sheetUrl);
+        const data = await res.text();
+        const rows = data.split('\n').slice(1);
         
         const now = new Date();
-        const currentMonth = now.getMonth() + 1;
-        const currentYear = now.getFullYear();
-        const monthName = now.toLocaleString('default', { month: 'long' });
-
-        document.getElementById('currentMonthLabel').innerText = `${monthName} ${currentYear} Key Deadlines`;
+        const curMonth = now.getMonth() + 1;
+        const curYear = now.getFullYear();
+        document.getElementById('monthLabel').innerText = now.toLocaleString('default', { month: 'long' }) + " " + curYear + " Deadlines";
 
         let html = '';
-        let hasData = false;
+        let found = false;
 
         rows.forEach(row => {
             const cols = row.split(',');
-            if(cols.length >= 5) {
-                const sheetMonth = parseInt(cols[3]);
-                const sheetYear = parseInt(cols[4]);
-
-                if(sheetMonth === currentMonth && sheetYear === currentYear) {
-                    html += `<tr>
-                        <td><strong>${cols[0]}</strong></td>
-                        <td>${cols[1]}</td>
-                        <td>${cols[2]}</td>
-                    </tr>`;
-                    hasData = true;
-                }
+            if(cols.length >= 5 && parseInt(cols[3]) === curMonth && parseInt(cols[4]) === curYear) {
+                html += `<tr><td><strong>${cols[0]}</strong></td><td>${cols[1]}</td><td>${cols[2]}</td></tr>`;
+                found = true;
             }
         });
-
-        document.getElementById('tableBody').innerHTML = hasData ? html : '<tr><td colspan="3" style="text-align:center; padding:20px;">No upcoming deadlines for this month. Stay tuned!</td></tr>';
+        document.getElementById('tableBody').innerHTML = found ? html : '<tr><td colspan="3" style="text-align:center;">No deadlines for this month.</td></tr>';
     } catch (e) {
-        document.getElementById('tableBody').innerHTML = '<tr><td colspan="3" style="text-align:center; color:red;">Cloud Sync Offline.</td></tr>';
+        document.getElementById('tableBody').innerHTML = '<tr><td colspan="3" style="text-align:center;">Pending Cloud Link...</td></tr>';
     }
 }
-fetchSmartDeadlines();
-
-// DARK MODE TOGGLE
-const toggleBtn = document.getElementById('darkToggle');
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    const isDark = document.body.classList.contains('dark');
-    toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i><span>Light</span>' : '<i class="fas fa-moon"></i><span>Dark</span>';
-});
+loadCalendar();
 </script>
 </body>
 </html>

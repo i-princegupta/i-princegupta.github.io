@@ -1,72 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-way Bill & Logistics Compliance | Prince Gupta</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-<style>
-:root {
-  --primary: #f97316; /* Energetic Orange for Logistics/E-way Bill */
-  --primary-glow: rgba(249, 115, 22, 0.4);
-  --dark-bg: #0f172a; --light-bg: #fcfcfd; 
-}
-* { box-sizing: border-box; scroll-behavior: smooth; text-decoration: none !important; }
-body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-bg); color:#334155; }
-body.dark { background: var(--dark-bg); color:#e2e8f0; }
-
-nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(12px); background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(0,0,0,0.05); }
-body.dark nav { background: rgba(15, 23, 42, 0.7); }
-.logo { font-weight: 900; font-size: 22px; color: var(--primary); }
-
-header { padding: 160px 20px 80px; text-align: center; background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.05) 0%, transparent 50%); }
-h1 { font-size: 60px; font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; color: var(--primary); }
-
-.content-box { max-width: 900px; margin: auto; padding: 40px; background: white; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); }
-body.dark .content-box { background: #1e293b; border-color: rgba(255,255,255,0.05); }
-
-.service-list { list-style: none; padding: 0; text-align: left; }
-.service-list li { padding: 15px; margin-bottom: 10px; background: rgba(249, 115, 22, 0.05); border-radius: 12px; display: flex; align-items: center; gap: 15px; font-weight: 600; }
-.service-list li i { color: var(--primary); }
-
-.btn { display:inline-flex; align-items: center; gap: 12px; padding:18px 40px; background: var(--primary); color:white !important; border-radius:16px; font-weight:700; margin-top: 30px; transition: 0.3s; }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
-footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px; margin-top: 100px; }
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PF & ESI Compliance | Prince Gupta Consultancy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #3b82f6; --dark-bg: #0f172a; --card-dark: #1e293b; --text-main: #e2e8f0; }
+        body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark-bg); color: var(--text-main); }
+        nav { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.9); border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 100; }
+        .container { max-width: 1100px; margin: 60px auto; padding: 20px; }
+        .hero-mini { text-align: center; margin-bottom: 60px; }
+        .hero-mini h1 { font-size: 3rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--card-dark); padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); }
+        .card i { color: var(--primary); font-size: 2rem; margin-bottom: 20px; }
+        .card h3 { color: #8b5cf6; margin-bottom: 15px; }
+        .btn { display: inline-block; padding: 15px 30px; background: var(--primary); color: white; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 40px; transition: 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+    </style>
 </head>
-<body class="dark">
-
-<nav>
-    <a href="index.html" class="logo">← BACK TO HOME</a>
-</nav>
-
-<header>
-    <h1>E-way Bill Services</h1>
-    <p>Seamless Logistics Compliance & Real-time Documentation Support</p>
-</header>
-
-<section style="padding: 20px;">
-    <div class="content-box">
-        <h3>Fast-Track Logistics Compliance</h3>
-        <p>Prince Gupta ensures your goods move without legal hurdles. We handle real-time E-way bill generation and reconciliation to keep your supply chain running smoothly.</p>
-        
-        <ul class="service-list">
-            <li><i class="fas fa-truck-moving"></i> Real-time E-way Bill Generation</li>
-            <li><i class="fas fa-history"></i> E-way Bill Extension & Cancellation</li>
-            <li><i class="fas fa-exchange-alt"></i> Consolidated E-way Bills for Transporters</li>
-            <li><i class="fas fa-file-contract"></i> Multi-vehicle Movement Documentation</li>
-            <li><i class="fas fa-search-location"></i> Tracking & Reconciliation with GSTR-1</li>
-            <li><i class="fas fa-gavel"></i> Handling Interception & Detention Notices</li>
-        </ul>
-
-        <a class="btn" href="https://wa.me/919311661381"><i class="fab fa-whatsapp"></i> Get Logistics Support</a>
+<body>
+    <nav><a href="index.html" style="color: var(--primary); font-weight: 900; text-decoration: none;">PG CONSULTANCY</a></nav>
+    <div class="container">
+        <div class="hero-mini">
+            <h1>PF & ESI Management</h1>
+            <p>End-to-End Labor Law Compliance for Your Workforce</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-user-plus"></i>
+                <h3>Registration</h3>
+                <p>New Establishment registration under EPF & MP Act, 1952 and ESI Act, 1948.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Monthly Filings</h3>
+                <p>Timely preparation and filing of monthly ECR (Electronic Challan-cum-Return).</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-shield"></i>
+                <h3>KYC & Claims</h3>
+                <p>UAN Generation, KYC seeding, and seamless handling of PF withdrawal/transfer claims.</p>
+            </div>
+        </div>
+        <center><a href="https://wa.me/919311661381" class="btn">Consult for Compliance</a></center>
     </div>
-</section>
-
-<footer>
-    <p>© 2026 Prince Gupta | Logistics Compliance Specialist</p>
-</footer>
-
 </body>
 </html>

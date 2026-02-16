@@ -3,49 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PF & ESI Compliance | Prince Gupta Consultancy</title>
+    <title>PF & ESI Compliance | Stress-Free Workforce Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #3b82f6; --dark-bg: #0f172a; --card-dark: #1e293b; --text-main: #e2e8f0; }
-        body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark-bg); color: var(--text-main); }
+        :root { --primary: #3b82f6; --dark-bg: #0f172a; --card-dark: #1e293b; --text-main: #e2e8f0; --urgent: #ef4444; }
+        body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark-bg); color: var(--text-main); line-height: 1.6; }
         nav { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.9); border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 100; }
         .container { max-width: 1100px; margin: 60px auto; padding: 20px; }
-        .hero-mini { text-align: center; margin-bottom: 60px; }
-        .hero-mini h1 { font-size: 3rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--card-dark); padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); }
-        .card i { color: var(--primary); font-size: 2rem; margin-bottom: 20px; }
-        .card h3 { color: #8b5cf6; margin-bottom: 15px; }
-        .btn { display: inline-block; padding: 15px 30px; background: var(--primary); color: white; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 40px; transition: 0.3s; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+        
+        .urgency-banner { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--urgent); color: var(--urgent); padding: 15px; border-radius: 12px; text-align: center; font-weight: 700; margin-bottom: 40px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+
+        .hero-mini h1 { font-size: clamp(32px, 5vw, 55px); text-align: center; font-weight: 800; background: linear-gradient(135deg, #fff, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .peace-tag { text-align: center; color: #10b981; font-weight: 700; font-size: 1.2rem; margin-bottom: 50px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--card-dark); padding: 40px; border-radius: 32px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); }
+        .card i { color: var(--primary); font-size: 2.2rem; margin-bottom: 20px; }
+        .card h3 { color: #fff; margin-bottom: 15px; font-size: 1.5rem; }
+        
+        .cta-box { text-align: center; margin-top: 80px; padding: 60px; background: linear-gradient(rgba(59, 130, 246, 0.1), transparent); border-radius: 40px; }
+        .btn { display: inline-block; padding: 20px 50px; background: var(--primary); color: white; border-radius: 16px; text-decoration: none; font-weight: 800; transition: 0.3s; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3); }
+        .btn:hover { transform: translateY(-5px); background: #2563eb; }
     </style>
 </head>
 <body>
-    <nav><a href="index.html" style="color: var(--primary); font-weight: 900; text-decoration: none;">PG CONSULTANCY</a></nav>
+    <nav><a href="index.html" style="color: var(--primary); font-weight: 900; text-decoration: none; font-size: 20px;">PG CONSULTANCY</a></nav>
+    
     <div class="container">
-        <div class="hero-mini">
-            <h1>PF & ESI Management</h1>
-            <p>End-to-End Labor Law Compliance for Your Workforce</p>
+        <div class="urgency-banner">
+            <i class="fas fa-exclamation-triangle"></i> Missed PF/ESI Deadlines can lead to 25% Damages + 12% Interest. Act Now!
         </div>
+
+        <div class="hero-mini">
+            <h1>Eliminate Compliance Stress</h1>
+            <p class="peace-tag">Your Peace of Mind is My Professional Priority.</p>
+        </div>
+
         <div class="grid">
             <div class="card">
-                <i class="fas fa-user-plus"></i>
-                <h3>Registration</h3>
-                <p>New Establishment registration under EPF & MP Act, 1952 and ESI Act, 1948.</p>
+                <i class="fas fa-shield-virus"></i>
+                <h3>Risk Mitigation</h3>
+                <p>Stop worrying about labor inspections. We handle establishment registrations and compliance audits with 100% legal accuracy.</p>
             </div>
             <div class="card">
-                <i class="fas fa-file-invoice"></i>
-                <h3>Monthly Filings</h3>
-                <p>Timely preparation and filing of monthly ECR (Electronic Challan-cum-Return).</p>
+                <i class="fas fa-history"></i>
+                <h3>Zero-Delay Filings</h3>
+                <p>Monthly ECR and ESI contributions filed way before the 15th. Avoid the last-minute portal crashes and heavy late fees.</p>
             </div>
             <div class="card">
-                <i class="fas fa-user-shield"></i>
-                <h3>KYC & Claims</h3>
-                <p>UAN Generation, KYC seeding, and seamless handling of PF withdrawal/transfer claims.</p>
+                <i class="fas fa-heartbeat"></i>
+                <h3>Employee Trust</h3>
+                <p>Ensure your team gets their UAN and Insurance benefits on time. Happy employees build successful businesses.</p>
             </div>
         </div>
-        <center><a href="https://wa.me/919311661381" class="btn">Consult for Compliance</a></center>
+
+        <div class="cta-box">
+            <h2>Ready to Outsource Your Compliance?</h2>
+            <p>Secure your business today. Don't wait for a legal notice to reach your desk.</p>
+            <a href="https://wa.me/919311661381" class="btn">Get Peace of Mind Now</a>
+        </div>
     </div>
 </body>
 </html>

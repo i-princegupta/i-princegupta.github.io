@@ -3,59 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxation Strategy & Compliance | Prince Gupta</title>
+    <title>Taxation Strategy | Prince Gupta Tax Consultancy</title>
+    <meta name="description" content="Expert Taxation Strategy by Prince Gupta. Direct & Indirect Tax management, proactive tax planning, and hassle-free compliance.">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        :root { --primary: #3b82f6; --dark-bg: #0f172a; --card-dark: #1e293b; --text-main: #e2e8f0; }
-        body { margin:0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark-bg); color: var(--text-main); line-height: 1.6; }
-        .hero-tax { padding: 120px 8% 80px; text-align: center; background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent); }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        .tax-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px; }
-        .tax-card { background: var(--card-dark); border-radius: 28px; padding: 40px; border: 1px solid rgba(255,255,255,0.05); position: relative; }
-        .tax-card h2 { color: #fff; font-size: 1.8rem; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
-        .tax-card h2 i { color: var(--primary); }
-        .service-list { list-style: none; padding: 0; }
-        .service-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; opacity: 0.9; }
-        .service-list li i { color: #10b981; font-size: 0.8rem; }
-        .highlight-box { background: rgba(59, 130, 246, 0.05); border-left: 4px solid var(--primary); padding: 20px; border-radius: 0 15px 15px 0; margin-top: 25px; }
+    /* ===== RESTORING YOUR EXACT BRANDING CSS ===== */
+    :root {
+      --primary: #3b82f6; --primary-glow: rgba(59, 130, 246, 0.5);
+      --accent: #8b5cf6; --dark-bg: #0f172a; --light-bg: #fcfcfd; 
+      --card-light: #ffffff; --card-dark: #1e293b;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; text-decoration: none !important; }
+
+    body {
+      margin:0; font-family: 'Plus Jakarta Sans', sans-serif;
+      color:#334155; line-height:1.6; overflow-x:hidden;
+      background: var(--light-bg); transition: background 0.4s ease;
+    }
+    body.dark { color:#e2e8f0; background: var(--dark-bg); }
+
+    /* ===== NAVIGATION (Matching Index) ===== */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(0,0,0,0.05);
+      overflow: visible !important;
+    }
+    body.dark nav { background: rgba(15, 23, 42, 0.7); border-color: rgba(255,255,255,0.05); }
+
+    .logo { font-weight: 900; font-size: 22px; color: var(--primary); text-transform: uppercase; letter-spacing: -1px; }
+
+    /* ===== TAXATION HERO SECTION ===== */
+    .tax-header {
+      position:relative; min-height: 60vh; display:flex; justify-content:center; align-items:center;
+      padding: 150px 20px 80px; text-align: center;
+      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+    }
+
+    .tax-header h1 { 
+        font-size: clamp(40px, 8vw, 70px); font-weight: 900; line-height: 1.1;
+        background: linear-gradient(135deg, #2563eb 0%, #7dd3fc 50%, #2563eb 100%);
+        background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        animation: shine 5s linear infinite; letter-spacing: -3px;
+    }
+
+    /* ===== SERVICE TABLE & CONTENT ===== */
+    .content-section { padding: 80px 8%; max-width: 1300px; margin: auto; }
+    
+    .tax-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    
+    .tax-card {
+        background: var(--card-light); padding: 40px; border-radius: 32px;
+        border: 1px solid rgba(0,0,0,0.03); transition: 0.4s;
+    }
+    body.dark .tax-card { background: var(--card-dark); border-color: rgba(255,255,255,0.05); }
+
+    .tax-card h3 { color: var(--primary); font-size: 24px; margin-bottom: 20px; font-weight: 800; }
+    .tax-card ul { padding: 0; list-style: none; }
+    .tax-card ul li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 600; }
+    .tax-card ul li i { color: #10b981; }
+
+    /* ===== UTILITIES ===== */
+    .btn { display:inline-flex; align-items: center; gap: 12px; padding:18px 40px; background: var(--primary); color:white !important; border-radius:16px; font-weight:700; transition: 0.3s; }
+    .dark-toggle { background: #1e293b; color:white; padding:12px 20px; border-radius:14px; cursor:pointer; font-weight:700; display: flex; align-items: center; gap: 10px; }
+    body.dark .dark-toggle { background: #f8fafc; color: #0f172a; }
+    
+    footer { background:#0f172a; color:#94a3b8; text-align:center; padding:60px 20px; margin-top: 100px; }
+    
+    @keyframes shine { to { background-position: 200% center; } }
     </style>
 </head>
-<body>
-    <div class="hero-tax">
-        <span style="color: var(--primary); font-weight: 700; letter-spacing: 2px;">STRATEGIC TAXATION</span>
-        <h1 style="font-size: clamp(32px, 5vw, 55px); font-weight: 800; margin: 15px 0;">Minimize Liability. Maximize Compliance.</h1>
-        <p style="max-width: 700px; margin: auto; opacity: 0.7;">Expert tax solutions tailored for High-Net-Worth Individuals, Startups, and Established Corporates.</p>
+<body class="dark">
+
+<nav>
+    <a href="../index.html" class="logo">PG CONSULTANCY</a>
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="../index.html" style="color: var(--primary); font-weight: 700; font-size: 14px;">HOME</a>
+        <div id="darkToggle" class="dark-toggle"><i class="fas fa-sun"></i><span>Light</span></div>
     </div>
+</nav>
 
-    <div class="container">
-        <div class="tax-grid">
-            <div class="tax-card">
-                <h2><i class="fas fa-file-invoice-dollar"></i> Indirect Taxation</h2>
-                <ul class="service-list">
-                    <li><i class="fas fa-check-circle"></i> GST Registration & Amendment</li>
-                    <li><i class="fas fa-check-circle"></i> Monthly/Quarterly Return Filing (GSTR-1, 3B, 9)</li>
-                    <li><i class="fas fa-check-circle"></i> ITC Optimization & Reconciliation</li>
-                    <li><i class="fas fa-check-circle"></i> Handling GST Notices & Scrutiny</li>
-                </ul>
-                <div class="highlight-box">
-                    <strong>Zero-Leakage Policy:</strong> We ensure 100% ITC claim accuracy to improve your cash flow.
-                </div>
-            </div>
+<div class="tax-header">
+    <div style="max-width: 900px;">
+        <p style="text-transform: uppercase; letter-spacing: 4px; font-weight: 800; color: var(--primary);">Advanced Advisory</p>
+        <h1>Taxation Strategy & Compliance</h1>
+        <p style="font-size: 1.2rem; opacity: 0.8; margin-top: 20px;">Proactive tax planning to safeguard your wealth and ensure 100% legal compliance in an ever-evolving regulatory landscape.</p>
+    </div>
+</div>
 
-            <div class="tax-card">
-                <h2><i class="fas fa-user-tie"></i> Direct Taxation</h2>
-                <ul class="service-list">
-                    <li><i class="fas fa-check-circle"></i> ITR Filing (Individuals, Firms, Companies)</li>
-                    <li><i class="fas fa-check-circle"></i> Advance Tax Planning & Computation</li>
-                    <li><i class="fas fa-check-circle"></i> TDS/TCS Compliance & Quarterly Filings</li>
-                    <li><i class="fas fa-check-circle"></i> Representation in Assessments (Faceless)</li>
-                </ul>
-                <div class="highlight-box">
-                    <strong>Wealth Protection:</strong> Strategic planning to reduce tax burden under current financial laws.
-                </div>
-            </div>
+<section class="content-section">
+    <h2 style="font-size: 40px; font-weight: 900; text-align: center; letter-spacing: -2px;">Service Breakdown</h2>
+    
+    <div class="tax-grid">
+        <div class="tax-card">
+            <h3>Direct Taxation</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Personal Income Tax Filing</li>
+                <li><i class="fas fa-check-circle"></i> Corporate Tax Planning</li>
+                <li><i class="fas fa-check-circle"></i> TDS & TCS Compliance</li>
+                <li><i class="fas fa-check-circle"></i> Advance Tax Calculations</li>
+            </ul>
+        </div>
+        
+        <div class="tax-card">
+            <h3>Indirect Taxation</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> GST Registration & Filing</li>
+                <li><i class="fas fa-check-circle"></i> ITC Reconciliation (2B vs 3B)</li>
+                <li><i class="fas fa-check-circle"></i> GST Refund Processing</li>
+                <li><i class="fas fa-check-circle"></i> LUT for Export Services</li>
+            </ul>
+        </div>
+
+        <div class="tax-card">
+            <h3>Audit & Representation</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Statutory Audit Support</li>
+                <li><i class="fas fa-check-circle"></i> Tax Audit Finalisation</li>
+                <li><i class="fas fa-check-circle"></i> Dealing with IT Notices</li>
+                <li><i class="fas fa-check-circle"></i> Assessment Preparation</li>
+            </ul>
         </div>
     </div>
+
+    <div style="margin-top: 80px; text-align: center; background: rgba(59, 130, 246, 0.05); padding: 60px; border-radius: 40px;">
+        <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">Ready to Optimize Your Taxes?</h2>
+        <a href="https://wa.me/919311661381" class="btn" style="background: #10b981;"><i class="fab fa-whatsapp"></i> Get Expert Advice Now</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Prince Gupta | New Delhi, India</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById('darkToggle');
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i><span>Light</span>' : '<i class="fas fa-moon"></i><span>Dark</span>';
+});
+</script>
 </body>
 </html>

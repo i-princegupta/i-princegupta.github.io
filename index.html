@@ -3,2053 +3,1758 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prince Gupta | CA Finalist & Tax Consultant — New Delhi</title>
-<meta name="description" content="Prince Gupta – Expert CA Finalist providing GST, Income Tax, ROC, PF-ESI, E-Way Bill and Bookkeeping services in New Delhi. Call +91-9311661381.">
-<meta name="keywords" content="Prince Gupta, CA Finalist, Tax Consultant New Delhi, GST Filing, ITR Expert, ROC Compliance, TDS Returns, Bookkeeping Services">
+<title>Prince Gupta | CA Finalist & Tax Consultant, New Delhi</title>
+<meta name="description" content="Prince Gupta - Expert CA Finalist providing GST, Income Tax, ROC compliance, Bookkeeping and PF-ESI services in New Delhi. Trusted by 200+ clients.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* ============================================================
-   DESIGN SYSTEM — PRINCE GUPTA | CA CONSULTANT
-   Aesthetic: Luxury Dark + Gold — like a private wealth firm
-   ============================================================ */
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS — LUXURY NAVY × GOLD
+═══════════════════════════════════════════ */
 :root {
-  --bg:       #09090b;
-  --bg2:      #111113;
-  --bg3:      #18181c;
-  --surface:  #1c1c21;
-  --border:   rgba(255,255,255,0.07);
-  --border2:  rgba(212,175,55,0.2);
-  --gold:     #d4af37;
-  --gold2:    #f0d060;
-  --gold3:    rgba(212,175,55,0.12);
-  --text:     #f0ede8;
-  --text2:    #a09f9c;
-  --text3:    #6b6a68;
-  --red:      #e25a5a;
-  --green:    #4caf7d;
-  --blue:     #5aa8e2;
+  --navy:    #08142E;
+  --navy2:   #0E1F45;
+  --navy3:   #142D60;
+  --gold:    #C9A84C;
+  --gold2:   #E8C97A;
+  --cream:   #FAF7F0;
+  --muted:   #B8C4D8;
+  --text:    #1C2A45;
+  --white:   #FFFFFF;
+  --card-bg: #F4F1EA;
+  --border:  rgba(201,168,76,0.18);
+  --shadow:  0 24px 80px rgba(8,20,46,0.12);
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Outfit', system-ui, sans-serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
 
-  --radius:   16px;
-  --radius-lg: 24px;
-  --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
-  --shadow:   0 24px 60px rgba(0,0,0,0.5);
-  --glow:     0 0 40px rgba(212,175,55,0.12);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
-*,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; font-size:16px; }
-
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  font-family: var(--sans);
+  background: var(--cream);
   color: var(--text);
-  font-family: var(--font-body);
   overflow-x: hidden;
-  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+/* ═══════════════════════════════════════════
+   PAGE SYSTEM (SPA routing)
+═══════════════════════════════════════════ */
+.page { display: none; }
+.page.active { display: block; animation: fadeUp 0.5s var(--ease) both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-a { color:inherit; text-decoration:none; }
-img { max-width:100%; }
-button { font-family:inherit; cursor:pointer; border:none; background:none; }
-
-/* ============ SCROLLBAR ============ */
-::-webkit-scrollbar { width:5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius:99px; }
-
-/* ============ CURSOR ============ */
-#cur { position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s; }
-#cur-ring { position:fixed;width:36px;height:36px;border:1px solid rgba(212,175,55,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .2s ease; }
-
-/* ============ NOISE ============ */
-body::after {
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  opacity:.6;
-}
-
-/* ============ LAYOUT ============ */
-.page { display:none; animation:pageIn .5s ease; }
-.page.active { display:block; }
-@keyframes pageIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
-
-main { padding-top: 80px; }
-
-/* ============ NAV ============ */
+/* ═══════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════ */
 nav {
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 5%;height:80px;
-  background:rgba(9,9,11,0.85);
-  backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%;
+  height: 72px;
+  background: rgba(8,20,46,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  transition: all 0.3s var(--ease);
 }
-.nav-logo {
-  font-family:var(--font-display);font-size:1.5rem;font-weight:700;
-  color:var(--gold);letter-spacing:0.04em;white-space:nowrap;cursor:pointer;
+nav.scrolled { height: 60px; }
+
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--serif); font-size: 20px; font-weight: 600;
+  color: var(--white); letter-spacing: 0.5px;
 }
-.nav-logo span { color:var(--text);font-weight:400; }
-.nav-links { display:flex;gap:2px;align-items:center; }
-.nav-link {
-  font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--text2);padding:.55rem 1rem;border-radius:8px;cursor:pointer;
-  transition:color var(--transition), background var(--transition);
-  background:none;border:none;
+.nav-brand .brand-mark {
+  width: 38px; height: 38px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px; color: var(--navy); font-family: var(--serif);
 }
-.nav-link:hover { color:var(--gold);background:var(--gold3); }
-.nav-link.active { color:var(--gold); }
+.nav-links {
+  display: flex; align-items: center; gap: 36px;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 500; letter-spacing: 0.6px;
+  color: var(--muted); transition: color 0.25s;
+  cursor: pointer; text-transform: uppercase; font-size: 12.5px;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
 .nav-cta {
-  margin-left:.5rem;padding:.55rem 1.4rem;
-  border-radius:10px;
-  background:linear-gradient(135deg,#d4af37,#f0d060);
-  color:#09090b;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
-  cursor:pointer;border:none;transition:opacity var(--transition),transform var(--transition);
-  box-shadow:0 4px 20px rgba(212,175,55,0.25);
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--navy) !important;
+  padding: 10px 24px; border-radius: 8px;
+  font-weight: 600 !important; font-size: 13px !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
 }
-.nav-cta:hover { opacity:.9;transform:translateY(-1px); }
-.hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px; }
-.hamburger span { width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s; }
-.mob-menu {
-  display:none;position:fixed;top:80px;left:0;right:0;bottom:0;
-  background:rgba(9,9,11,0.97);backdrop-filter:blur(24px);
-  z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
-}
-.mob-menu.open { display:flex; }
-.mob-link {
-  font-size:1.8rem;font-family:var(--font-display);font-weight:600;
-  color:var(--text2);cursor:pointer;transition:color .2s;
-  background:none;border:none;
-}
-.mob-link:hover,.mob-link.active { color:var(--gold); }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.3) !important; }
 
-/* ============ HELPERS ============ */
-.container { max-width:1200px;margin:0 auto;padding:0 5%; }
-.section { padding:100px 0; }
-.section-tag {
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--gold);background:var(--gold3);
-  border:1px solid var(--border2);
-  padding:.4rem 1rem;border-radius:99px;margin-bottom:1.5rem;
-}
-.section-title {
-  font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:600;line-height:1.1;color:var(--text);letter-spacing:-.01em;
-  margin-bottom:1.5rem;
-}
-.section-title em { font-style:italic;color:var(--gold); }
-.section-sub { font-size:1.05rem;color:var(--text2);line-height:1.7;max-width:560px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: var(--muted); border-radius: 2px; transition: 0.3s; }
 
-.gold-line {
-  width:60px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);
-  margin:1.5rem 0;
+/* ═══════════════════════════════════════════
+   HOME PAGE — HERO
+═══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 120px 6% 80px;
 }
 
-.btn-gold {
-  display:inline-flex;align-items:center;gap:.7rem;
-  padding:.85rem 2rem;border-radius:12px;
-  background:linear-gradient(135deg,#d4af37,#f0d060);
-  color:#09090b;font-weight:700;font-size:.9rem;letter-spacing:.04em;
-  cursor:pointer;border:none;
-  transition:opacity var(--transition),transform var(--transition),box-shadow var(--transition);
-  box-shadow:0 8px 30px rgba(212,175,55,0.25);
+/* Decorative grid lines */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
 }
-.btn-gold:hover { opacity:.9;transform:translateY(-2px);box-shadow:0 16px 40px rgba(212,175,55,0.35); }
+
+/* Radial glow */
+.hero::after {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center; max-width: 1300px; margin: auto; width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+  padding: 8px 16px; border-radius: 40px; margin-bottom: 28px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold);
+}
+.hero-eyebrow .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
+
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(52px, 7vw, 90px);
+  font-weight: 700; line-height: 1.0; letter-spacing: -1px;
+  color: var(--white); margin-bottom: 24px;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+
+.hero-sub {
+  font-size: 17px; line-height: 1.7; color: var(--muted); margin-bottom: 44px; max-width: 520px;
+}
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 34px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--navy); font-weight: 600; font-size: 15px;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(201,168,76,0.35); }
 
 .btn-outline {
-  display:inline-flex;align-items:center;gap:.7rem;
-  padding:.85rem 2rem;border-radius:12px;
-  background:transparent;
-  border:1px solid var(--border2);
-  color:var(--gold);font-weight:600;font-size:.9rem;letter-spacing:.04em;
-  cursor:pointer;
-  transition:all var(--transition);
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 34px; border-radius: 12px;
+  border: 1.5px solid rgba(201,168,76,0.3); color: var(--white);
+  font-weight: 500; font-size: 15px; transition: all 0.2s var(--ease);
+  cursor: pointer;
 }
-.btn-outline:hover { background:var(--gold3);border-color:var(--gold); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-.btn-wa {
-  display:inline-flex;align-items:center;gap:.7rem;
-  padding:.85rem 2rem;border-radius:12px;
-  background:linear-gradient(135deg,#25d366,#128c7e);
-  color:#fff;font-weight:700;font-size:.9rem;
-  cursor:pointer;border:none;
-  transition:opacity var(--transition),transform var(--transition);
-  box-shadow:0 8px 30px rgba(37,211,102,0.25);
-}
-.btn-wa:hover { opacity:.9;transform:translateY(-2px); }
-
-/* ============ DIVIDER ============ */
-.divider {
-  height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);
-  margin:0 auto;max-width:1200px;
+/* Right side visual */
+.hero-card-stack {
+  position: relative; height: 480px;
 }
 
-/* ============ FLOATING WA ============ */
-#wa-float {
-  position:fixed;bottom:2rem;right:2rem;z-index:900;
-  width:58px;height:58px;border-radius:50%;
-  background:linear-gradient(135deg,#25d366,#128c7e);
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:1.6rem;
-  box-shadow:0 8px 30px rgba(37,211,102,0.4);
-  transition:transform .3s;
-}
-#wa-float:hover { transform:scale(1.1) rotate(8deg); }
-
-/* ======================================================
-   PAGE: HOME
-   ====================================================== */
-.hero {
-  min-height:100vh;display:flex;align-items:center;
-  position:relative;overflow:hidden;
-}
-.hero-bg {
-  position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(212,175,55,0.07) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 80% at 10% 80%, rgba(212,175,55,0.04) 0%,transparent 55%);
-}
-.hero-grid {
-  position:absolute;inset:0;z-index:0;
-  background-image:
-    linear-gradient(rgba(212,175,55,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(212,175,55,0.04) 1px,transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%);
-}
-.hero-inner {
-  position:relative;z-index:2;
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:5rem;
-  max-width:1200px;margin:0 auto;padding:6rem 5% 6rem;
-}
-.hero-badge {
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--gold);background:var(--gold3);border:1px solid var(--border2);
-  padding:.4rem 1rem;border-radius:99px;margin-bottom:1.5rem;
-}
-.hero-badge i { font-size:.8rem; }
-.hero-title {
-  font-family:var(--font-display);
-  font-size:clamp(3rem,6vw,5.5rem);
-  font-weight:700;line-height:1.05;
-  letter-spacing:-.02em;
-  color:var(--text);
-  margin-bottom:1rem;
-}
-.hero-title em { color:var(--gold);font-style:italic; }
-.hero-role {
-  font-size:1rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.5rem;
-}
-.hero-desc { font-size:1.1rem;color:var(--text2);line-height:1.75;margin-bottom:2.5rem;max-width:480px; }
-.hero-actions { display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem; }
-.hero-stats {
-  display:flex;gap:2.5rem;
-  padding-top:2rem;
-  border-top:1px solid var(--border);
-}
-.stat-item .num {
-  font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--gold);
-  display:block;
-}
-.stat-item .lbl { font-size:.8rem;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-top:.2rem; }
-
-/* Hero card */
 .hero-card {
-  background:var(--bg2);
-  border:1px solid var(--border2);
-  border-radius:var(--radius-lg);
-  padding:2.5rem;
-  box-shadow:var(--glow),var(--shadow);
-  position:relative;
+  position: absolute; border-radius: 24px; padding: 30px;
+  background: rgba(20,45,96,0.7);
+  border: 1px solid rgba(201,168,76,0.2);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s var(--ease);
 }
-.hero-card::before {
-  content:'';position:absolute;top:-1px;left:20px;right:20px;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  border-radius:99px;
-}
-.hc-title { font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:1.5rem; }
-.hc-service {
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem;border-radius:var(--radius);
-  border:1px solid var(--border);
-  margin-bottom:.75rem;background:var(--bg3);
-  transition:border-color .25s,background .25s;cursor:pointer;
-}
-.hc-service:hover { border-color:var(--gold);background:var(--gold3); }
-.hc-service i { width:38px;height:38px;border-radius:10px;background:var(--gold3);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-.hc-service .label { font-size:.9rem;font-weight:500;color:var(--text); }
-.hc-service .arrow { margin-left:auto;color:var(--text3);font-size:.8rem; }
-.hc-footer {
-  display:flex;align-items:center;justify-content:space-between;
-  margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);
-  font-size:.85rem;color:var(--text2);
-}
-.online-dot { width:8px;height:8px;background:#4caf7d;border-radius:50%;display:inline-block;margin-right:.5rem;animation:pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.hero-card:hover { transform: translateY(-6px) !important; }
 
-/* Scroll indicator */
-.scroll-hint {
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);
-  animation:bounce 2s ease infinite;
+.card-a {
+  top: 0; left: 0; width: 240px;
+  animation: float1 6s ease-in-out infinite;
 }
-.scroll-hint i { font-size:.9rem; }
-@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
-
-/* ======================================================
-   PAGE: ABOUT
-   ====================================================== */
-.about-grid {
-  display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;
+.card-b {
+  top: 80px; right: 0; width: 260px;
+  animation: float2 7s ease-in-out infinite;
 }
-.about-visual {
-  position:relative;
-}
-.about-card-main {
-  background:var(--bg2);border:1px solid var(--border2);
-  border-radius:var(--radius-lg);padding:2.5rem;
-  box-shadow:var(--shadow);position:relative;overflow:hidden;
-}
-.about-card-main::before {
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at top right,rgba(212,175,55,0.06),transparent 60%);
-}
-.about-monogram {
-  width:100px;height:100px;border-radius:50%;
-  background:linear-gradient(135deg,#d4af37,#a07c20);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:#09090b;
-  margin:0 auto 1.5rem;
-  box-shadow:0 0 0 6px rgba(212,175,55,0.15),0 0 0 12px rgba(212,175,55,0.06);
-}
-.about-name-block { text-align:center;margin-bottom:2rem; }
-.about-name { font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--text); }
-.about-role-tag { font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.3rem; }
-.info-row {
-  display:flex;align-items:center;gap:1rem;
-  padding:.9rem 0;border-bottom:1px solid var(--border);
-  font-size:.9rem;
-}
-.info-row:last-child { border-bottom:none; }
-.info-row i { color:var(--gold);width:20px;flex-shrink:0; }
-.info-row .val { color:var(--text);font-weight:500; }
-.info-row .lbl { color:var(--text3);font-size:.8rem;margin-left:auto; }
-
-.floating-badge {
-  position:absolute;bottom:-1rem;right:-1rem;
-  background:linear-gradient(135deg,#d4af37,#f0d060);
-  color:#09090b;font-weight:700;font-size:.82rem;
-  padding:.7rem 1.2rem;border-radius:12px;
-  box-shadow:0 8px 25px rgba(212,175,55,0.3);
-  white-space:nowrap;
+.card-c {
+  bottom: 40px; left: 30px; width: 280px;
+  animation: float3 5.5s ease-in-out infinite;
 }
 
-.about-content {}
-.timeline { margin-top:2.5rem; }
-.tl-item { display:flex;gap:1.5rem;margin-bottom:2rem; }
-.tl-dot-col { display:flex;flex-direction:column;align-items:center;gap:0; }
-.tl-dot { width:14px;height:14px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:4px; }
-.tl-line { width:1px;flex:1;background:linear-gradient(var(--gold),transparent);margin-top:6px; }
-.tl-body { padding-bottom:1.5rem; }
-.tl-year { font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem; }
-.tl-head { font-weight:600;color:var(--text);margin-bottom:.4rem; }
-.tl-desc { font-size:.9rem;color:var(--text2);line-height:1.6; }
+@keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes float3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
 
-.skills-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem; }
-.skill-chip {
-  display:flex;align-items:center;gap:.7rem;
-  padding:.8rem 1rem;border-radius:10px;
-  background:var(--bg2);border:1px solid var(--border);
-  font-size:.85rem;font-weight:500;color:var(--text);
-  transition:border-color .2s,background .2s;
+.hero-card .card-icon {
+  width: 48px; height: 48px; border-radius: 14px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05));
+  color: var(--gold); border: 1px solid rgba(201,168,76,0.2);
 }
-.skill-chip:hover { border-color:var(--gold);background:var(--gold3); }
-.skill-chip i { color:var(--gold);font-size:.9rem; }
+.hero-card h4 { font-family: var(--serif); font-size: 18px; color: var(--white); margin-bottom: 6px; }
+.hero-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.hero-card .badge {
+  display: inline-block; margin-top: 14px;
+  background: rgba(201,168,76,0.15); color: var(--gold);
+  padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+}
 
-/* ======================================================
-   PAGE: SERVICES
-   ====================================================== */
-.services-hero {
-  text-align:center;max-width:700px;margin:0 auto 5rem;
+/* ═══════════════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════════════ */
+.trust-bar {
+  background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 32px 6%;
 }
+.trust-inner {
+  max-width: 1300px; margin: auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 16px;
+}
+.trust-num {
+  font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1;
+}
+.trust-label { font-size: 13px; color: var(--muted); line-height: 1.4; }
+.trust-divider { width: 1px; height: 50px; background: var(--border); }
+
+/* ═══════════════════════════════════════════
+   SECTION COMMONS
+═══════════════════════════════════════════ */
+.section { padding: 110px 6%; }
+.section-inner { max-width: 1300px; margin: auto; }
+
+.section-tag {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 16px;
+}
+.section-tag::before { content: '— '; }
+
+.section-title {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 58px);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.5px;
+  color: var(--navy); margin-bottom: 20px;
+}
+.section-title em { color: var(--gold); font-style: italic; }
+.section-sub {
+  font-size: 16px; color: #6B7C9A; line-height: 1.7; max-width: 560px;
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES GRID (HOME)
+═══════════════════════════════════════════ */
+.services-section { background: var(--cream); }
+
+.services-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 64px; flex-wrap: wrap; gap: 24px;
+}
+
 .services-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
-}
-.svc-card {
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:2.5rem 2rem;
-  position:relative;overflow:hidden;
-  transition:all var(--transition);cursor:pointer;
-}
-.svc-card::before {
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.svc-card:hover { border-color:var(--border2);transform:translateY(-6px);box-shadow:var(--glow); }
-.svc-card:hover::before { opacity:1; }
-.svc-icon {
-  width:60px;height:60px;border-radius:16px;
-  background:var(--gold3);border:1px solid var(--border2);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--gold);font-size:1.5rem;margin-bottom:1.5rem;
-}
-.svc-name { font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--text);margin-bottom:.7rem; }
-.svc-desc { font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem; }
-.svc-tags { display:flex;flex-wrap:wrap;gap:.4rem; }
-.svc-tag {
-  font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--gold);background:var(--gold3);border:1px solid var(--border2);
-  padding:.25rem .65rem;border-radius:99px;
-}
-.svc-arrow {
-  position:absolute;bottom:1.5rem;right:1.5rem;
-  color:var(--text3);font-size:.9rem;
-  transition:color .25s,transform .25s;
-}
-.svc-card:hover .svc-arrow { color:var(--gold);transform:translate(3px,-3px); }
-
-/* Featured service card */
-.svc-card.featured {
-  background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.03));
-  border-color:var(--border2);
-}
-.svc-card.featured::before { opacity:1; }
-
-/* Why choose */
-.why-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem; }
-.why-card {
-  background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);
-  padding:2rem 1.5rem;text-align:center;transition:all .3s;
-}
-.why-card:hover { border-color:var(--border2);background:var(--gold3);transform:translateY(-4px); }
-.why-num {
-  font-family:var(--font-display);font-size:2.5rem;font-weight:700;
-  color:var(--gold);display:block;margin-bottom:.5rem;
-}
-.why-label { font-size:.85rem;color:var(--text2);line-height:1.5; }
-
-/* ======================================================
-   PAGE: GST / INCOME TAX / etc (Service Detail)
-   ====================================================== */
-.detail-hero {
-  padding:5rem 0 4rem;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.detail-hero::before {
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(212,175,55,0.06),transparent 60%);
-  z-index:0;
-}
-.detail-hero > * { position:relative;z-index:1; }
-.detail-icon {
-  width:90px;height:90px;border-radius:24px;
-  background:var(--gold3);border:1px solid var(--border2);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--gold);font-size:2.2rem;
-  margin:0 auto 2rem;
-  box-shadow:var(--glow);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
 }
 
-.process-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:4rem 0; }
-.process-step {
-  text-align:center;padding:2rem 1rem;
-  position:relative;
+.service-card {
+  background: var(--white); border-radius: 20px; padding: 40px 36px;
+  border: 1px solid rgba(8,20,46,0.06);
+  transition: all 0.35s var(--ease);
+  position: relative; overflow: hidden; cursor: pointer;
+  group: true;
 }
-.process-step::after {
-  content:'→';
-  position:absolute;top:2.2rem;right:-1rem;
-  color:var(--text3);font-size:1.1rem;
+.service-card::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s var(--ease);
 }
-.process-step:last-child::after { display:none; }
-.step-num {
-  width:48px;height:48px;border-radius:50%;
-  background:linear-gradient(135deg,#d4af37,#f0d060);
-  color:#09090b;font-weight:700;font-size:1.1rem;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1rem;
-}
-.step-title { font-weight:600;color:var(--text);margin-bottom:.5rem;font-size:.95rem; }
-.step-desc { font-size:.83rem;color:var(--text2);line-height:1.6; }
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+.service-card:hover::before { transform: scaleX(1); }
 
-.faq-list { max-width:760px;margin:0 auto; }
-.faq-item {
-  border:1px solid var(--border);border-radius:var(--radius);
-  margin-bottom:.75rem;overflow:hidden;
-  transition:border-color .25s;
+.service-icon {
+  width: 60px; height: 60px; border-radius: 16px; margin-bottom: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; background: linear-gradient(135deg, var(--navy), var(--navy3));
+  color: var(--gold);
+  transition: transform 0.3s var(--ease);
 }
-.faq-item.open { border-color:var(--border2); }
-.faq-q {
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.2rem 1.5rem;cursor:pointer;
-  font-weight:600;color:var(--text);font-size:.95rem;
-  background:var(--bg2);transition:background .25s;
-}
-.faq-item.open .faq-q { background:var(--gold3); }
-.faq-icon { color:var(--gold);transition:transform .3s; }
-.faq-item.open .faq-icon { transform:rotate(45deg); }
-.faq-a {
-  max-height:0;overflow:hidden;
-  background:var(--bg3);
-  font-size:.9rem;color:var(--text2);line-height:1.7;
-  transition:max-height .35s ease, padding .35s ease;
-}
-.faq-item.open .faq-a { max-height:300px;padding:1.2rem 1.5rem; }
+.service-card:hover .service-icon { transform: rotate(6deg) scale(1.05); }
 
-/* ======================================================
-   PAGE: BLOG / RESOURCES
-   ====================================================== */
-.blog-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem; }
-.blog-card {
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:var(--radius-lg);overflow:hidden;
-  transition:all .35s;cursor:pointer;
+.service-card h3 {
+  font-family: var(--serif); font-size: 24px; font-weight: 700;
+  color: var(--navy); margin-bottom: 12px; letter-spacing: -0.3px;
 }
-.blog-card:hover { border-color:var(--border2);transform:translateY(-6px);box-shadow:var(--glow); }
-.blog-thumb {
-  height:180px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:3rem;
-  border-bottom:1px solid var(--border);
-}
-.blog-body { padding:1.8rem; }
-.blog-cat {
-  font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.8rem;
-}
-.blog-title { font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--text);margin-bottom:.7rem;line-height:1.3; }
-.blog-snippet { font-size:.87rem;color:var(--text2);line-height:1.65;margin-bottom:1.2rem; }
-.blog-meta { display:flex;align-items:center;justify-content:space-between;font-size:.78rem;color:var(--text3); }
+.service-card p { font-size: 14.5px; color: #6B7C9A; line-height: 1.7; margin-bottom: 24px; }
 
-/* ======================================================
-   PAGE: CALCULATOR
-   ====================================================== */
-.calc-tabs { display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap; }
-.calc-tab {
-  padding:.65rem 1.4rem;border-radius:10px;
-  font-size:.85rem;font-weight:600;
-  background:var(--bg2);border:1px solid var(--border);
-  color:var(--text2);cursor:pointer;transition:.25s;
+.service-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+  color: var(--navy); text-transform: uppercase;
+  transition: gap 0.2s, color 0.2s;
 }
-.calc-tab.active { background:var(--gold3);border-color:var(--border2);color:var(--gold); }
-.calc-box {
-  background:var(--bg2);border:1px solid var(--border2);
-  border-radius:var(--radius-lg);padding:2.5rem;
-  max-width:680px;
-}
-.calc-panel { display:none; }
-.calc-panel.active { display:block; }
-.field-group { margin-bottom:1.5rem; }
-.field-label { font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);margin-bottom:.5rem; }
-.field-input {
-  width:100%;padding:.85rem 1.1rem;
-  background:var(--bg3);border:1px solid var(--border);border-radius:10px;
-  color:var(--text);font-family:var(--font-body);font-size:1rem;
-  transition:border-color .25s;outline:none;
-}
-.field-input:focus { border-color:var(--gold); }
-.field-select {
-  width:100%;padding:.85rem 1.1rem;
-  background:var(--bg3);border:1px solid var(--border);border-radius:10px;
-  color:var(--text);font-family:var(--font-body);font-size:1rem;
-  outline:none;cursor:pointer;
-}
-.calc-result {
-  margin-top:1.5rem;padding:1.5rem;
-  background:var(--gold3);border:1px solid var(--border2);
-  border-radius:var(--radius);
-}
-.result-row { display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.9rem; }
-.result-row:last-child { border-bottom:none;font-weight:700;font-size:1rem;color:var(--gold); }
-.result-row .lbl { color:var(--text2); }
-.result-row .val { color:var(--text);font-weight:600; }
+.service-card:hover .service-link { gap: 14px; color: var(--gold); }
 
-/* ======================================================
-   PAGE: TESTIMONIALS
-   ====================================================== */
-.testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem; }
+/* ═══════════════════════════════════════════
+   WHY CHOOSE — DARK SECTION
+═══════════════════════════════════════════ */
+.why-section { background: var(--navy); }
+.why-section .section-title { color: var(--white); }
+.why-section .section-sub { color: var(--muted); }
+
+.why-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.why-left {}
+.why-right {}
+
+.why-features { margin-top: 52px; display: grid; gap: 20px; }
+
+.why-item {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 24px; border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.1);
+  background: rgba(14,31,69,0.5);
+  transition: all 0.3s var(--ease);
+}
+.why-item:hover { border-color: rgba(201,168,76,0.3); background: rgba(20,45,96,0.7); }
+
+.why-item-icon {
+  width: 48px; height: 48px; min-width: 48px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--gold);
+}
+.why-item h4 { font-family: var(--serif); font-size: 20px; color: var(--white); margin-bottom: 6px; }
+.why-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* Credentials visual on right */
+.credentials-card {
+  background: rgba(14,31,69,0.8); border: 1px solid var(--border);
+  border-radius: 28px; padding: 44px 40px;
+  backdrop-filter: blur(12px);
+}
+.cred-row {
+  display: flex; align-items: center; gap: 18px; padding: 20px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.cred-row:last-child { border-bottom: none; }
+.cred-icon { font-size: 28px; color: var(--gold); width: 40px; text-align: center; }
+.cred-row h4 { font-family: var(--serif); font-size: 20px; color: var(--white); margin-bottom: 3px; }
+.cred-row p { font-size: 13px; color: var(--muted); }
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════ */
+.testi-section { background: var(--cream); }
+
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
 .testi-card {
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:2rem;
-  transition:all .35s;
+  background: var(--white); border-radius: 20px; padding: 36px 32px;
+  border: 1px solid rgba(8,20,46,0.06);
+  transition: all 0.3s var(--ease);
+  position: relative;
 }
-.testi-card:hover { border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow); }
-.testi-stars { color:var(--gold);margin-bottom:1rem;font-size:.9rem;letter-spacing:.1em; }
-.testi-quote { font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.7;margin-bottom:1.5rem; }
-.testi-author { display:flex;align-items:center;gap:.8rem; }
-.testi-avatar {
-  width:42px;height:42px;border-radius:50%;
-  background:linear-gradient(135deg,#d4af37,#a07c20);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-weight:700;color:#09090b;font-size:1rem;
-  flex-shrink:0;
-}
-.testi-name { font-weight:600;color:var(--text);font-size:.9rem; }
-.testi-role { font-size:.78rem;color:var(--text3); }
+.testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 
-/* ======================================================
-   PAGE: CONTACT
-   ====================================================== */
-.contact-grid { display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start; }
-.contact-info-col { }
-.contact-card {
-  background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);
-  padding:1.5rem;display:flex;align-items:flex-start;gap:1.2rem;margin-bottom:1rem;
-  transition:border-color .25s,transform .25s;
+.testi-quote {
+  font-size: 48px; color: var(--gold); font-family: Georgia; line-height: 0.7;
+  margin-bottom: 16px; opacity: 0.6;
 }
-.contact-card:hover { border-color:var(--border2);transform:translateX(4px); }
-.contact-icon {
-  width:48px;height:48px;border-radius:12px;flex-shrink:0;
-  background:var(--gold3);border:1px solid var(--border2);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--gold);font-size:1.1rem;
+.testi-text { font-size: 15px; line-height: 1.7; color: #4A5568; margin-bottom: 28px; }
+.testi-author {
+  display: flex; align-items: center; gap: 14px;
+  padding-top: 20px; border-top: 1px solid rgba(8,20,46,0.06);
 }
-.contact-card-label { font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem; }
-.contact-card-val { font-weight:600;color:var(--text);font-size:.95rem; }
-.contact-card-sub { font-size:.82rem;color:var(--text2);margin-top:.2rem; }
-.hours-box {
-  background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);
-  padding:1.8rem;margin-top:1rem;
+.testi-avatar {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy), var(--navy3));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--gold);
 }
-.hours-title { font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:1rem; }
-.hours-row { display:flex;justify-content:space-between;font-size:.88rem;padding:.5rem 0;border-bottom:1px solid var(--border); }
-.hours-row:last-child { border-bottom:none; }
-.hours-row .day { color:var(--text2); }
-.hours-row .time { color:var(--text);font-weight:500; }
+.testi-name { font-weight: 600; font-size: 15px; color: var(--navy); }
+.testi-role { font-size: 12px; color: #94A3B8; }
+.stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════ */
+.cta-section {
+  background: linear-gradient(135deg, var(--navy), var(--navy3));
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle at 60% 50%, rgba(201,168,76,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cta-inner {
+  max-width: 1300px; margin: auto; padding: 110px 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 48px; flex-wrap: wrap; position: relative;
+}
+.cta-left h2 {
+  font-family: var(--serif); font-size: clamp(38px, 5vw, 62px);
+  font-weight: 700; color: var(--white); line-height: 1.1; max-width: 600px; margin-bottom: 16px;
+}
+.cta-left h2 em { color: var(--gold); font-style: italic; }
+.cta-left p { font-size: 16px; color: var(--muted); }
+.cta-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 34px; border-radius: 12px;
+  background: #25D366; color: var(--white);
+  font-weight: 600; font-size: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(37,211,102,0.35); }
+.btn-phone {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 34px; border-radius: 12px;
+  border: 1.5px solid rgba(201,168,76,0.35); color: var(--white);
+  font-weight: 500; font-size: 15px; transition: all 0.2s;
+}
+.btn-phone:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   SERVICES PAGE
+═══════════════════════════════════════════ */
+.page-hero {
+  background: var(--navy); padding: 150px 6% 90px;
+  text-align: center;
+}
+.page-hero .section-tag { margin-bottom: 20px; }
+.page-hero h1 {
+  font-family: var(--serif); font-size: clamp(44px, 7vw, 76px);
+  font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px;
+}
+.page-hero h1 em { color: var(--gold); font-style: italic; }
+.page-hero p { font-size: 17px; color: var(--muted); max-width: 600px; margin: auto; }
+
+.services-full { background: var(--cream); padding: 90px 6%; }
+.services-full-inner { max-width: 1300px; margin: auto; display: grid; gap: 30px; }
+
+.service-full-card {
+  background: var(--white); border-radius: 24px; overflow: hidden;
+  border: 1px solid rgba(8,20,46,0.06);
+  display: grid; grid-template-columns: 320px 1fr;
+  transition: box-shadow 0.3s var(--ease);
+}
+.service-full-card:hover { box-shadow: var(--shadow); }
+
+.sfc-left {
+  background: linear-gradient(160deg, var(--navy), var(--navy3));
+  padding: 50px 44px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.sfc-left .big-icon {
+  font-size: 52px; color: var(--gold); margin-bottom: 24px;
+  opacity: 0.9;
+}
+.sfc-left h2 { font-family: var(--serif); font-size: 30px; color: var(--white); margin-bottom: 12px; }
+.sfc-left p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.sfc-left .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.sfc-left .tag {
+  background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.2);
+  color: var(--gold); padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+}
+
+.sfc-right { padding: 50px 52px; }
+.sfc-right h3 { font-family: var(--serif); font-size: 22px; color: var(--navy); margin-bottom: 24px; }
+
+.benefit-list { display: grid; gap: 14px; }
+.benefit-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px; border-radius: 12px; background: var(--cream);
+}
+.benefit-item i { color: var(--gold); margin-top: 2px; font-size: 14px; min-width: 16px; }
+.benefit-item div { }
+.benefit-item strong { display: block; font-size: 14.5px; color: var(--navy); margin-bottom: 2px; }
+.benefit-item span { font-size: 13.5px; color: #6B7C9A; line-height: 1.5; }
+
+.sfc-cta {
+  margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT PAGE
+═══════════════════════════════════════════ */
+.about-section { background: var(--cream); padding: 90px 6%; }
+.about-inner { max-width: 1300px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+.about-left {}
+.about-portrait {
+  width: 100%; aspect-ratio: 3/4; border-radius: 24px;
+  background: linear-gradient(160deg, var(--navy), var(--navy3));
+  position: relative; overflow: hidden; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: center;
+}
+.about-portrait .portrait-placeholder {
+  font-family: var(--serif); font-size: 120px; color: rgba(201,168,76,0.3); font-weight: 700;
+}
+.about-portrait .portrait-badge {
+  position: absolute; bottom: 24px; left: 24px; right: 24px;
+  background: rgba(8,20,46,0.85); backdrop-filter: blur(10px);
+  border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px;
+  display: flex; align-items: center; gap: 14px;
+}
+.portrait-badge i { font-size: 28px; color: var(--gold); }
+.portrait-badge .badge-text strong { display: block; color: var(--white); font-size: 16px; }
+.portrait-badge .badge-text span { font-size: 12px; color: var(--muted); }
+
+.about-stat-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.about-stat {
+  background: var(--white); border: 1px solid rgba(8,20,46,0.06);
+  border-radius: 16px; padding: 24px 20px; text-align: center;
+}
+.about-stat .num { font-family: var(--serif); font-size: 36px; color: var(--navy); font-weight: 700; }
+.about-stat .lbl { font-size: 12px; color: #94A3B8; margin-top: 4px; }
+
+.about-right {}
+.about-right .section-tag { display: block; margin-bottom: 12px; }
+.about-right .section-title { margin-bottom: 24px; }
+.about-bio { font-size: 16px; color: #4A5568; line-height: 1.8; margin-bottom: 36px; }
+.about-bio + .about-bio { margin-top: -20px; }
+
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
+.skill-pill {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--white); border: 1px solid rgba(8,20,46,0.06);
+  border-radius: 12px; padding: 14px 18px;
+  font-size: 14px; font-weight: 500; color: var(--navy);
+  transition: border-color 0.2s;
+}
+.skill-pill:hover { border-color: var(--gold); }
+.skill-pill i { color: var(--gold); font-size: 16px; width: 20px; text-align: center; }
+
+.timeline { margin-top: 52px; position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--gold), transparent); }
+.tl-item { position: relative; margin-bottom: 32px; }
+.tl-item::before {
+  content: ''; position: absolute; left: -34px; top: 8px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold); border: 3px solid var(--cream);
+}
+.tl-item h4 { font-family: var(--serif); font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.tl-item .tl-date { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.tl-item p { font-size: 14px; color: #6B7C9A; line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   CONTACT PAGE
+═══════════════════════════════════════════ */
+.contact-section { background: var(--cream); padding: 90px 6%; }
+.contact-inner { max-width: 1300px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+.contact-info {}
+.contact-info .section-title { margin-bottom: 20px; }
+.contact-info p { font-size: 16px; color: #6B7C9A; line-height: 1.7; margin-bottom: 40px; }
+
+.contact-methods { display: grid; gap: 16px; }
+.contact-method {
+  display: flex; align-items: center; gap: 18px;
+  background: var(--white); border-radius: 16px; padding: 22px 24px;
+  border: 1px solid rgba(8,20,46,0.06);
+  transition: all 0.25s var(--ease);
+  cursor: pointer;
+}
+.contact-method:hover { border-color: var(--gold); transform: translateX(4px); box-shadow: 0 8px 24px rgba(8,20,46,0.06); }
+.contact-method-icon {
+  width: 50px; height: 50px; min-width: 50px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; transition: transform 0.2s;
+}
+.contact-method:hover .contact-method-icon { transform: scale(1.1); }
+.cm-navy { background: linear-gradient(135deg, var(--navy), var(--navy3)); color: var(--gold); }
+.cm-green { background: linear-gradient(135deg, #064e3b, #065f46); color: #34d399; }
+.cm-blue  { background: linear-gradient(135deg, #1e3a5f, #1d4ed8); color: #93c5fd; }
+.contact-method h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+.contact-method p { font-size: 13.5px; color: #6B7C9A; }
+.contact-method .method-action { margin-left: auto; font-size: 18px; color: var(--muted); }
 
 /* Form */
 .contact-form-wrap {
-  background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);
-  padding:2.5rem;
-  position:relative;overflow:hidden;
+  background: var(--white); border-radius: 24px; padding: 50px 44px;
+  border: 1px solid rgba(8,20,46,0.06);
 }
-.contact-form-wrap::before {
-  content:'';position:absolute;top:-1px;left:20%;right:20%;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-.form-row { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
-.form-group { margin-bottom:1.2rem; }
-.form-label { font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);margin-bottom:.5rem;display:block; }
-.form-input,.form-select,.form-textarea {
-  width:100%;padding:.85rem 1.1rem;
-  background:var(--bg3);border:1px solid var(--border);border-radius:10px;
-  color:var(--text);font-family:var(--font-body);font-size:.95rem;
-  transition:border-color .25s,box-shadow .25s;outline:none;
-}
-.form-input:focus,.form-select:focus,.form-textarea:focus {
-  border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,0.1);
-}
-.form-textarea { resize:vertical;min-height:110px; }
-.form-select { cursor:pointer; }
-.form-success {
-  display:none;text-align:center;padding:1.5rem;
-  color:var(--green);font-weight:600;font-size:1rem;
-}
+.contact-form-wrap h3 { font-family: var(--serif); font-size: 30px; color: var(--navy); margin-bottom: 8px; }
+.contact-form-wrap > p { font-size: 14px; color: #94A3B8; margin-bottom: 36px; }
 
-/* ======================================================
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 12.5px; font-weight: 600; letter-spacing: 0.7px; text-transform: uppercase; color: #4A5568; margin-bottom: 8px; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 14px 18px; border-radius: 12px;
+  border: 1.5px solid rgba(8,20,46,0.1); background: var(--cream);
+  font-family: var(--sans); font-size: 14.5px; color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group select { appearance: none; cursor: pointer; }
+
+.form-submit {
+  width: 100%; padding: 18px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--navy); font-weight: 700; font-size: 16px;
+  border: none; cursor: pointer; font-family: var(--sans);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(201,168,76,0.3); }
+
+.hours-card {
+  background: var(--navy); border-radius: 20px; padding: 36px;
+  margin-top: 24px;
+}
+.hours-card h4 { font-family: var(--serif); font-size: 22px; color: var(--white); margin-bottom: 20px; }
+.hours-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(201,168,76,0.08); }
+.hours-row:last-child { border-bottom: none; }
+.hours-row span { font-size: 14px; color: var(--muted); }
+.hours-row strong { font-size: 14px; color: var(--white); }
+
+/* ═══════════════════════════════════════════
    FOOTER
-   ====================================================== */
+═══════════════════════════════════════════ */
 footer {
-  background:var(--bg);border-top:1px solid var(--border);
-  padding:5rem 0 2rem;
+  background: var(--navy); border-top: 1px solid var(--border);
+  padding: 80px 6% 40px;
 }
-.footer-grid { display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem; }
-.footer-brand .name { font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:.7rem; }
-.footer-brand .tagline { font-size:.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem;max-width:280px; }
-.footer-socials { display:flex;gap:.7rem; }
-.social-icon {
-  width:38px;height:38px;border-radius:10px;border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--text2);font-size:.9rem;
-  transition:all .25s;
+.footer-inner { max-width: 1300px; margin: auto; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 60px; border-bottom: 1px solid var(--border);
 }
-.social-icon:hover { border-color:var(--gold);color:var(--gold);background:var(--gold3); }
-.footer-col-title { font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text);margin-bottom:1.2rem; }
-.footer-link { display:block;font-size:.88rem;color:var(--text2);margin-bottom:.6rem;cursor:pointer;transition:color .2s; }
-.footer-link:hover { color:var(--gold); }
+.footer-brand .nav-brand { margin-bottom: 16px; font-size: 18px; display: inline-flex; }
+.footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 300px; }
+.footer-brand .social { display: flex; gap: 12px; margin-top: 24px; }
+.footer-brand .social a {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 16px; transition: all 0.2s;
+}
+.footer-brand .social a:hover { background: rgba(201,168,76,0.2); color: var(--gold); }
+
+.footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { font-size: 14px; color: var(--muted); transition: color 0.2s; cursor: pointer; }
+.footer-col ul a:hover { color: var(--white); }
+
 .footer-bottom {
-  border-top:1px solid var(--border);padding-top:2rem;
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:.82rem;color:var(--text3);
+  padding-top: 32px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
 }
-.footer-bottom-links { display:flex;gap:1.5rem; }
-.footer-bottom-links a { color:var(--text3);cursor:pointer;transition:color .2s; }
-.footer-bottom-links a:hover { color:var(--gold); }
+.footer-bottom p { font-size: 13px; color: #475569; }
+.footer-bottom .footer-legal { display: flex; gap: 24px; }
+.footer-bottom .footer-legal a { font-size: 13px; color: #475569; transition: color 0.2s; cursor: pointer; }
+.footer-bottom .footer-legal a:hover { color: var(--muted); }
 
-/* ======================================================
+/* ═══════════════════════════════════════════
+   WHATSAPP FLOAT
+═══════════════════════════════════════════ */
+.whatsapp-fab {
+  position: fixed; bottom: 36px; right: 36px; z-index: 998;
+  width: 60px; height: 60px; border-radius: 18px;
+  background: #25D366; color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.whatsapp-fab:hover { transform: scale(1.08) rotate(5deg); box-shadow: 0 16px 48px rgba(37,211,102,0.5); }
+.whatsapp-fab::before {
+  content: 'Chat on WhatsApp';
+  position: absolute; right: 72px; white-space: nowrap;
+  background: var(--navy); color: var(--white); padding: 8px 16px; border-radius: 10px;
+  font-size: 13px; font-weight: 500; font-family: var(--sans);
+  opacity: 0; transform: translateX(10px); transition: all 0.25s;
+  pointer-events: none;
+}
+.whatsapp-fab:hover::before { opacity: 1; transform: translateX(0); }
+
+/* ═══════════════════════════════════════════
+   MOBILE NAV OVERLAY
+═══════════════════════════════════════════ */
+.mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: var(--navy); flex-direction: column;
+  align-items: center; justify-content: center; gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--serif); font-size: 36px; color: var(--white);
+  cursor: pointer; transition: color 0.2s; font-weight: 600;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute; top: 28px; right: 6%;
+  background: none; border: none; color: var(--muted);
+  font-size: 28px; cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════
    RESPONSIVE
-   ====================================================== */
-@media(max-width:1024px){
-  .services-grid { grid-template-columns:repeat(2,1fr); }
-  .why-grid { grid-template-columns:repeat(2,1fr); }
-  .testi-grid { grid-template-columns:repeat(2,1fr); }
-  .footer-grid { grid-template-columns:1fr 1fr; }
-  .process-grid { grid-template-columns:repeat(2,1fr); }
-  .process-step::after { display:none; }
-}
-@media(max-width:768px){
-  .hero-inner { grid-template-columns:1fr; gap:3rem; }
-  .about-grid { grid-template-columns:1fr; }
-  .contact-grid { grid-template-columns:1fr; }
-  .services-grid { grid-template-columns:1fr; }
-  .blog-grid { grid-template-columns:1fr; }
-  .testi-grid { grid-template-columns:1fr; }
-  .why-grid { grid-template-columns:1fr 1fr; }
-  .footer-grid { grid-template-columns:1fr; }
-  .form-row { grid-template-columns:1fr; }
-  .skills-grid { grid-template-columns:1fr; }
-  .hero-stats { gap:1.5rem; }
-  .nav-links, .nav-cta { display:none; }
-  .hamburger { display:flex; }
-}
-@media(max-width:480px){
-  .why-grid { grid-template-columns:1fr; }
-  .hero-title { font-size:2.8rem; }
-  .hero-stats { flex-direction:column;gap:1rem; }
-  .process-grid { grid-template-columns:1fr; }
+═══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-full-card { grid-template-columns: 1fr; }
+  .sfc-left { padding: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
-/* ============ ANIMATIONS ============ */
-.reveal {
-  opacity:0;transform:translateY(28px);
-  transition:opacity .7s ease,transform .7s ease;
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 60px; }
+  .hero-actions { justify-content: center; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-card-stack { height: 300px; }
+  .card-b { top: 30px; right: 10px; width: 200px; }
+  .card-c { display: none; }
+  .why-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .about-inner { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .trust-divider { display: none; }
+  .trust-inner { justify-content: center; text-align: center; }
+  .cta-inner { text-align: center; justify-content: center; }
+  .cta-actions { align-items: center; }
 }
-.reveal.visible { opacity:1;transform:none; }
-.reveal-delay-1 { transition-delay:.1s; }
-.reveal-delay-2 { transition-delay:.2s; }
-.reveal-delay-3 { transition-delay:.3s; }
-.reveal-delay-4 { transition-delay:.4s; }
+
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .about-stat-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
 </style>
 </head>
 <body>
 
-<!-- CURSOR -->
-<div id="cur"></div>
-<div id="cur-ring"></div>
-
-<!-- FLOATING WA -->
-<a href="https://wa.me/919311661381" target="_blank" id="wa-float" title="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo" onclick="showPage('home')">Prince<span> Gupta</span></div>
-  <div class="nav-links">
-    <button class="nav-link active" onclick="showPage('home')" data-page="home">Home</button>
-    <button class="nav-link" onclick="showPage('about')" data-page="about">About</button>
-    <button class="nav-link" onclick="showPage('services')" data-page="services">Services</button>
-    <button class="nav-link" onclick="showPage('calculator')" data-page="calculator">Calculators</button>
-    <button class="nav-link" onclick="showPage('blog')" data-page="blog">Resources</button>
-    <button class="nav-link" onclick="showPage('testimonials')" data-page="testimonials">Reviews</button>
-    <button class="nav-link" onclick="showPage('contact')" data-page="contact">Contact</button>
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="mainNav">
+  <div class="nav-brand">
+    <div class="brand-mark">PG</div>
+    PG Consultancy
   </div>
-  <button class="nav-cta" onclick="showPage('contact')">Get Consultation</button>
-  <div class="hamburger" id="hamburger">
+  <div class="nav-links">
+    <a onclick="showPage('home')" class="active" data-page="home">Home</a>
+    <a onclick="showPage('services')" data-page="services">Services</a>
+    <a onclick="showPage('about')" data-page="about">About</a>
+    <a onclick="showPage('contact')" data-page="contact">Contact</a>
+    <a href="https://wa.me/919311661381" target="_blank" class="nav-cta">
+      <i class="fab fa-whatsapp"></i> Free Consultation
+    </a>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-link active" onclick="showPage('home');closeMob()" data-page="home">Home</button>
-  <button class="mob-link" onclick="showPage('about');closeMob()" data-page="about">About</button>
-  <button class="mob-link" onclick="showPage('services');closeMob()" data-page="services">Services</button>
-  <button class="mob-link" onclick="showPage('calculator');closeMob()" data-page="calculator">Calculators</button>
-  <button class="mob-link" onclick="showPage('blog');closeMob()" data-page="blog">Resources</button>
-  <button class="mob-link" onclick="showPage('testimonials');closeMob()" data-page="testimonials">Reviews</button>
-  <button class="mob-link" onclick="showPage('contact');closeMob()" data-page="contact">Contact</button>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMobile()"><i class="fas fa-times"></i></button>
+  <a onclick="showPage('home');toggleMobile()">Home</a>
+  <a onclick="showPage('services');toggleMobile()">Services</a>
+  <a onclick="showPage('about');toggleMobile()">About</a>
+  <a onclick="showPage('contact');toggleMobile()">Contact</a>
 </div>
 
-<main>
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
+<div id="page-home" class="page active">
 
-<!-- ===================================================
-     PAGE: HOME
-     =================================================== -->
-<div class="page active" id="page-home">
-  <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
+  <!-- HERO -->
+  <section class="hero">
     <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-badge"><i class="fas fa-certificate"></i> CA Finalist · New Delhi</div>
-        <div class="hero-role">Tax & Compliance Expert</div>
-        <h1 class="hero-title">Prince<br><em>Gupta</em></h1>
-        <p class="hero-desc">Transforming complex tax regulations into clear, hassle-free compliance. Trusted by 200+ businesses & individuals across India.</p>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          New Delhi's Trusted Compliance Partner
+        </div>
+        <h1>Your Finances,<br><em>Perfectly</em><br>Compliant.</h1>
+        <p class="hero-sub">Expert CA Finalist services — GST, Income Tax, ROC, PF-ESI & Bookkeeping. Transparent, deadline-driven, and built around your business goals.</p>
         <div class="hero-actions">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-compass"></i> Explore Services</button>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="num">200+</span>
-            <span class="lbl">Happy Clients</span>
-          </div>
-          <div class="stat-item">
-            <span class="num">5+</span>
-            <span class="lbl">Years Experience</span>
-          </div>
-          <div class="stat-item">
-            <span class="num">100%</span>
-            <span class="lbl">Compliance Rate</span>
-          </div>
+          <a class="btn-primary" onclick="showPage('services')">
+            <i class="fas fa-layer-group"></i> Explore Services
+          </a>
+          <a class="btn-outline" href="https://wa.me/919311661381" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Now
+          </a>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="hero-card">
-          <div class="hc-title">Our Core Services</div>
-          <div class="hc-service" onclick="showPage('gst')">
-            <div style="width:38px;height:38px;border-radius:10px;background:var(--gold3);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-file-invoice"></i></div>
-            <span class="label">GST Registration & Filing</span>
-            <i class="fas fa-arrow-right arrow"></i>
-          </div>
-          <div class="hc-service" onclick="showPage('incometax')">
-            <div style="width:38px;height:38px;border-radius:10px;background:var(--gold3);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-landmark"></i></div>
-            <span class="label">Income Tax Returns (ITR)</span>
-            <i class="fas fa-arrow-right arrow"></i>
-          </div>
-          <div class="hc-service" onclick="showPage('roc')">
-            <div style="width:38px;height:38px;border-radius:10px;background:var(--gold3);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-building"></i></div>
-            <span class="label">ROC / Company Compliance</span>
-            <i class="fas fa-arrow-right arrow"></i>
-          </div>
-          <div class="hc-service" onclick="showPage('pfesi')">
-            <div style="width:38px;height:38px;border-radius:10px;background:var(--gold3);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-shield-alt"></i></div>
-            <span class="label">PF & ESI Compliance</span>
-            <i class="fas fa-arrow-right arrow"></i>
-          </div>
-          <div class="hc-service" onclick="showPage('bookkeeping')">
-            <div style="width:38px;height:38px;border-radius:10px;background:var(--gold3);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-book-open"></i></div>
-            <span class="label">Bookkeeping & Accounting</span>
-            <i class="fas fa-arrow-right arrow"></i>
-          </div>
-          <div class="hc-footer">
-            <span><span class="online-dot"></span>Available Mon–Sat, 9AM–6PM</span>
-            <a href="tel:+919311661381" style="color:var(--gold);font-weight:600;">+91 93116 61381</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-hint">
-      <i class="fas fa-chevron-down"></i>
-      <span>Scroll</span>
-    </div>
-  </div>
 
-  <!-- Trust section -->
-  <div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 0;">
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:2rem;text-align:center;">
-        <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--gold);">ICAI</div><div style="font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">Member</div></div>
-        <div style="width:1px;height:40px;background:var(--border);"></div>
-        <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--gold);">GST</div><div style="font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">Practitioner</div></div>
-        <div style="width:1px;height:40px;background:var(--border);"></div>
-        <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--gold);">MCA</div><div style="font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">Registered</div></div>
-        <div style="width:1px;height:40px;background:var(--border);"></div>
-        <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--gold);">Income Tax</div><div style="font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">E-Filing Expert</div></div>
-        <div style="width:1px;height:40px;background:var(--border);"></div>
-        <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--gold);">200+</div><div style="font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">Satisfied Clients</div></div>
+      <div class="hero-card-stack">
+        <div class="hero-card card-a">
+          <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h4>GST Compliance</h4>
+          <p>Monthly returns, registration & reconciliation handled end-to-end.</p>
+          <span class="badge">₹ Saves Average 40% Time</span>
+        </div>
+        <div class="hero-card card-b">
+          <div class="card-icon"><i class="fas fa-building-columns"></i></div>
+          <h4>ROC Filing</h4>
+          <p>Company registration & annual compliance done right, on time.</p>
+          <span class="badge">Zero Penalty Record</span>
+        </div>
+        <div class="hero-card card-c">
+          <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+          <h4>Income Tax</h4>
+          <p>Strategic tax planning and ITR filing for individuals & businesses.</p>
+          <span class="badge">200+ Returns Filed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-num" data-count="200">0</div>
+        <div class="trust-label">Happy<br>Clients</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num" data-count="500">0</div>
+        <div class="trust-label">Returns<br>Filed</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num" data-count="6">0</div>
+        <div class="trust-label">Services<br>Offered</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">0%</div>
+        <div class="trust-label">Penalty<br>Rate</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-num">24h</div>
+        <div class="trust-label">Response<br>Time</div>
       </div>
     </div>
   </div>
 
-  <!-- Services preview -->
-  <div class="section">
-    <div class="container">
-      <div style="text-align:center;max-width:640px;margin:0 auto 4rem;">
-        <div class="section-tag"><i class="fas fa-star"></i> Our Expertise</div>
-        <h2 class="section-title">Complete Tax & <em>Compliance</em> Solutions</h2>
-        <p class="section-sub" style="margin:0 auto;">From GST to corporate filings, we handle everything so you can focus on growing your business.</p>
+  <!-- SERVICES OVERVIEW -->
+  <section class="section services-section">
+    <div class="section-inner">
+      <div class="services-header">
+        <div>
+          <span class="section-tag reveal">What We Do</span>
+          <h2 class="section-title reveal reveal-delay-1">End-to-End <em>Tax &</em><br>Compliance Services</h2>
+        </div>
+        <div>
+          <p class="section-sub reveal reveal-delay-2">Every service is handled personally — not outsourced. You deal directly with Prince Gupta, a CA Finalist with deep expertise across all compliance domains.</p>
+        </div>
       </div>
+
       <div class="services-grid">
-        <div class="svc-card featured" onclick="showPage('gst')">
-          <div class="svc-icon"><i class="fas fa-file-invoice"></i></div>
-          <div class="svc-name">GST Services</div>
-          <div class="svc-desc">Registration, GSTR-1, 3B, annual returns, LUT filing, notices & assessments handled end-to-end.</div>
-          <div class="svc-tags"><span class="svc-tag">Registration</span><span class="svc-tag">Monthly Filing</span><span class="svc-tag">Notices</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        <div class="service-card reveal reveal-delay-1" onclick="showPage('services')">
+          <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>GST Services</h3>
+          <p>Registration, monthly/quarterly returns (GSTR-1, 3B, 9), reconciliation, notices, and e-invoicing compliance.</p>
+          <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="svc-card" onclick="showPage('incometax')">
-          <div class="svc-icon"><i class="fas fa-landmark"></i></div>
-          <div class="svc-name">Income Tax</div>
-          <div class="svc-desc">ITR filing for individuals, firms & companies. TDS returns, advance tax, tax planning & savings.</div>
-          <div class="svc-tags"><span class="svc-tag">ITR Filing</span><span class="svc-tag">TDS</span><span class="svc-tag">Tax Planning</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        <div class="service-card reveal reveal-delay-2" onclick="showPage('services')">
+          <div class="service-icon"><i class="fas fa-landmark"></i></div>
+          <h3>Income Tax</h3>
+          <p>ITR filing for individuals, HUFs & businesses, advance tax calculation, tax planning, and notice handling.</p>
+          <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="svc-card" onclick="showPage('roc')">
-          <div class="svc-icon"><i class="fas fa-building"></i></div>
-          <div class="svc-name">ROC Compliance</div>
-          <div class="svc-desc">Company incorporation, annual filings, ROC returns, director KYC, and MCA compliance.</div>
-          <div class="svc-tags"><span class="svc-tag">Incorporation</span><span class="svc-tag">MCA Filings</span><span class="svc-tag">KYC</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        <div class="service-card reveal reveal-delay-3" onclick="showPage('services')">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <h3>ROC Compliance</h3>
+          <p>Company incorporation, annual filings (AOC-4, MGT-7), board resolutions, and MCA compliance.</p>
+          <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="svc-card" onclick="showPage('pfesi')">
-          <div class="svc-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="svc-name">PF & ESI</div>
-          <div class="svc-desc">PF registration, monthly ECR filing, ESI compliance, and employee benefit management.</div>
-          <div class="svc-tags"><span class="svc-tag">Registration</span><span class="svc-tag">ECR Filing</span><span class="svc-tag">ESI</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        <div class="service-card reveal reveal-delay-1" onclick="showPage('services')">
+          <div class="service-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Bookkeeping</h3>
+          <p>Day-to-day accounting, ledger management, bank reconciliation, financial statements, and MIS reports.</p>
+          <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="svc-card" onclick="showPage('bookkeeping')">
-          <div class="svc-icon"><i class="fas fa-book-open"></i></div>
-          <div class="svc-name">Bookkeeping</div>
-          <div class="svc-desc">Tally-based accounting, ledger management, P&L, balance sheet, and MIS reporting.</div>
-          <div class="svc-tags"><span class="svc-tag">Tally</span><span class="svc-tag">P&L</span><span class="svc-tag">MIS</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        <div class="service-card reveal reveal-delay-2" onclick="showPage('services')">
+          <div class="service-icon"><i class="fas fa-truck"></i></div>
+          <h3>E-Way Bill</h3>
+          <p>Generation, cancellation, and Part-B updates for all inter-state and intra-state goods movements.</p>
+          <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="svc-card" onclick="showPage('ewaybill')">
-          <div class="svc-icon"><i class="fas fa-truck"></i></div>
-          <div class="svc-name">E-Way Bill</div>
-          <div class="svc-desc">Generation, management, and cancellation of E-Way Bills for goods movement compliance.</div>
-          <div class="svc-tags"><span class="svc-tag">Generation</span><span class="svc-tag">Bulk</span><span class="svc-tag">Cancellation</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
+        <div class="service-card reveal reveal-delay-3" onclick="showPage('services')">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>PF & ESI</h3>
+          <p>Provident Fund and ESI registration, monthly challans, annual returns, and employee compliance.</p>
+          <span class="service-link">Learn More <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Why Choose -->
-  <div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="section">
-      <div class="container">
-        <div style="text-align:center;max-width:600px;margin:0 auto 3rem;">
-          <div class="section-tag"><i class="fas fa-trophy"></i> Why Choose Me</div>
-          <h2 class="section-title">Expertise You Can <em>Trust</em></h2>
-        </div>
-        <div class="why-grid">
-          <div class="why-card">
-            <span class="why-num">5+</span>
-            <div class="why-label">Years of Tax & Compliance Experience</div>
-          </div>
-          <div class="why-card">
-            <span class="why-num">200+</span>
-            <div class="why-label">Clients Served Across Delhi NCR</div>
-          </div>
-          <div class="why-card">
-            <span class="why-num">100%</span>
-            <div class="why-label">On-Time Filing Guarantee</div>
-          </div>
-          <div class="why-card">
-            <span class="why-num">₹0</span>
-            <div class="why-label">Hidden Charges — Transparent Pricing</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- WHY CHOOSE -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div class="why-left">
+          <span class="section-tag">Why Prince Gupta</span>
+          <h2 class="section-title">Not Just a Consultant.<br><em>A Strategic</em><br>Partner.</h2>
+          <p class="section-sub">Most consultants file your returns and disappear. We stay engaged year-round — proactively flagging risks, saving you money, and keeping you ahead of every deadline.</p>
 
-  <!-- CTA Strip -->
-  <div class="section">
-    <div class="container">
-      <div style="background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(212,175,55,0.04));border:1px solid var(--border2);border-radius:var(--radius-lg);padding:4rem;text-align:center;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-30px;right:-30px;width:200px;height:200px;border-radius:50%;background:radial-gradient(rgba(212,175,55,0.12),transparent);"></div>
-        <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-phone-alt"></i> Free Consultation</div>
-        <h2 class="section-title" style="margin-bottom:1rem;">Ready to Simplify Your Taxes?</h2>
-        <p style="color:var(--text2);margin-bottom:2rem;font-size:1.05rem;">Get a free 30-minute consultation. No obligations, just clarity.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-          <a href="mailto:princegupta09work@gmail.com" class="btn-gold"><i class="fas fa-envelope"></i> Send Email</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     PAGE: ABOUT
-     =================================================== -->
-<div class="page" id="page-about">
-  <div class="section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-card-main">
-            <div class="about-monogram">PG</div>
-            <div class="about-name-block">
-              <div class="about-name">Prince Gupta</div>
-              <div class="about-role-tag">CA Finalist · Tax Consultant · New Delhi</div>
-            </div>
-            <div class="info-row"><i class="fas fa-map-marker-alt"></i><span class="val">New Delhi, India</span><span class="lbl">Location</span></div>
-            <div class="info-row"><i class="fas fa-phone"></i><span class="val">+91 93116 61381</span><span class="lbl">Phone</span></div>
-            <div class="info-row"><i class="fas fa-envelope"></i><span class="val">princegupta09work@gmail.com</span><span class="lbl">Email</span></div>
-            <div class="info-row"><i class="fab fa-linkedin"></i><span class="val">linkedin.com/in/i-princegupta</span><span class="lbl">LinkedIn</span></div>
-            <div class="info-row"><i class="fas fa-clock"></i><span class="val">Mon–Sat, 9AM–6PM</span><span class="lbl">Availability</span></div>
-            <div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap;">
-              <a href="https://wa.me/919311661381" target="_blank" class="btn-wa" style="flex:1;justify-content:center;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-              <a href="mailto:princegupta09work@gmail.com" class="btn-gold" style="flex:1;justify-content:center;"><i class="fas fa-envelope"></i> Email</a>
-            </div>
-          </div>
-          <div class="floating-badge">⭐ 5+ Years Experience</div>
-        </div>
-        <div class="about-content">
-          <div class="section-tag"><i class="fas fa-user-tie"></i> About Me</div>
-          <h2 class="section-title">A Trusted Name in <em>Tax & Compliance</em></h2>
-          <div class="gold-line"></div>
-          <p style="color:var(--text2);line-height:1.8;margin-bottom:1.5rem;">I'm Prince Gupta, a CA Finalist and experienced Tax Consultant based in New Delhi. With over 5 years of hands-on experience, I specialise in making complex tax laws simple and accessible for businesses and individuals alike.</p>
-          <p style="color:var(--text2);line-height:1.8;margin-bottom:2.5rem;">My approach combines technical expertise with personal attention — ensuring every client receives timely, accurate, and cost-effective compliance solutions. From GST to company law, I handle it all so you can focus on what matters: growing your business.</p>
-
-          <div class="timeline">
-            <div class="tl-item">
-              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-              <div class="tl-body">
-                <div class="tl-year">2019 — Present</div>
-                <div class="tl-head">Independent Tax & Compliance Consultant</div>
-                <div class="tl-desc">Serving 200+ clients across Delhi NCR with GST, Income Tax, ROC, PF-ESI and bookkeeping services.</div>
+          <div class="why-features">
+            <div class="why-item reveal">
+              <div class="why-item-icon"><i class="fas fa-shield-halved"></i></div>
+              <div>
+                <h4>Zero Penalty Guarantee</h4>
+                <p>Our proactive deadline tracking ensures you've never paid a penalty for late filing.</p>
               </div>
             </div>
-            <div class="tl-item">
-              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-              <div class="tl-body">
-                <div class="tl-year">2017 — 2019</div>
-                <div class="tl-head">CA Articleship — Reputed CA Firm, Delhi</div>
-                <div class="tl-desc">Completed articleship with hands-on exposure to audit, taxation, and corporate compliance for SMEs and large corporates.</div>
+            <div class="why-item reveal reveal-delay-1">
+              <div class="why-item-icon"><i class="fas fa-headset"></i></div>
+              <div>
+                <h4>Direct Access, Always</h4>
+                <p>WhatsApp Prince directly — no junior staff relay. Your queries answered within 24 hours.</p>
               </div>
             </div>
-            <div class="tl-item">
-              <div class="tl-dot-col"><div class="tl-dot"></div></div>
-              <div class="tl-body">
-                <div class="tl-year">2015 — 2017</div>
-                <div class="tl-head">CA Foundation & Intermediate — ICAI</div>
-                <div class="tl-desc">Cleared CA Foundation and Intermediate examinations from the Institute of Chartered Accountants of India.</div>
+            <div class="why-item reveal reveal-delay-2">
+              <div class="why-item-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+              <div>
+                <h4>Tax Optimisation Mindset</h4>
+                <p>Every engagement is reviewed for legal deductions and opportunities to reduce your tax burden.</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <div style="margin-top:2rem;">
-            <div class="section-tag" style="margin-bottom:1.2rem;"><i class="fas fa-tools"></i> Expertise</div>
-            <div class="skills-grid">
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> GST Law & Compliance</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> Income Tax Planning</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> ROC & Company Law</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> PF / ESI Management</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> Tally ERP / Prime</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> Tax Audit & Notices</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> E-Way Bill Portal</div>
-              <div class="skill-chip"><i class="fas fa-check-circle"></i> MCA & MCA21 Portal</div>
+        <div class="why-right reveal reveal-delay-2">
+          <div class="credentials-card">
+            <h3 style="font-family:var(--serif);font-size:26px;color:var(--white);margin-bottom:30px;">Qualifications & Credentials</h3>
+            <div class="cred-row">
+              <div class="cred-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <h4>CA Finalist (ICAI)</h4>
+                <p>Institute of Chartered Accountants of India — Final stage</p>
+              </div>
+            </div>
+            <div class="cred-row">
+              <div class="cred-icon"><i class="fas fa-award"></i></div>
+              <div>
+                <h4>GST Certified Practitioner</h4>
+                <p>Registered & certified under the GST framework</p>
+              </div>
+            </div>
+            <div class="cred-row">
+              <div class="cred-icon"><i class="fas fa-briefcase"></i></div>
+              <div>
+                <h4>5+ Years Experience</h4>
+                <p>Across SMEs, startups, and individual taxpayers in New Delhi</p>
+              </div>
+            </div>
+            <div class="cred-row">
+              <div class="cred-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4>Based in New Delhi</h4>
+                <p>Serving clients across Delhi NCR and remotely pan-India</p>
+              </div>
+            </div>
+            <div class="cred-row">
+              <div class="cred-icon"><i class="fab fa-linkedin"></i></div>
+              <div>
+                <h4>LinkedIn Verified Profile</h4>
+                <p>Connect professionally at linkedin.com/in/i-princegupta</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- ===================================================
-     PAGE: SERVICES
-     =================================================== -->
-<div class="page" id="page-services">
-  <div class="section">
-    <div class="container">
-      <div class="services-hero">
-        <div class="section-tag"><i class="fas fa-layer-group"></i> All Services</div>
-        <h2 class="section-title">Everything You Need for <em>Tax Compliance</em></h2>
-        <p class="section-sub" style="margin:0 auto;text-align:center;">Comprehensive financial & compliance services for businesses, startups, and individuals across India.</p>
-      </div>
-      <div class="services-grid">
-        <div class="svc-card featured" onclick="showPage('gst')">
-          <div class="svc-icon"><i class="fas fa-file-invoice"></i></div>
-          <div class="svc-name">GST Services</div>
-          <div class="svc-desc">End-to-end GST registration, monthly/quarterly GSTR filing, LUT filing, reconciliation, and handling of notices.</div>
-          <div class="svc-tags"><span class="svc-tag">GSTR-1</span><span class="svc-tag">GSTR-3B</span><span class="svc-tag">Annual Return</span><span class="svc-tag">LUT</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
-        </div>
-        <div class="svc-card" onclick="showPage('incometax')">
-          <div class="svc-icon"><i class="fas fa-landmark"></i></div>
-          <div class="svc-name">Income Tax</div>
-          <div class="svc-desc">ITR filing for individuals, HUF, firms, and companies. TDS returns, advance tax computation and tax planning.</div>
-          <div class="svc-tags"><span class="svc-tag">ITR-1 to ITR-7</span><span class="svc-tag">TDS / TCS</span><span class="svc-tag">Form 15CA</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
-        </div>
-        <div class="svc-card" onclick="showPage('roc')">
-          <div class="svc-icon"><i class="fas fa-building"></i></div>
-          <div class="svc-name">ROC Compliance</div>
-          <div class="svc-desc">Company & LLP incorporation, annual ROC filings, director KYC, DIN, charge creation, and MCA21 compliance.</div>
-          <div class="svc-tags"><span class="svc-tag">Incorporation</span><span class="svc-tag">AOC-4</span><span class="svc-tag">MGT-7</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
-        </div>
-        <div class="svc-card" onclick="showPage('pfesi')">
-          <div class="svc-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="svc-name">PF & ESI Compliance</div>
-          <div class="svc-desc">EPF/ESIC registration, monthly ECR/ESI challan filing, employee enrolment, and compliance management.</div>
-          <div class="svc-tags"><span class="svc-tag">EPF</span><span class="svc-tag">ESIC</span><span class="svc-tag">ECR</span><span class="svc-tag">UAN</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
-        </div>
-        <div class="svc-card" onclick="showPage('bookkeeping')">
-          <div class="svc-icon"><i class="fas fa-book-open"></i></div>
-          <div class="svc-name">Bookkeeping & Accounting</div>
-          <div class="svc-desc">Full-scale Tally-based accounting, ledger maintenance, P&L, balance sheet, and management reporting.</div>
-          <div class="svc-tags"><span class="svc-tag">Tally</span><span class="svc-tag">Ledger</span><span class="svc-tag">Balance Sheet</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
-        </div>
-        <div class="svc-card" onclick="showPage('ewaybill')">
-          <div class="svc-icon"><i class="fas fa-truck"></i></div>
-          <div class="svc-name">E-Way Bill</div>
-          <div class="svc-desc">Generation, extension, and cancellation of E-Way Bills on the GST portal for goods movement compliance.</div>
-          <div class="svc-tags"><span class="svc-tag">Generation</span><span class="svc-tag">Bulk</span><span class="svc-tag">Cancellation</span></div>
-          <div class="svc-arrow"><i class="fas fa-arrow-up-right"></i></div>
-        </div>
-        <div class="svc-card" style="cursor:default;">
-          <div class="svc-icon"><i class="fas fa-gavel"></i></div>
-          <div class="svc-name">Tax Notices & Litigation</div>
-          <div class="svc-desc">Expert handling of GST, Income Tax, and TDS notices. Preparation of replies and representation before authorities.</div>
-          <div class="svc-tags"><span class="svc-tag">GST Notice</span><span class="svc-tag">IT Notice</span><span class="svc-tag">Appeals</span></div>
-        </div>
-        <div class="svc-card" style="cursor:default;">
-          <div class="svc-icon"><i class="fas fa-handshake"></i></div>
-          <div class="svc-name">Business Registration</div>
-          <div class="svc-desc">MSME/Udyam registration, FSSAI, trade license, Shop Act, import-export code (IEC), and more.</div>
-          <div class="svc-tags"><span class="svc-tag">MSME</span><span class="svc-tag">FSSAI</span><span class="svc-tag">IEC</span></div>
-        </div>
-        <div class="svc-card" style="cursor:default;">
-          <div class="svc-icon"><i class="fas fa-chart-pie"></i></div>
-          <div class="svc-name">Financial Planning</div>
-          <div class="svc-desc">Personal tax planning, investment advisory, business financial planning, and cash flow management.</div>
-          <div class="svc-tags"><span class="svc-tag">Tax Saving</span><span class="svc-tag">Investments</span><span class="svc-tag">Planning</span></div>
-        </div>
+  <!-- TESTIMONIALS -->
+  <section class="section testi-section">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:64px;">
+        <span class="section-tag reveal">Client Stories</span>
+        <h2 class="section-title reveal reveal-delay-1" style="margin:0 auto;">What Our <em>Clients</em> Say</h2>
       </div>
 
-      <!-- CTA -->
-      <div style="text-align:center;margin-top:4rem;">
-        <p style="color:var(--text2);margin-bottom:1.5rem;font-size:1.05rem;">Not sure which service you need? Let's have a free conversation.</p>
-        <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp for Free Consultation</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     SERVICE DETAIL: GST
-     =================================================== -->
-<div class="page" id="page-gst">
-  <div class="section">
-    <div class="container">
-      <div class="detail-hero">
-        <div class="detail-icon"><i class="fas fa-file-invoice"></i></div>
-        <div class="section-tag"><i class="fas fa-layer-group"></i> Service Detail</div>
-        <h2 class="section-title">GST Registration & <em>Filing</em></h2>
-        <p class="section-sub" style="margin:1rem auto;text-align:center;max-width:600px;">Complete GST compliance — from registration to monthly filings, annual returns, LUT, and notice handling — all under one roof.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-arrow-left"></i> All Services</button>
-        </div>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-step"><div class="step-num">1</div><div class="step-title">Document Collection</div><div class="step-desc">PAN, Aadhaar, address proof, business documents collected securely.</div></div>
-        <div class="process-step"><div class="step-num">2</div><div class="step-title">Application Filing</div><div class="step-desc">GST registration application filed on the portal within 24 hours.</div></div>
-        <div class="process-step"><div class="step-num">3</div><div class="step-title">GSTIN Obtained</div><div class="step-desc">GSTIN certificate issued by GST portal, typically in 3–7 working days.</div></div>
-        <div class="process-step"><div class="step-num">4</div><div class="step-title">Ongoing Filing</div><div class="step-desc">Monthly/quarterly GSTR-1 and GSTR-3B filed on time, every time.</div></div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem;">
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-list"></i> What's Included</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> GST Registration (Regular / Composition)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> GSTR-1 (Outward Supply Returns)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> GSTR-3B (Monthly Summary)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> GSTR-9 / 9C (Annual Returns)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> LUT Filing (Export without Tax)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> GST Notices & Reply Drafting</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> ITC Reconciliation (2A/2B)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> GST Audit Support</div>
-          </div>
-        </div>
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-question-circle"></i> FAQ</div>
-          <div class="faq-list" style="max-width:100%;">
-            <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">Who needs GST registration? <i class="fas fa-plus faq-icon"></i></div>
-              <div class="faq-a">Any business with annual turnover exceeding ₹40 lakh (₹20 lakh for services) must register for GST. Inter-state suppliers and e-commerce sellers must register regardless of turnover.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">How long does GST registration take? <i class="fas fa-plus faq-icon"></i></div>
-              <div class="faq-a">Typically 3–7 working days after document submission. We file the application within 24 hours of receiving all documents.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">What if I miss filing deadlines? <i class="fas fa-plus faq-icon"></i></div>
-              <div class="faq-a">Late filing attracts interest (18% p.a.) and late fees (₹50/day, max ₹10,000). We set up reminders to ensure you never miss a deadline.</div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q" onclick="toggleFaq(this)">Can you handle GST notices? <i class="fas fa-plus faq-icon"></i></div>
-              <div class="faq-a">Yes. We draft professional replies to GST notices and represent clients before GST officers. Early action is key — contact us immediately upon receiving any notice.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     SERVICE DETAIL: INCOME TAX
-     =================================================== -->
-<div class="page" id="page-incometax">
-  <div class="section">
-    <div class="container">
-      <div class="detail-hero">
-        <div class="detail-icon"><i class="fas fa-landmark"></i></div>
-        <div class="section-tag"><i class="fas fa-layer-group"></i> Service Detail</div>
-        <h2 class="section-title">Income Tax <em>Filing & Planning</em></h2>
-        <p class="section-sub" style="margin:1rem auto;text-align:center;max-width:600px;">Accurate and timely ITR filing for all categories. TDS compliance, tax savings strategies, and complete income tax management.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-arrow-left"></i> All Services</button>
-        </div>
-      </div>
-      <div class="process-grid">
-        <div class="process-step"><div class="step-num">1</div><div class="step-title">Data Collection</div><div class="step-desc">Form 16, bank statements, investment proofs, and income details collected.</div></div>
-        <div class="process-step"><div class="step-num">2</div><div class="step-title">Computation</div><div class="step-desc">Income computed under all heads with maximum deductions claimed.</div></div>
-        <div class="process-step"><div class="step-num">3</div><div class="step-title">Return Filing</div><div class="step-desc">ITR filed on income tax portal within agreed timeline.</div></div>
-        <div class="process-step"><div class="step-num">4</div><div class="step-title">Verification</div><div class="step-desc">Return e-verified via Aadhaar OTP or bank account.</div></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-list"></i> What's Included</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> ITR-1 to ITR-7 Filing</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> TDS Return (24Q, 26Q, 27Q, 27EQ)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Form 15CA / 15CB</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Advance Tax Computation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Tax Planning & Savings Advice</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> IT Notice Handling & Replies</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Tax Audit (3CA/3CB)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Capital Gains Computation</div>
-          </div>
-        </div>
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-question-circle"></i> FAQ</div>
-          <div class="faq-list" style="max-width:100%;">
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the ITR filing deadline? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">For individuals (non-audit): July 31st. For businesses requiring audit: October 31st. Belated return can be filed until December 31st with late fees.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Old vs New Tax Regime — which is better? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">It depends on your deductions. We analyse both regimes and help you choose the one that results in lower tax liability based on your specific income profile.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to file if tax is deducted at source? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Yes, if your income exceeds the basic exemption limit (₹2.5L / ₹3L / ₹5L depending on age), filing is mandatory even if TDS is deducted.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     SERVICE DETAIL: ROC
-     =================================================== -->
-<div class="page" id="page-roc">
-  <div class="section">
-    <div class="container">
-      <div class="detail-hero">
-        <div class="detail-icon"><i class="fas fa-building"></i></div>
-        <div class="section-tag"><i class="fas fa-layer-group"></i> Service Detail</div>
-        <h2 class="section-title">ROC & Company <em>Compliance</em></h2>
-        <p class="section-sub" style="margin:1rem auto;text-align:center;max-width:600px;">Complete company lifecycle management — from incorporation to annual filings, changes, and ongoing MCA compliance.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-arrow-left"></i> All Services</button>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-list"></i> What's Included</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> Company / LLP Incorporation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Annual Filing (AOC-4, MGT-7)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Director KYC (DIR-3 KYC)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Change in Directors / Registered Office</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Charge Creation / Modification</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> DIN Registration & Allotment</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Share Transfer & Allotment</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Company Strike-off / Winding Up</div>
-          </div>
-        </div>
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-question-circle"></i> FAQ</div>
-          <div class="faq-list" style="max-width:100%;">
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When are annual ROC filings due? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">AOC-4 (Financial Statements) is due within 30 days of AGM; MGT-7 (Annual Return) within 60 days of AGM. Non-compliance attracts heavy penalties.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Director KYC mandatory every year? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Yes. Every director with a DIN must file DIR-3 KYC annually by September 30th, or their DIN gets deactivated.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does company incorporation take? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Typically 7–15 working days end-to-end, including name approval, MoA/AoA drafting, and Certificate of Incorporation from MCA.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     SERVICE DETAIL: PF ESI
-     =================================================== -->
-<div class="page" id="page-pfesi">
-  <div class="section">
-    <div class="container">
-      <div class="detail-hero">
-        <div class="detail-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="section-tag"><i class="fas fa-layer-group"></i> Service Detail</div>
-        <h2 class="section-title">PF & ESI <em>Compliance</em></h2>
-        <p class="section-sub" style="margin:1rem auto;text-align:center;max-width:600px;">Complete provident fund and ESIC management for businesses — registration, monthly challan filing, and employee enrolment.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Get Quote</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-arrow-left"></i> All Services</button>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-list"></i> PF Services</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> EPF Registration (EPFO)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Monthly ECR (Challan) Filing</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> UAN Generation & KYC</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> PF Withdrawal / Transfer Support</div>
-          </div>
-          <div class="section-tag" style="margin:1.5rem 0;"><i class="fas fa-list"></i> ESI Services</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> ESIC Registration</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Monthly ESI Challan Filing</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Employee IP Card Facilitation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Half-Yearly ESIC Return</div>
-          </div>
-        </div>
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-question-circle"></i> FAQ</div>
-          <div class="faq-list" style="max-width:100%;">
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When is PF registration mandatory? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Any establishment with 20 or more employees is required to register under EPFO. Voluntary registration is also available.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the ESI threshold? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">ESIC applies to establishments with 10+ employees where wages are up to ₹21,000/month. ESI contribution is 0.75% (employee) + 3.25% (employer).</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens if PF is not paid on time? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Late payment attracts damages (5–25% per annum) and interest (12% p.a.). Willful non-compliance can lead to prosecution.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     SERVICE DETAIL: BOOKKEEPING
-     =================================================== -->
-<div class="page" id="page-bookkeeping">
-  <div class="section">
-    <div class="container">
-      <div class="detail-hero">
-        <div class="detail-icon"><i class="fas fa-book-open"></i></div>
-        <div class="section-tag"><i class="fas fa-layer-group"></i> Service Detail</div>
-        <h2 class="section-title">Bookkeeping & <em>Accounting</em></h2>
-        <p class="section-sub" style="margin:1rem auto;text-align:center;max-width:600px;">Clean, accurate books give you a clear picture of your business health. We manage your accounts so you always have the data you need.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Get Quote</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-arrow-left"></i> All Services</button>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-list"></i> What's Included</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> Tally ERP / Tally Prime Accounting</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Daily Transaction Entry</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Ledger Management & Reconciliation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Bank Reconciliation Statement</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Profit & Loss Statement</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Balance Sheet Preparation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Monthly MIS Reports</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Accounts Payable / Receivable</div>
-          </div>
-        </div>
-        <div>
-          <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2rem;">
-            <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-star"></i> Why Accurate Books Matter</div>
-            <div style="display:flex;flex-direction:column;gap:1.2rem;">
-              <div style="display:flex;gap:1rem;align-items:flex-start;"><div style="color:var(--gold);font-size:1.2rem;margin-top:.1rem;">✓</div><div><div style="font-weight:600;color:var(--text);margin-bottom:.3rem;">Timely Tax Filing</div><div style="font-size:.88rem;color:var(--text2);">Accurate books make GST and ITR filing seamless and error-free.</div></div></div>
-              <div style="display:flex;gap:1rem;align-items:flex-start;"><div style="color:var(--gold);font-size:1.2rem;margin-top:.1rem;">✓</div><div><div style="font-weight:600;color:var(--text);margin-bottom:.3rem;">Business Decisions</div><div style="font-size:.88rem;color:var(--text2);">Understand your profits, costs, and cash flow to make smarter decisions.</div></div></div>
-              <div style="display:flex;gap:1rem;align-items:flex-start;"><div style="color:var(--gold);font-size:1.2rem;margin-top:.1rem;">✓</div><div><div style="font-weight:600;color:var(--text);margin-bottom:.3rem;">Loan & Credit Ready</div><div style="font-size:.88rem;color:var(--text2);">Banks require proper financials for loans. We ensure you're always credit-ready.</div></div></div>
-              <div style="display:flex;gap:1rem;align-items:flex-start;"><div style="color:var(--gold);font-size:1.2rem;margin-top:.1rem;">✓</div><div><div style="font-weight:600;color:var(--text);margin-bottom:.3rem;">Audit Protection</div><div style="font-size:.88rem;color:var(--text2);">Proper records protect you in case of any tax scrutiny or audit.</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     SERVICE DETAIL: E-WAY BILL
-     =================================================== -->
-<div class="page" id="page-ewaybill">
-  <div class="section">
-    <div class="container">
-      <div class="detail-hero">
-        <div class="detail-icon"><i class="fas fa-truck"></i></div>
-        <div class="section-tag"><i class="fas fa-layer-group"></i> Service Detail</div>
-        <h2 class="section-title">E-Way Bill <em>Management</em></h2>
-        <p class="section-sub" style="margin:1rem auto;text-align:center;max-width:600px;">Fast, accurate E-Way Bill generation, extension, and management for seamless goods movement compliance across India.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Get Quote</a>
-          <button class="btn-outline" onclick="showPage('services')"><i class="fas fa-arrow-left"></i> All Services</button>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
-        <div>
-          <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-list"></i> What's Included</div>
-          <div style="display:flex;flex-direction:column;gap:.8rem;">
-            <div class="skill-chip"><i class="fas fa-check"></i> Single E-Way Bill Generation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Bulk E-Way Bill Generation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> E-Way Bill Extension</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> E-Way Bill Cancellation</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Part-B Update (Vehicle Details)</div>
-            <div class="skill-chip"><i class="fas fa-check"></i> Multi-Vehicle Transport</div>
-          </div>
-        </div>
-        <div>
-          <div class="faq-list" style="max-width:100%;">
-            <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-question-circle"></i> FAQ</div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When is an E-Way Bill required? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">E-Way Bill is required for movement of goods valued above ₹50,000 for inter-state transport. For intra-state, thresholds vary by state.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long is an E-Way Bill valid? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Validity depends on distance: 1 day per 100 km for regular cargo. Can be extended if goods cannot reach destination within valid period.</div></div>
-            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can E-Way Bills be cancelled? <i class="fas fa-plus faq-icon"></i></div><div class="faq-a">Yes, within 24 hours of generation if movement has not begun. After 24 hours, cancellation is not possible electronically.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     PAGE: CALCULATORS
-     =================================================== -->
-<div class="page" id="page-calculator">
-  <div class="section">
-    <div class="container">
-      <div style="max-width:780px;margin:0 auto;">
-        <div class="section-tag"><i class="fas fa-calculator"></i> Free Tools</div>
-        <h2 class="section-title">Tax <em>Calculators</em></h2>
-        <p class="section-sub" style="margin-bottom:2.5rem;">Quick, accurate estimates. For detailed computation and planning, consult us directly.</p>
-
-        <div class="calc-tabs">
-          <button class="calc-tab active" onclick="switchCalc('gst')">GST Calculator</button>
-          <button class="calc-tab" onclick="switchCalc('it')">Income Tax (FY 2024-25)</button>
-          <button class="calc-tab" onclick="switchCalc('pf')">PF Calculator</button>
-          <button class="calc-tab" onclick="switchCalc('emi')">EMI Calculator</button>
-        </div>
-
-        <!-- GST Calc -->
-        <div class="calc-panel active calc-box" id="calc-gst">
-          <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;color:var(--text);">GST Calculator</h3>
-          <div class="field-group">
-            <div class="field-label">Enter Amount (₹)</div>
-            <input class="field-input" type="number" id="gst-amount" placeholder="e.g. 10000" oninput="calcGST()">
-          </div>
-          <div class="field-group">
-            <div class="field-label">GST Rate</div>
-            <select class="field-select" id="gst-rate" onchange="calcGST()">
-              <option value="5">5%</option>
-              <option value="12">12%</option>
-              <option value="18" selected>18%</option>
-              <option value="28">28%</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <div class="field-label">Calculation Type</div>
-            <select class="field-select" id="gst-type" onchange="calcGST()">
-              <option value="exclusive">Amount is Exclusive of GST (Add GST)</option>
-              <option value="inclusive">Amount is Inclusive of GST (Extract GST)</option>
-            </select>
-          </div>
-          <div class="calc-result" id="gst-result" style="display:none;">
-            <div class="result-row"><span class="lbl">Base Amount</span><span class="val" id="r-base">—</span></div>
-            <div class="result-row"><span class="lbl">CGST</span><span class="val" id="r-cgst">—</span></div>
-            <div class="result-row"><span class="lbl">SGST</span><span class="val" id="r-sgst">—</span></div>
-            <div class="result-row"><span class="lbl">Total GST</span><span class="val" id="r-totalgst">—</span></div>
-            <div class="result-row"><span class="lbl">Total Amount</span><span class="val" id="r-total">—</span></div>
-          </div>
-        </div>
-
-        <!-- IT Calc -->
-        <div class="calc-panel calc-box" id="calc-it">
-          <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;color:var(--text);">Income Tax Calculator — FY 2024-25</h3>
-          <div class="field-group">
-            <div class="field-label">Gross Annual Income (₹)</div>
-            <input class="field-input" type="number" id="it-income" placeholder="e.g. 1200000" oninput="calcIT()">
-          </div>
-          <div class="field-group">
-            <div class="field-label">Tax Regime</div>
-            <select class="field-select" id="it-regime" onchange="calcIT()">
-              <option value="new">New Tax Regime (Default)</option>
-              <option value="old">Old Tax Regime</option>
-            </select>
-          </div>
-          <div class="field-group" id="it-deductions-group" style="display:none;">
-            <div class="field-label">Total Deductions (80C, 80D, HRA, etc.) (₹)</div>
-            <input class="field-input" type="number" id="it-deductions" placeholder="e.g. 150000" oninput="calcIT()">
-          </div>
-          <div class="field-group">
-            <div class="field-label">Age Group</div>
-            <select class="field-select" id="it-age" onchange="calcIT()">
-              <option value="below60">Below 60 years</option>
-              <option value="60to80">60 – 80 years (Senior Citizen)</option>
-              <option value="above80">Above 80 years (Super Senior)</option>
-            </select>
-          </div>
-          <div class="calc-result" id="it-result" style="display:none;">
-            <div class="result-row"><span class="lbl">Gross Income</span><span class="val" id="it-r-gross">—</span></div>
-            <div class="result-row"><span class="lbl">Taxable Income</span><span class="val" id="it-r-taxable">—</span></div>
-            <div class="result-row"><span class="lbl">Income Tax</span><span class="val" id="it-r-tax">—</span></div>
-            <div class="result-row"><span class="lbl">Health & Education Cess (4%)</span><span class="val" id="it-r-cess">—</span></div>
-            <div class="result-row"><span class="lbl">Total Tax Liability</span><span class="val" id="it-r-total">—</span></div>
-          </div>
-        </div>
-
-        <!-- PF Calc -->
-        <div class="calc-panel calc-box" id="calc-pf">
-          <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;color:var(--text);">PF Contribution Calculator</h3>
-          <div class="field-group">
-            <div class="field-label">Basic Salary + DA (₹/month)</div>
-            <input class="field-input" type="number" id="pf-salary" placeholder="e.g. 25000" oninput="calcPF()">
-          </div>
-          <div class="calc-result" id="pf-result" style="display:none;">
-            <div class="result-row"><span class="lbl">Employee PF (12%)</span><span class="val" id="pf-r-emp">—</span></div>
-            <div class="result-row"><span class="lbl">Employer PF (3.67%)</span><span class="val" id="pf-r-emplerp">—</span></div>
-            <div class="result-row"><span class="lbl">Employer EPS (8.33%)</span><span class="val" id="pf-r-eps">—</span></div>
-            <div class="result-row"><span class="lbl">Total Monthly PF</span><span class="val" id="pf-r-total">—</span></div>
-          </div>
-        </div>
-
-        <!-- EMI Calc -->
-        <div class="calc-panel calc-box" id="calc-emi">
-          <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:600;margin-bottom:1.5rem;color:var(--text);">EMI / Loan Calculator</h3>
-          <div class="field-group">
-            <div class="field-label">Loan Amount (₹)</div>
-            <input class="field-input" type="number" id="emi-amt" placeholder="e.g. 500000" oninput="calcEMI()">
-          </div>
-          <div class="field-group">
-            <div class="field-label">Annual Interest Rate (%)</div>
-            <input class="field-input" type="number" id="emi-rate" placeholder="e.g. 8.5" oninput="calcEMI()">
-          </div>
-          <div class="field-group">
-            <div class="field-label">Tenure (Months)</div>
-            <input class="field-input" type="number" id="emi-tenure" placeholder="e.g. 60" oninput="calcEMI()">
-          </div>
-          <div class="calc-result" id="emi-result" style="display:none;">
-            <div class="result-row"><span class="lbl">Monthly EMI</span><span class="val" id="emi-r-emi">—</span></div>
-            <div class="result-row"><span class="lbl">Total Amount Payable</span><span class="val" id="emi-r-total">—</span></div>
-            <div class="result-row"><span class="lbl">Total Interest Payable</span><span class="val" id="emi-r-interest">—</span></div>
-          </div>
-        </div>
-
-        <p style="margin-top:1.5rem;font-size:.82rem;color:var(--text3);">* These calculators provide estimates only. For exact computation, please consult Prince Gupta directly.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     PAGE: BLOG / RESOURCES
-     =================================================== -->
-<div class="page" id="page-blog">
-  <div class="section">
-    <div class="container">
-      <div style="text-align:center;max-width:640px;margin:0 auto 4rem;">
-        <div class="section-tag"><i class="fas fa-newspaper"></i> Knowledge Hub</div>
-        <h2 class="section-title">Tax Tips & <em>Resources</em></h2>
-        <p class="section-sub" style="margin:0 auto;text-align:center;">Stay updated with the latest in GST, Income Tax, and compliance — explained simply.</p>
-      </div>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(212,175,55,0.03));">📊</div>
-          <div class="blog-body">
-            <div class="blog-cat">GST</div>
-            <div class="blog-title">New vs Old GST Return Filing System — What Changed in 2024</div>
-            <div class="blog-snippet">GSTN introduced key changes to return filing process. Here's what every business owner needs to know to stay compliant.</div>
-            <div class="blog-meta"><span>5 min read</span><span>GST Compliance</span></div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(90,168,226,0.1),rgba(90,168,226,0.03));">🏛️</div>
-          <div class="blog-body">
-            <div class="blog-cat">Income Tax</div>
-            <div class="blog-title">New Tax Regime vs Old Tax Regime — Which One Saves You More?</div>
-            <div class="blog-snippet">A practical comparison for salaried individuals, business owners, and senior citizens with real calculation examples.</div>
-            <div class="blog-meta"><span>7 min read</span><span>Tax Planning</span></div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(76,175,125,0.1),rgba(76,175,125,0.03));">🏢</div>
-          <div class="blog-body">
-            <div class="blog-cat">ROC Compliance</div>
-            <div class="blog-title">Annual ROC Filings Checklist for Private Limited Companies</div>
-            <div class="blog-snippet">Don't miss your compliance deadlines. Here's the complete annual filing checklist with due dates for FY 2024-25.</div>
-            <div class="blog-meta"><span>4 min read</span><span>Corporate Compliance</span></div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(212,175,55,0.03));">🛡️</div>
-          <div class="blog-body">
-            <div class="blog-cat">PF & ESI</div>
-            <div class="blog-title">PF & ESI Compliance for Small Businesses — A Complete Guide</div>
-            <div class="blog-snippet">Understanding your EPF and ESIC obligations as an employer. Thresholds, contribution rates, and filing deadlines explained.</div>
-            <div class="blog-meta"><span>6 min read</span><span>HR & Payroll</span></div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(226,90,90,0.1),rgba(226,90,90,0.03));">⚠️</div>
-          <div class="blog-body">
-            <div class="blog-cat">Tax Notices</div>
-            <div class="blog-title">Received a GST Notice? Here's What You Must Do Immediately</div>
-            <div class="blog-snippet">A step-by-step guide to responding to GST show-cause notices, demand notices, and scrutiny assessments.</div>
-            <div class="blog-meta"><span>5 min read</span><span>Legal Compliance</span></div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.02));">💰</div>
-          <div class="blog-body">
-            <div class="blog-cat">Tax Saving</div>
-            <div class="blog-title">15 Legal Tax Saving Strategies for FY 2024-25</div>
-            <div class="blog-snippet">Maximize your deductions under 80C, 80D, 80G, HRA, and more. Legally reduce your tax burden before March 31st.</div>
-            <div class="blog-meta"><span>8 min read</span><span>Tax Planning</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:3rem;">
-        <p style="color:var(--text2);margin-bottom:1.5rem;">Have a specific tax question? Get a personalised answer.</p>
-        <a href="https://wa.me/919311661381" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===================================================
-     PAGE: TESTIMONIALS
-     =================================================== -->
-<div class="page" id="page-testimonials">
-  <div class="section">
-    <div class="container">
-      <div style="text-align:center;max-width:640px;margin:0 auto 4rem;">
-        <div class="section-tag"><i class="fas fa-heart"></i> Client Reviews</div>
-        <h2 class="section-title">Trusted by <em>Businesses</em> Across Delhi</h2>
-        <p class="section-sub" style="margin:0 auto;text-align:center;">Real results, real clients, real savings.</p>
-      </div>
       <div class="testi-grid">
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"Prince Gupta has been handling our GST and TDS for 3 years. Always on time, always accurate. We haven't had a single penalty since engaging him."</div>
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Prince handled our GST registration and monthly filings flawlessly. He proactively caught a reconciliation error that would have cost us ₹40,000. Truly an expert.</p>
           <div class="testi-author">
-            <div class="testi-avatar">RK</div>
-            <div><div class="testi-name">Rajesh Kumar</div><div class="testi-role">Director, RK Trading Co., Delhi</div></div>
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-name">Rahul Sharma</div>
+              <div class="testi-role">Director, Sharma Traders Pvt. Ltd.</div>
+            </div>
           </div>
         </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"We saved ₹80,000 in taxes this year thanks to Prince's expert tax planning advice. He knew exactly which deductions applied to our startup."</div>
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">As a freelancer, taxes felt overwhelming. Prince simplified my ITR filing, helped me claim deductions I didn't know existed, and saved me nearly ₹25,000 in taxes.</p>
           <div class="testi-author">
-            <div class="testi-avatar">SM</div>
-            <div><div class="testi-name">Sunita Mehta</div><div class="testi-role">Co-founder, Mehta Retail Solutions</div></div>
+            <div class="testi-avatar">P</div>
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-name">Priya Kapoor</div>
+              <div class="testi-role">Independent Consultant, Delhi</div>
+            </div>
           </div>
         </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"Our company incorporation was done in just 10 days. Prince handled everything from name approval to PAN/TAN. Highly recommend for ROC matters."</div>
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">He incorporated our company, handled all ROC filings, and keeps us compliant without us lifting a finger. Prince is the backbone of our financial operations.</p>
           <div class="testi-author">
-            <div class="testi-avatar">AV</div>
-            <div><div class="testi-name">Amit Verma</div><div class="testi-role">CEO, TechVenture Pvt. Ltd.</div></div>
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-name">Amit Verma</div>
+              <div class="testi-role">Co-Founder, TechFlow Solutions</div>
+            </div>
           </div>
         </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"I received a GST notice and was very stressed. Prince handled the entire reply professionally. The matter was resolved without any penalty."</div>
-          <div class="testi-author">
-            <div class="testi-avatar">PS</div>
-            <div><div class="testi-name">Priya Sharma</div><div class="testi-role">Proprietor, Priya Boutique</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-left reveal">
+        <h2>Ready to Make<br><em>Compliance</em><br>Effortless?</h2>
+        <p style="margin-top:16px;">Book a free 30-minute consultation. No obligations. No jargon — just clarity.</p>
+      </div>
+      <div class="cta-actions reveal reveal-delay-2">
+        <a class="btn-whatsapp" href="https://wa.me/919311661381" target="_blank">
+          <i class="fab fa-whatsapp fa-lg"></i> WhatsApp for Free Consult
+        </a>
+        <a class="btn-phone" href="tel:+919311661381">
+          <i class="fas fa-phone"></i> +91 93116 61381
+        </a>
+        <a class="btn-primary" onclick="showPage('contact')" style="display:inline-flex;">
+          <i class="fas fa-envelope"></i> Send a Message
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <div class="brand-mark">PG</div>
+            PG Consultancy
+          </div>
+          <p>Professional tax and compliance services in New Delhi. CA Finalist-led, deadline-driven, and client-first in every engagement.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:princegupta09work@gmail.com"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"As a salaried person, I never knew how much tax I was overpaying. After consulting Prince, I got a ₹42,000 refund for last year's ITR. Exceptional."</div>
-          <div class="testi-author">
-            <div class="testi-avatar">VG</div>
-            <div><div class="testi-name">Vikas Gupta</div><div class="testi-role">Senior Manager, MNC Professional</div></div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a onclick="showPage('services')">GST Filing</a></li>
+            <li><a onclick="showPage('services')">Income Tax</a></li>
+            <li><a onclick="showPage('services')">ROC Compliance</a></li>
+            <li><a onclick="showPage('services')">Bookkeeping</a></li>
+            <li><a onclick="showPage('services')">E-Way Bill</a></li>
+            <li><a onclick="showPage('services')">PF & ESI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('about')">About Prince</a></li>
+            <li><a onclick="showPage('contact')">Contact Us</a></li>
+            <li><a href="https://www.linkedin.com/in/i-princegupta/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919311661381">+91 93116 61381</a></li>
+            <li><a href="mailto:princegupta09work@gmail.com">princegupta09work@gmail.com</a></li>
+            <li><a>New Delhi, India</a></li>
+            <li><a>Mon–Sat, 9 AM – 6 PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PG Consultancy | Prince Gupta. All rights reserved.</p>
+        <div class="footer-legal">
+          <a>Privacy Policy</a>
+          <a>Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ SERVICES PAGE ═══════════════ -->
+<div id="page-services" class="page">
+  <div class="page-hero">
+    <span class="section-tag">Our Expertise</span>
+    <h1>Comprehensive <em>Tax &</em><br>Compliance Services</h1>
+    <p>Six core services, delivered personally by Prince Gupta. Every deadline met. Every rupee optimised.</p>
+  </div>
+
+  <div class="services-full">
+    <div class="services-full-inner">
+
+      <!-- GST -->
+      <div class="service-full-card reveal">
+        <div class="sfc-left">
+          <div>
+            <div class="big-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <h2>GST Services</h2>
+            <p>Complete GST lifecycle management — from registration to return filing, reconciliation, and notice handling.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">GSTR-1</span><span class="tag">GSTR-3B</span><span class="tag">GSTR-9</span>
+            <span class="tag">E-Invoice</span><span class="tag">Notices</span>
           </div>
         </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"Our bookkeeping was a mess before Prince took over. Now we have clean monthly reports, and our CA audit goes smoothly every year. Worth every rupee."</div>
-          <div class="testi-author">
-            <div class="testi-avatar">NJ</div>
-            <div><div class="testi-name">Neha Jain</div><div class="testi-role">Owner, Jain Exports</div></div>
+        <div class="sfc-right">
+          <h3>What's Included</h3>
+          <div class="benefit-list">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>GST Registration</strong><span>New registration for businesses crossing the threshold — handled end-to-end within 7 working days.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Monthly / Quarterly Returns</strong><span>GSTR-1, GSTR-3B, and CMP-08 filed accurately before every due date, every month.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Annual Return (GSTR-9 & 9C)</strong><span>Comprehensive annual return preparation with reconciliation statements to avoid demand notices.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>ITC Reconciliation</strong><span>GSTR-2A / 2B vs purchase register reconciliation to maximise your Input Tax Credit claims.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Notice & Scrutiny Handling</strong><span>Professional representation and reply drafting for GST department queries and audit notices.</span></div></div>
+          </div>
+          <div class="sfc-cta">
+            <a href="https://wa.me/919311661381" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Started</a>
           </div>
         </div>
       </div>
 
-      <!-- Stats -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem;">
-        <div style="text-align:center;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2.5rem 1rem;">
-          <div style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--gold);">200+</div>
-          <div style="font-size:.85rem;color:var(--text2);margin-top:.5rem;">Happy Clients</div>
+      <!-- INCOME TAX -->
+      <div class="service-full-card reveal">
+        <div class="sfc-left">
+          <div>
+            <div class="big-icon"><i class="fas fa-landmark"></i></div>
+            <h2>Income Tax</h2>
+            <p>Strategic tax planning and accurate filing for individuals, HUFs, firms, and private limited companies.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">ITR-1 to ITR-6</span><span class="tag">Tax Planning</span><span class="tag">Form 16</span>
+            <span class="tag">TDS Returns</span><span class="tag">Advance Tax</span>
+          </div>
         </div>
-        <div style="text-align:center;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2.5rem 1rem;">
-          <div style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--gold);">4.9★</div>
-          <div style="font-size:.85rem;color:var(--text2);margin-top:.5rem;">Average Rating</div>
+        <div class="sfc-right">
+          <h3>What's Included</h3>
+          <div class="benefit-list">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>ITR Filing (All Categories)</strong><span>ITR-1 through ITR-6 for salaried individuals, freelancers, business owners, and corporates.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Tax Optimisation Planning</strong><span>Proactive planning to legally maximise deductions under 80C, 80D, HRA, LTA, and business expenses.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>TDS Return Filing</strong><span>Quarterly TDS returns (24Q, 26Q, 27Q) with Form 16/16A generation for your employees/vendors.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Advance Tax Computation</strong><span>Quarterly advance tax calculation to avoid interest under sections 234B and 234C.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Income Tax Notice Response</strong><span>Expert drafting of replies for scrutiny, defective return, and demand notices.</span></div></div>
+          </div>
+          <div class="sfc-cta">
+            <a href="https://wa.me/919311661381" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Started</a>
+          </div>
         </div>
-        <div style="text-align:center;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2.5rem 1rem;">
-          <div style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--gold);">5+</div>
-          <div style="font-size:.85rem;color:var(--text2);margin-top:.5rem;">Years Experience</div>
+      </div>
+
+      <!-- ROC -->
+      <div class="service-full-card reveal">
+        <div class="sfc-left">
+          <div>
+            <div class="big-icon"><i class="fas fa-building"></i></div>
+            <h2>ROC / MCA Compliance</h2>
+            <p>From company incorporation to ongoing annual compliance — keeping your entity legally sound.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">MCA Portal</span><span class="tag">AOC-4</span><span class="tag">MGT-7</span>
+            <span class="tag">DIR-3 KYC</span><span class="tag">Incorporation</span>
+          </div>
         </div>
-        <div style="text-align:center;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2.5rem 1rem;">
-          <div style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--gold);">₹0</div>
-          <div style="font-size:.85rem;color:var(--text2);margin-top:.5rem;">Penalties Incurred</div>
+        <div class="sfc-right">
+          <h3>What's Included</h3>
+          <div class="benefit-list">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Company Incorporation</strong><span>Private Limited, OPC, LLP, and Partnership firm registration — DIN, DSC, and name approval included.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Annual ROC Filings</strong><span>AOC-4 (Financial Statements) and MGT-7 (Annual Return) filed accurately before the MCA deadline.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Board Meetings & Resolutions</strong><span>Drafting of board resolutions, meeting minutes, and statutory registers maintenance.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Director KYC (DIR-3)</strong><span>Annual Director KYC filing to avoid deactivation of DIN and associated penalties.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Statutory Audit Support</strong><span>Preparation of audit-ready financial statements and coordination with statutory auditors.</span></div></div>
+          </div>
+          <div class="sfc-cta">
+            <a href="https://wa.me/919311661381" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOOKKEEPING -->
+      <div class="service-full-card reveal">
+        <div class="sfc-left">
+          <div>
+            <div class="big-icon"><i class="fas fa-book-open"></i></div>
+            <h2>Bookkeeping</h2>
+            <p>Clean, accurate books are the foundation of every good financial decision. We keep yours spotless.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Tally / Zoho</span><span class="tag">P&L Statements</span>
+            <span class="tag">Bank Recon</span><span class="tag">MIS Reports</span>
+          </div>
+        </div>
+        <div class="sfc-right">
+          <h3>What's Included</h3>
+          <div class="benefit-list">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Day-to-Day Accounting</strong><span>Recording all transactions — sales, purchases, payments, and receipts — in Tally or your preferred software.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Bank Reconciliation</strong><span>Monthly reconciliation of bank statements against books to catch discrepancies early.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Financial Statements</strong><span>Monthly P&L, Balance Sheet, and Cash Flow statements ready for stakeholders or lenders.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Payroll Processing</strong><span>Monthly salary computation, payslips, and payroll journal entries including PF/ESI deductions.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>MIS Dashboards</strong><span>Monthly management reports with KPIs, cost analysis, and business insights to aid decision-making.</span></div></div>
+          </div>
+          <div class="sfc-cta">
+            <a href="https://wa.me/919311661381" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-WAY BILL -->
+      <div class="service-full-card reveal">
+        <div class="sfc-left">
+          <div>
+            <div class="big-icon"><i class="fas fa-truck"></i></div>
+            <h2>E-Way Bill Services</h2>
+            <p>Fast, accurate e-way bill generation to keep your goods moving without GST department hurdles.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Generation</span><span class="tag">Cancellation</span>
+            <span class="tag">Part-B Update</span><span class="tag">Bulk Upload</span>
+          </div>
+        </div>
+        <div class="sfc-right">
+          <h3>What's Included</h3>
+          <div class="benefit-list">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>E-Way Bill Generation</strong><span>Quick generation for inter-state and intra-state movement of goods above ₹50,000 in value.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Part-B Transporter Updates</strong><span>Real-time updates to vehicle number and transporter ID as shipments progress.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>E-Way Bill Cancellation</strong><span>Timely cancellation within the 24-hour window when shipments are cancelled or returned.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Consolidated EWB</strong><span>Generation of consolidated e-way bills for multiple consignments on a single vehicle.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Bulk Processing</strong><span>High-volume e-way bill generation through JSON upload for businesses with heavy shipment activity.</span></div></div>
+          </div>
+          <div class="sfc-cta">
+            <a href="https://wa.me/919311661381" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PF-ESI -->
+      <div class="service-full-card reveal">
+        <div class="sfc-left">
+          <div>
+            <div class="big-icon"><i class="fas fa-users"></i></div>
+            <h2>PF & ESI Compliance</h2>
+            <p>Protect your employees and stay compliant with Provident Fund and Employee State Insurance regulations.</p>
+          </div>
+          <div class="tags">
+            <span class="tag">EPFO</span><span class="tag">ESIC</span>
+            <span class="tag">Monthly Challan</span><span class="tag">Annual Returns</span>
+          </div>
+        </div>
+        <div class="sfc-right">
+          <h3>What's Included</h3>
+          <div class="benefit-list">
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>PF & ESI Registration</strong><span>New establishment registration with EPFO and ESIC, including UAN generation for employees.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Monthly Challan Filing</strong><span>ECR file preparation and monthly challan submission for PF contributions before the 15th of every month.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>ESI Return Filing</strong><span>Half-yearly ESI returns with accurate wage data and contribution computation for all employees.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Employee Additions / Exits</strong><span>UAN activation, member profile updates, and seamless PF settlement assistance for exiting employees.</span></div></div>
+            <div class="benefit-item"><i class="fas fa-check-circle"></i><div><strong>Inspection Readiness</strong><span>Maintenance of statutory registers and records to pass PF/ESI department inspections without issues.</span></div></div>
+          </div>
+          <div class="sfc-cta">
+            <a href="https://wa.me/919311661381" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <div class="brand-mark">PG</div>
+            PG Consultancy
+          </div>
+          <p>Professional tax and compliance services in New Delhi. CA Finalist-led, deadline-driven, and client-first.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:princegupta09work@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a onclick="showPage('services')">GST Filing</a></li>
+            <li><a onclick="showPage('services')">Income Tax</a></li>
+            <li><a onclick="showPage('services')">ROC Compliance</a></li>
+            <li><a onclick="showPage('services')">Bookkeeping</a></li>
+            <li><a onclick="showPage('services')">E-Way Bill</a></li>
+            <li><a onclick="showPage('services')">PF & ESI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('about')">About Prince</a></li>
+            <li><a onclick="showPage('contact')">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919311661381">+91 93116 61381</a></li>
+            <li><a href="mailto:princegupta09work@gmail.com">princegupta09work@gmail.com</a></li>
+            <li><a>New Delhi, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PG Consultancy | Prince Gupta. All rights reserved.</p>
+        <div class="footer-legal">
+          <a>Privacy Policy</a>
+          <a>Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ ABOUT PAGE ═══════════════ -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <span class="section-tag">The Person Behind the Practice</span>
+    <h1>Meet <em>Prince Gupta</em></h1>
+    <p>CA Finalist, tax strategist, and the person who answers your WhatsApp — not a junior assistant.</p>
+  </div>
+
+  <div class="about-section">
+    <div class="about-inner">
+      <div class="about-left">
+        <div class="about-portrait">
+          <span class="portrait-placeholder">PG</span>
+          <div class="portrait-badge">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="badge-text">
+              <strong>CA Finalist — ICAI</strong>
+              <span>Institute of Chartered Accountants of India</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-stat-row">
+          <div class="about-stat"><div class="num">200+</div><div class="lbl">Clients Served</div></div>
+          <div class="about-stat"><div class="num">500+</div><div class="lbl">Returns Filed</div></div>
+          <div class="about-stat"><div class="num">5+</div><div class="lbl">Years Active</div></div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <span class="section-tag">My Story</span>
+        <h2 class="section-title">Built on <em>Trust</em>,<br>Driven by Results.</h2>
+        <p class="about-bio">I'm Prince Gupta — a CA Finalist based in New Delhi with a singular mission: to make tax compliance simple, stress-free, and strategic for every client I serve. I started this practice with a conviction that small businesses and individuals deserve the same quality of advice that large corporations receive.</p>
+        <p class="about-bio" style="margin-top:16px;">Over the past 5+ years, I've built a track record of zero late penalties, proactive tax savings, and relationships where clients call me their CFO — even without the title.</p>
+
+        <div class="skills-grid">
+          <div class="skill-pill"><i class="fas fa-file-invoice-dollar"></i> GST & Indirect Tax</div>
+          <div class="skill-pill"><i class="fas fa-landmark"></i> Income Tax Planning</div>
+          <div class="skill-pill"><i class="fas fa-building"></i> Corporate Law (MCA)</div>
+          <div class="skill-pill"><i class="fas fa-book-open"></i> Financial Reporting</div>
+          <div class="skill-pill"><i class="fas fa-users"></i> Labour Compliance</div>
+          <div class="skill-pill"><i class="fas fa-chart-line"></i> Business Advisory</div>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">Present</div>
+            <h4>CA Final — Pursuing (ICAI)</h4>
+            <p>Completing the final stage of Chartered Accountancy certification, covering Advanced Accounting, Auditing, Taxation, and Financial Reporting.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2020 – Present</div>
+            <h4>Independent Tax & Compliance Consultant</h4>
+            <p>Serving 200+ clients across Delhi NCR — from solo freelancers to private limited companies — across all 6 compliance verticals.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2019</div>
+            <h4>CA Intermediate — Cleared (ICAI)</h4>
+            <p>Successfully cleared both groups of CA Intermediate, covering Corporate Law, Taxation, Cost Accounting, and Auditing.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2018</div>
+            <h4>Articleship Training</h4>
+            <p>Completed 3-year mandatory articleship under a senior Chartered Accountant, gaining hands-on experience in audits, tax filings, and MCA compliance.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- ===================================================
-     PAGE: CONTACT
-     =================================================== -->
-<div class="page" id="page-contact">
-  <div class="section">
-    <div class="container">
-      <div style="text-align:center;max-width:640px;margin:0 auto 4rem;">
-        <div class="section-tag"><i class="fas fa-paper-plane"></i> Get In Touch</div>
-        <h2 class="section-title">Start Your <em>Free Consultation</em></h2>
-        <p class="section-sub" style="margin:0 auto;text-align:center;">Ready to simplify your taxes? Reach out today — response within 2 hours.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info-col">
-          <a href="tel:+919311661381" class="contact-card" style="display:flex;text-decoration:none;">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div>
-              <div class="contact-card-label">Phone</div>
-              <div class="contact-card-val">+91 93116 61381</div>
-              <div class="contact-card-sub">Call or WhatsApp anytime</div>
-            </div>
-          </a>
-          <a href="mailto:princegupta09work@gmail.com" class="contact-card" style="display:flex;text-decoration:none;">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <div class="contact-card-label">Email</div>
-              <div class="contact-card-val">princegupta09work@gmail.com</div>
-              <div class="contact-card-sub">Reply within 4 hours</div>
-            </div>
-          </a>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <div class="contact-card-label">Location</div>
-              <div class="contact-card-val">New Delhi, India</div>
-              <div class="contact-card-sub">Serving clients pan-India</div>
-            </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <div class="brand-mark">PG</div>
+            PG Consultancy
           </div>
-          <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank" class="contact-card" style="display:flex;text-decoration:none;">
-            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-            <div>
-              <div class="contact-card-label">LinkedIn</div>
-              <div class="contact-card-val">linkedin.com/in/i-princegupta</div>
-              <div class="contact-card-sub">Connect professionally</div>
-            </div>
-          </a>
-          <div class="hours-box">
-            <div class="hours-title">🕐 Business Hours</div>
-            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">9:00 AM – 6:00 PM</span></div>
-            <div class="hours-row"><span class="day">Saturday</span><span class="time">10:00 AM – 4:00 PM</span></div>
-            <div class="hours-row"><span class="day">Sunday</span><span class="time">By Appointment</span></div>
+          <p>Professional tax and compliance services in New Delhi. CA Finalist-led, deadline-driven, and client-first.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:princegupta09work@gmail.com"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a onclick="showPage('services')">GST Filing</a></li>
+            <li><a onclick="showPage('services')">Income Tax</a></li>
+            <li><a onclick="showPage('services')">ROC Compliance</a></li>
+            <li><a onclick="showPage('services')">Bookkeeping</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('about')">About</a></li>
+            <li><a onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919311661381">+91 93116 61381</a></li>
+            <li><a href="mailto:princegupta09work@gmail.com">princegupta09work@gmail.com</a></li>
+            <li><a>New Delhi, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PG Consultancy | Prince Gupta. All rights reserved.</p>
+        <div class="footer-legal">
+          <a>Privacy Policy</a>
+          <a>Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
 
-        <div class="contact-form-wrap">
-          <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--text);margin-bottom:.5rem;">Send a Message</h3>
-          <p style="color:var(--text2);font-size:.9rem;margin-bottom:2rem;">Free consultation, no obligations.</p>
+<!-- ═══════════════ CONTACT PAGE ═══════════════ -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <span class="section-tag">Let's Talk</span>
+    <h1>Get Your <em>Free</em><br>Consultation</h1>
+    <p>No long waits. No corporate runaround. Reach Prince directly and get clarity within 24 hours.</p>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">Reach Out</span>
+        <h2 class="section-title">We're Just a<br><em>Message Away</em></h2>
+        <p>Whether you're a startup figuring out GST registration, or an established business that needs comprehensive compliance management — start with a free conversation.</p>
+
+        <div class="contact-methods">
+          <a href="https://wa.me/919311661381" target="_blank" class="contact-method">
+            <div class="contact-method-icon cm-green"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp (Fastest)</h4>
+              <p>+91 93116 61381 — Typical reply within 2 hours</p>
+            </div>
+            <i class="fas fa-arrow-right method-action"></i>
+          </a>
+          <a href="tel:+919311661381" class="contact-method">
+            <div class="contact-method-icon cm-navy"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Call Us Directly</h4>
+              <p>+91 93116 61381 — Mon to Sat, 9 AM – 6 PM</p>
+            </div>
+            <i class="fas fa-arrow-right method-action"></i>
+          </a>
+          <a href="mailto:princegupta09work@gmail.com" class="contact-method">
+            <div class="contact-method-icon cm-blue"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>princegupta09work@gmail.com</p>
+            </div>
+            <i class="fas fa-arrow-right method-action"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank" class="contact-method">
+            <div class="contact-method-icon cm-blue"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p>Connect professionally at linkedin.com/in/i-princegupta</p>
+            </div>
+            <i class="fas fa-arrow-right method-action"></i>
+          </a>
+        </div>
+
+        <div class="hours-card">
+          <h4>Office Hours</h4>
+          <div class="hours-row"><span>Monday – Friday</span><strong>9:00 AM – 6:00 PM</strong></div>
+          <div class="hours-row"><span>Saturday</span><strong>10:00 AM – 4:00 PM</strong></div>
+          <div class="hours-row"><span>Sunday</span><strong>By Appointment</strong></div>
+          <div class="hours-row"><span>Location</span><strong>New Delhi, India</strong></div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal">
+        <h3>Send a Message</h3>
+        <p>Fill in the details and Prince will personally get back to you within 24 hours.</p>
+
+        <form onsubmit="handleFormSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Full Name *</label>
-              <input class="form-input" type="text" id="cf-name" placeholder="Your name" required>
+              <label>First Name</label>
+              <input type="text" placeholder="Rahul" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Phone Number *</label>
-              <input class="form-input" type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX" required>
+              <label>Last Name</label>
+              <input type="text" placeholder="Sharma" required>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input class="form-input" type="email" id="cf-email" placeholder="you@example.com">
+            <label>Email Address</label>
+            <input type="email" placeholder="rahul@company.com" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Service Required</label>
-            <select class="form-select" id="cf-service">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
               <option value="">— Select a service —</option>
-              <option>GST Registration & Filing</option>
-              <option>Income Tax Return (ITR)</option>
+              <option>GST Registration / Filing</option>
+              <option>Income Tax / ITR Filing</option>
               <option>ROC / Company Compliance</option>
-              <option>PF & ESI Compliance</option>
               <option>Bookkeeping & Accounting</option>
               <option>E-Way Bill Management</option>
-              <option>Tax Notice Handling</option>
-              <option>Business Registration</option>
-              <option>Other / General Query</option>
+              <option>PF & ESI Compliance</option>
+              <option>Multiple / Not Sure Yet</option>
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea" id="cf-message" placeholder="Briefly describe your requirement..."></textarea>
+            <label>Your Message</label>
+            <textarea placeholder="Briefly describe your requirement — size of business, current compliance status, urgency, etc."></textarea>
           </div>
-          <button class="btn-gold" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;" onclick="submitForm()">
+          <button type="submit" class="form-submit">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
-          <div class="form-success" id="form-success">
-            <i class="fas fa-check-circle" style="font-size:2rem;color:var(--green);display:block;margin-bottom:.5rem;"></i>
-            Message sent! Prince will contact you within 2 hours.
-          </div>
-          <p style="margin-top:1rem;font-size:.8rem;color:var(--text3);text-align:center;">
-            Or reach directly: <a href="https://wa.me/919311661381" target="_blank" style="color:var(--green);font-weight:600;">WhatsApp +91 93116 61381</a>
-          </p>
-        </div>
+        </form>
       </div>
     </div>
   </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <div class="brand-mark">PG</div>
+            PG Consultancy
+          </div>
+          <p>Professional tax and compliance services in New Delhi. CA Finalist-led, deadline-driven, and client-first.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919311661381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:princegupta09work@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a onclick="showPage('services')">GST Filing</a></li>
+            <li><a onclick="showPage('services')">Income Tax</a></li>
+            <li><a onclick="showPage('services')">ROC Compliance</a></li>
+            <li><a onclick="showPage('services')">Bookkeeping</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('about')">About</a></li>
+            <li><a onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919311661381">+91 93116 61381</a></li>
+            <li><a href="mailto:princegupta09work@gmail.com">princegupta09work@gmail.com</a></li>
+            <li><a>New Delhi, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PG Consultancy | Prince Gupta. All rights reserved.</p>
+        <div class="footer-legal">
+          <a>Privacy Policy</a>
+          <a>Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 
-</main>
+<!-- ═══════════════ WHATSAPP FAB ═══════════════ -->
+<a class="whatsapp-fab" href="https://wa.me/919311661381" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="name">Prince Gupta</div>
-        <div style="font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;">CA Finalist · Tax Consultant · New Delhi</div>
-        <div class="tagline">Your trusted partner for GST, Income Tax, ROC, PF-ESI, and all compliance needs. Simplifying taxation for 200+ businesses across India.</div>
-        <div class="footer-socials">
-          <a href="https://www.linkedin.com/in/i-princegupta/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/919311661381" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:princegupta09work@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <div class="footer-link" onclick="showPage('gst')">GST Services</div>
-        <div class="footer-link" onclick="showPage('incometax')">Income Tax</div>
-        <div class="footer-link" onclick="showPage('roc')">ROC Compliance</div>
-        <div class="footer-link" onclick="showPage('pfesi')">PF & ESI</div>
-        <div class="footer-link" onclick="showPage('bookkeeping')">Bookkeeping</div>
-        <div class="footer-link" onclick="showPage('ewaybill')">E-Way Bill</div>
-      </div>
-      <div>
-        <div class="footer-col-title">Quick Links</div>
-        <div class="footer-link" onclick="showPage('home')">Home</div>
-        <div class="footer-link" onclick="showPage('about')">About Me</div>
-        <div class="footer-link" onclick="showPage('calculator')">Tax Calculators</div>
-        <div class="footer-link" onclick="showPage('blog')">Resources</div>
-        <div class="footer-link" onclick="showPage('testimonials')">Reviews</div>
-        <div class="footer-link" onclick="showPage('contact')">Contact</div>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <div class="footer-link"><i class="fas fa-phone" style="color:var(--gold);margin-right:.5rem;"></i> +91 93116 61381</div>
-        <div class="footer-link"><i class="fas fa-envelope" style="color:var(--gold);margin-right:.5rem;"></i> princegupta09work@gmail.com</div>
-        <div class="footer-link"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:.5rem;"></i> New Delhi, India</div>
-        <div class="footer-link"><i class="fas fa-clock" style="color:var(--gold);margin-right:.5rem;"></i> Mon–Sat: 9AM – 6PM</div>
-        <div style="margin-top:1.5rem;">
-          <a href="https://wa.me/919311661381" target="_blank" class="btn-wa" style="font-size:.82rem;padding:.65rem 1.2rem;"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2025 Prince Gupta. CA Finalist & Tax Consultant, New Delhi.</div>
-      <div class="footer-bottom-links">
-        <a>Privacy Policy</a>
-        <a>Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
+<!-- ═══════════════ JAVASCRIPT ═══════════════ -->
 <script>
-// ============ PAGE NAVIGATION ============
-function showPage(id) {
+// ── Page Routing ──
+function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const el = document.getElementById('page-' + id);
-  if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
-  document.querySelectorAll('[data-page]').forEach(b => {
-    b.classList.toggle('active', b.dataset.page === id);
+  document.getElementById('page-' + name).classList.add('active');
+
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === name);
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  initReveal();
+}
+
+// ── Mobile Menu ──
+function toggleMobile() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── Nav Scroll Effect ──
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ── Counter Animation ──
+function animateCounters() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count);
+    const suffix = el.nextElementSibling?.classList.contains('trust-label') ? '+' : '';
+    let current = 0;
+    const step = target / 60;
+    const interval = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current) + '+';
+      if (current >= target) clearInterval(interval);
+    }, 20);
   });
 }
 
-// ============ HAMBURGER ============
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobMenu').classList.toggle('open');
-});
-function closeMob() { document.getElementById('mobMenu').classList.remove('open'); }
+// ── Scroll Reveal ──
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
 
-// ============ CURSOR ============
-const cur = document.getElementById('cur');
-const ring = document.getElementById('cur-ring');
-document.addEventListener('mousemove', e => {
-  cur.style.left = e.clientX + 'px';
-  cur.style.top = e.clientY + 'px';
-  ring.style.left = e.clientX + 'px';
-  ring.style.top = e.clientY + 'px';
-});
-document.querySelectorAll('a,button,[onclick]').forEach(el => {
-  el.addEventListener('mouseenter', () => { ring.style.width = '60px'; ring.style.height = '60px'; });
-  el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; });
-});
-
-// ============ FAQ TOGGLE ============
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const wasOpen = item.classList.contains('open');
-  item.closest('.faq-list,.container').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-// ============ CALCULATOR TABS ============
-function switchCalc(id) {
-  document.querySelectorAll('.calc-tab').forEach((t,i) => {
-    const ids = ['gst','it','pf','emi'];
-    t.classList.toggle('active', ids[i] === id);
+  document.querySelectorAll('.page.active .reveal').forEach(el => {
+    el.classList.remove('visible');
+    observer.observe(el);
   });
-  document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('calc-' + id).classList.add('active');
 }
 
-// Old/New regime toggle
-document.addEventListener('change', e => {
-  if (e.target.id === 'it-regime') {
-    document.getElementById('it-deductions-group').style.display = e.target.value === 'old' ? 'block' : 'none';
-    calcIT();
-  }
+// ── Form Submit ──
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.innerHTML = '<i class="fas fa-check"></i> Message Sent! Prince will reach out soon.';
+  btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.style.background = '';
+    btn.style.color = '';
+    e.target.reset();
+  }, 4000);
+}
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', () => {
+  animateCounters();
+  initReveal();
 });
-
-// ============ GST CALC ============
-function fmt(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
-function calcGST() {
-  const amt = parseFloat(document.getElementById('gst-amount').value);
-  const rate = parseFloat(document.getElementById('gst-rate').value);
-  const type = document.getElementById('gst-type').value;
-  const res = document.getElementById('gst-result');
-  if (!amt || isNaN(amt)) { res.style.display = 'none'; return; }
-  let base, gst;
-  if (type === 'exclusive') { base = amt; gst = amt * rate / 100; }
-  else { base = amt * 100 / (100 + rate); gst = amt - base; }
-  document.getElementById('r-base').textContent = fmt(base);
-  document.getElementById('r-cgst').textContent = fmt(gst / 2);
-  document.getElementById('r-sgst').textContent = fmt(gst / 2);
-  document.getElementById('r-totalgst').textContent = fmt(gst);
-  document.getElementById('r-total').textContent = fmt(base + gst);
-  res.style.display = 'block';
-}
-
-// ============ INCOME TAX CALC ============
-function calcIT() {
-  const gross = parseFloat(document.getElementById('it-income').value);
-  const regime = document.getElementById('it-regime').value;
-  const age = document.getElementById('it-age').value;
-  const dedRaw = parseFloat(document.getElementById('it-deductions').value) || 0;
-  const res = document.getElementById('it-result');
-  if (!gross || isNaN(gross)) { res.style.display = 'none'; return; }
-
-  let taxable = gross;
-  let stdDed = 50000;
-
-  if (regime === 'old') {
-    taxable = Math.max(0, gross - stdDed - dedRaw);
-  } else {
-    taxable = Math.max(0, gross - stdDed);
-  }
-
-  let exemption = age === 'below60' ? 250000 : age === '60to80' ? 300000 : 500000;
-  if (regime === 'new') exemption = 300000; // new regime basic
-
-  let tax = 0;
-  if (regime === 'new') {
-    const slabs = [[300000,0],[400000,.05],[300000,.10],[300000,.15],[300000,.20],[Infinity,.30]];
-    let rem = Math.max(0, taxable - 300000);
-    for (let [limit, r] of slabs.slice(1)) {
-      let chunk = Math.min(rem, limit);
-      tax += chunk * r;
-      rem -= chunk;
-      if (rem <= 0) break;
-    }
-    if (taxable <= 700000) tax = 0; // rebate 87A
-  } else {
-    const base = exemption;
-    if (taxable > base) {
-      let rem = taxable - base;
-      const slabs = [[250000,.05],[500000,.20],[Infinity,.30]];
-      for (let [limit, r] of slabs) {
-        let chunk = Math.min(rem, limit);
-        tax += chunk * r;
-        rem -= chunk;
-        if (rem <= 0) break;
-      }
-    }
-    if (taxable <= 500000) tax = 0; // rebate 87A old regime
-  }
-  const cess = tax * 0.04;
-  document.getElementById('it-r-gross').textContent = fmt(gross);
-  document.getElementById('it-r-taxable').textContent = fmt(taxable);
-  document.getElementById('it-r-tax').textContent = fmt(tax);
-  document.getElementById('it-r-cess').textContent = fmt(cess);
-  document.getElementById('it-r-total').textContent = fmt(tax + cess);
-  res.style.display = 'block';
-}
-
-// ============ PF CALC ============
-function calcPF() {
-  const sal = parseFloat(document.getElementById('pf-salary').value);
-  const res = document.getElementById('pf-result');
-  if (!sal || isNaN(sal)) { res.style.display = 'none'; return; }
-  const cap = Math.min(sal, 15000);
-  const empPF = cap * 0.12;
-  const emplerPF = cap * 0.0367;
-  const eps = cap * 0.0833;
-  const total = empPF + emplerPF + eps;
-  document.getElementById('pf-r-emp').textContent = fmt(empPF);
-  document.getElementById('pf-r-emplerp').textContent = fmt(emplerPF);
-  document.getElementById('pf-r-eps').textContent = fmt(eps);
-  document.getElementById('pf-r-total').textContent = fmt(total);
-  res.style.display = 'block';
-}
-
-// ============ EMI CALC ============
-function calcEMI() {
-  const P = parseFloat(document.getElementById('emi-amt').value);
-  const r = parseFloat(document.getElementById('emi-rate').value) / 12 / 100;
-  const n = parseFloat(document.getElementById('emi-tenure').value);
-  const res = document.getElementById('emi-result');
-  if (!P || !r || !n || isNaN(P+r+n)) { res.style.display = 'none'; return; }
-  const emi = P * r * Math.pow(1+r,n) / (Math.pow(1+r,n) - 1);
-  const total = emi * n;
-  const interest = total - P;
-  document.getElementById('emi-r-emi').textContent = fmt(emi);
-  document.getElementById('emi-r-total').textContent = fmt(total);
-  document.getElementById('emi-r-interest').textContent = fmt(interest);
-  res.style.display = 'block';
-}
-
-// ============ CONTACT FORM ============
-function submitForm() {
-  const name = document.getElementById('cf-name').value.trim();
-  const phone = document.getElementById('cf-phone').value.trim();
-  if (!name || !phone) { alert('Please fill in Name and Phone Number.'); return; }
-  const service = document.getElementById('cf-service').value;
-  const message = document.getElementById('cf-message').value;
-  const email = document.getElementById('cf-email').value;
-  const text = `*New Enquiry from Website*%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AService: ${encodeURIComponent(service)}%0AMessage: ${encodeURIComponent(message)}`;
-  window.open(`https://wa.me/919311661381?text=${text}`, '_blank');
-  document.getElementById('form-success').style.display = 'block';
-  document.getElementById('cf-name').value = '';
-  document.getElementById('cf-phone').value = '';
-  document.getElementById('cf-email').value = '';
-  document.getElementById('cf-message').value = '';
-}
-
-// ============ SCROLL REVEAL ============
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
